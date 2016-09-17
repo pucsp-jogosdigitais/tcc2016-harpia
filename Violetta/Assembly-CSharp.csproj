@@ -55,10 +55,6 @@
      <Compile Include="Assets\Scripts\GerenciadorScript.cs" />
      <Compile Include="Assets\Scripts\KartCameraScript.cs" />
      <Compile Include="Assets\Scripts\KartScript.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Lixu\MenuModoCustomScript.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Lixu\MenuPrincipalScript.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Lixu\MenuSeleçãoModoJogoScript.cs" />
-     <Compile Include="Assets\Scripts\Menu Scripts\Lixu\SeleçãoPersonagensScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\ManipulaPropriedadesScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\MenuSelecaoScript.cs" />
