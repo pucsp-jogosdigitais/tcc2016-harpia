@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violetta 14-08.CSharp.Plugins", "Violetta 14-08.CSharp.Plugins.csproj", "{46F87468-C876-07DF-B865-3718EB645B3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violetta 14-08.CSharp", "Violetta 14-08.CSharp.csproj", "{F27181E3-59CB-D89A-421B-F7D16BBBCC25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Violetta 14-08.CSharp.Editor", "Violetta 14-08.CSharp.Editor.csproj", "{43E9D236-50E1-7AB0-36C0-70957B946C2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46F87468-C876-07DF-B865-3718EB645B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F87468-C876-07DF-B865-3718EB645B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F87468-C876-07DF-B865-3718EB645B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F87468-C876-07DF-B865-3718EB645B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27181E3-59CB-D89A-421B-F7D16BBBCC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27181E3-59CB-D89A-421B-F7D16BBBCC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27181E3-59CB-D89A-421B-F7D16BBBCC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27181E3-59CB-D89A-421B-F7D16BBBCC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E9D236-50E1-7AB0-36C0-70957B946C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E9D236-50E1-7AB0-36C0-70957B946C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E9D236-50E1-7AB0-36C0-70957B946C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E9D236-50E1-7AB0-36C0-70957B946C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
