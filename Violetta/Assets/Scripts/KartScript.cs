@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class KartScript : MonoBehaviour
 {
@@ -16,11 +16,11 @@ public class KartScript : MonoBehaviour
     public Transform CenterOfMass;
     public Rigidbody KartRigidbody;
     private float tempo = 0;
-    public Image ImgMiniatura;
     public int minutos = 0, segundos = 0;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
+    public Object PowerUpBoxFalsa;
     public Rigidbody MisselPrefab;
     public Rigidbody MisselGuiadoPrefab;
     public Object OleoPrefab;
@@ -331,10 +331,10 @@ public class KartScript : MonoBehaviour
             #region Personagem Pequeno
             case "Pequeno":
                 {
-                    velMax = 80;
-                    aceleracao = 40;
-                    direcaoBaixaVel = 60f;
-                    direcaoAltaVel = 55f;
+                    velMax = 10000000000000000;
+                    aceleracao = 200;
+                    direcaoBaixaVel = 50f;
+                    direcaoAltaVel = 45f;
                 }
                 break;
             #endregion
@@ -342,8 +342,8 @@ public class KartScript : MonoBehaviour
             #region Personagem Médio
             case "Médio":
                 {
-                    velMax = 70;
-                    aceleracao = 50;
+                    velMax = 10000000000000000;
+                    aceleracao = 180;
                     direcaoBaixaVel = 55f;
                     direcaoAltaVel = 50f;
                 }
@@ -354,9 +354,9 @@ public class KartScript : MonoBehaviour
             case "Grande":
                 {
                     velMax = 10000000000000000;
-                    aceleracao = 200;
-                    direcaoBaixaVel = 50f;
-                    direcaoAltaVel = 45f;
+                    aceleracao = 150;
+                    direcaoBaixaVel = 65f;
+                    direcaoAltaVel = 55f;
                 }
                 break;
             #endregion
@@ -469,13 +469,22 @@ public class KartScript : MonoBehaviour
                 break;
             #endregion
 
+            #region Power Up Box Falsa
+            case 5: //Power Up Box Falsa
+                {
+                    Instantiate(PowerUpBoxFalsa, PosTras.position, PosTras.rotation);
+                    powerUpTipo = 0;
+                }
+                break;
+            #endregion
+
             #region Aranha Explosiva
-            case 5: //Aranha Explosiva
+            /*case 6: //Aranha Explosiva
                 {
                     Instantiate(AranhaExplosivaPrefab, PosTras.position, PosTras.rotation);
                     powerUpTipo = 0;
                 }
-                break;
+                break;*/
             #endregion
         }
     }
@@ -486,12 +495,7 @@ public class KartScript : MonoBehaviour
         {
             switch (this.gameObject.name)
             {
-                case "Violeta":
-                    {
-
-                    }
-                    break;
-                case "Kruchula":
+                case "Violetta":
                     {
 
                     }
@@ -502,16 +506,6 @@ public class KartScript : MonoBehaviour
                     }
                     break;
                 case "Momoto":
-                    {
-
-                    }
-                    break;
-                case "Atawe":
-                    {
-
-                    }
-                    break;
-                case "Rangitoto":
                     {
 
                     }

@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuSelecaoScript : MonoBehaviour {
 
-    public Text numJog;
     int numero;
     public GameObject Plat1, Plat2, Plat3, Plat4;
-    public GameObject Panel1, Panel2, Panel3, Panel4;
 
     private string level = "Pista 4 - Doceria da Violetta";
     private bool p1selecionou = false;
@@ -29,7 +27,6 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 1:
                 {
                     Plat1.SetActive(true);
-                    Panel1.SetActive(true);
                 }
                 break;
             #endregion
@@ -37,7 +34,6 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 2:
                 {
                     Plat2.SetActive(true);
-                    Panel2.SetActive(true);
                 }
                 break;
             #endregion
@@ -45,7 +41,6 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 3:
                 {
                     Plat3.SetActive(true);
-                    Panel3.SetActive(true);
                 }
                 break;
             #endregion
@@ -53,14 +48,10 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 4:
                 {
                     Plat4.SetActive(true);
-                    Panel4.SetActive(true);
                 }
                 break;
             #endregion
         }
-
-        numJog.text = "Selecione o seu personagem: " + numero;
-	
 	}
 	
 	// Update is called once per frame

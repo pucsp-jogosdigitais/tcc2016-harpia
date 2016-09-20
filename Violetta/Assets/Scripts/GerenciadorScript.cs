@@ -13,7 +13,6 @@ public class GerenciadorScript : MonoBehaviour
     public int progTotal;
     public Camera CamPreview;
     public Text regressiva, resultado;
-    public Image barraImg;
 
     private KartScript script;
     private List<KartScript> ScriptsKarts;
@@ -26,16 +25,16 @@ public class GerenciadorScript : MonoBehaviour
     public List<ControllerScript> ScriptsControllers;
     private float count = 0, count2;
     private int numTotalCheckPoints;
-    private float PropBarraProg;
     private int numeroJogadores;
     private string player1, player2, player3, player4;
     private ManipulaPropriedadesScript manipulador;
+    private bool Iniciou = false;
 
     // Use this for initialization
     void Start()
     {
-          manipulador = gameObject.AddComponent<ManipulaPropriedadesScript>();
-          numeroJogadores = manipulador.NumJogadores(0);
+        manipulador = gameObject.AddComponent<ManipulaPropriedadesScript>();
+        numeroJogadores = manipulador.NumJogadores(0);
         //player1 = manipulador.Jogador(1);
         //player2 = manipulador.Jogador(2);
         //player3 = manipulador.Jogador(3);
@@ -57,9 +56,7 @@ public class GerenciadorScript : MonoBehaviour
         CamerasPlayers = new List<Camera>();
         Posições = transform.GetComponentsInChildren<Transform>();
         CamPreview.gameObject.SetActive(true);
-        barraImg.gameObject.SetActive(false);
         numTotalCheckPoints = Checkpoints.Length;
-        PropBarraProg = 198.00f/(float) progTotal;
 
         #region Posiciona os Karts
         foreach (Transform posição in Posições) //Adiciona todas as posições iniciais na lista de posições
@@ -72,17 +69,17 @@ public class GerenciadorScript : MonoBehaviour
         {
             Karts[i].transform.position = PosIniciais[i].position; //Coloca os karts nas posições pré definidas
             ScriptsKarts.Add(Karts[i].GetComponent<KartScript>()); //Salva a referência do script de cada Kart
-            ScriptsKarts[i].contProgresso = -i;
-          
+            ScriptsAI.Add(Karts[i].GetComponent<AIScript>()); //Salva a referência do script de AI de cada Kart
+            ScriptsKarts[i].contProgresso = -i;     
         }
         #endregion
 
-        switch (numeroJogadores) //Ativa os karts como jogáveis e ajusta as cameras na tela
+        #region Ajusta as cameras na tela de acordo com o número de jogadores
+        switch (numeroJogadores) 
         {
             #region Somente um jogador
             case 1:
                 {
-                    ativarComoJogador("Kart_" + player1);
                     configCameras("KartCamera_" + player1);
                 }
                 break;
@@ -90,8 +87,6 @@ public class GerenciadorScript : MonoBehaviour
             #region Dois Jogadores
             case 2:
                 {
-                    ativarComoJogador("Kart_" + player1);
-                    ativarComoJogador("Kart_" + player2);
                     configCameras("KartCamera_" + player1, "KartCamera_" + player2);
                 }
                 break;
@@ -99,9 +94,6 @@ public class GerenciadorScript : MonoBehaviour
             #region Três Jogadores
             case 3:
                 {
-                    ativarComoJogador("Kart_" + player1);
-                    ativarComoJogador("Kart_" + player2);
-                    ativarComoJogador("Kart_" + player3);
                     configCameras("KartCamera_" + player1, "KartCamera_" + player2, "KartCamera_" + player3);
                 }
                 break;
@@ -109,15 +101,12 @@ public class GerenciadorScript : MonoBehaviour
             #region Quatro Jogadores
             case 4:
                 {
-                    ativarComoJogador("Kart_" + player1);
-                    ativarComoJogador("Kart_" + player2);
-                    ativarComoJogador("Kart_" + player3);
-                    ativarComoJogador("Kart_" + player4);
                     configCameras("KartCamera_" + player1, "KartCamera_" + player2, "KartCamera_" + player3, "KartCamera_" + player4);
                 }
                 break;
                 #endregion
         }
+        #endregion
     }
 
     // Update is called once per frame
@@ -139,6 +128,7 @@ public class GerenciadorScript : MonoBehaviour
         }
         else
         {
+            if (!Iniciou)
             contagemInicial();
 
             #region Atualiza as colocações/posições na corrida
@@ -153,10 +143,8 @@ public class GerenciadorScript : MonoBehaviour
             #region Verifica se cada kart terminou a corrida e atualiza o seu progresso
             foreach (KartScript script in ScriptsKarts)
             {
-                if ((script.contProgresso >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints/2))
+                if ((script.contProgresso >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                     script.Terminou = true;
-                if (script.contProgresso > 0)
-                script.ImgMiniatura.rectTransform.localPosition = new Vector3(201f, (script.contProgresso * PropBarraProg) -138, 0);
             }
             #endregion
 
@@ -186,7 +174,7 @@ public class GerenciadorScript : MonoBehaviour
             #region Ativa todas as cameras de jogadores
             foreach (Camera CamKart in CamerasPlayers)
             {
-                CamKart.gameObject.GetComponent<AudioListener>().enabled = true;
+                //CamKart.gameObject.GetComponent<AudioListener>().enabled = true;
                 CamKart.gameObject.GetComponent<Camera>().enabled = true;
             }
             #endregion
@@ -196,20 +184,52 @@ public class GerenciadorScript : MonoBehaviour
             if (count2 >= 5)
             {
                 #region Inicia o Jogo
-                foreach (AIScript script in ScriptsAI)
-                {
-                    script.enabled = true;
-                    script.gameObject.GetComponent<KartScript>().ImgMiniatura.gameObject.SetActive(true);
-                }
-
-                foreach (ControllerScript script in ScriptsControllers)
-                {
-                    script.enabled = true;
-                    script.gameObject.GetComponent<KartScript>().ImgMiniatura.gameObject.SetActive(true);
-                }
-
                 regressiva.text = "";
-                barraImg.gameObject.SetActive(true);
+                switch (numeroJogadores) //Ativa os karts como jogáveis
+                {
+                    #region Somente um jogador
+                    case 1:
+                        {
+                            ativarComoJogador("Kart_" + player1);
+                        }
+                        break;
+                    #endregion
+                    #region Dois Jogadores
+                    case 2:
+                        {
+                            ativarComoJogador("Kart_" + player1);
+                            ativarComoJogador("Kart_" + player2);
+                        }
+                        break;
+                    #endregion
+                    #region Três Jogadores
+                    case 3:
+                        {
+                            ativarComoJogador("Kart_" + player1);
+                            ativarComoJogador("Kart_" + player2);
+                            ativarComoJogador("Kart_" + player3);
+                        }
+                        break;
+                    #endregion
+                    #region Quatro Jogadores
+                    case 4:
+                        {
+                            ativarComoJogador("Kart_" + player1);
+                            ativarComoJogador("Kart_" + player2);
+                            ativarComoJogador("Kart_" + player3);
+                            ativarComoJogador("Kart_" + player4);
+                        }
+                        break;
+                        #endregion
+                }
+
+                foreach (AIScript AI in ScriptsAI)
+                {
+                    AI.enabled = true;
+                }
+
+                Iniciou = true;
+
                 #endregion
             }
             else
@@ -236,14 +256,14 @@ public class GerenciadorScript : MonoBehaviour
                 }
                 #endregion
             }
-
+            
             #endregion
         }
         else
         {
             #region Contagem do Preview + Interrupção
             count += Time.deltaTime/Time.timeScale;
-            if (Input.GetKey("up")) //Interrompe o Preview
+            if (Input.anyKey) //Interrompe o Preview
             {
                 count = TempoPreview;
             }
@@ -253,11 +273,11 @@ public class GerenciadorScript : MonoBehaviour
 
     private void ativarComoJogador(string kart)
     {
-        AIScript ControladorAI = ControladorAI = GameObject.Find(kart).GetComponent<AIScript>();        
+        AIScript ControladorAI = GameObject.Find(kart).GetComponent<AIScript>();        
         ControllerScript ControladorJogador = GameObject.Find(kart).GetComponent<ControllerScript>();
         ScriptsAI.Remove(ControladorAI);
         ControladorAI.enabled = false;
-        GameObject.Find(kart).GetComponent<NavMeshAgent>().enabled = false;
+        GameObject.Find(kart).GetComponentInChildren<NavMeshAgent>().enabled = false;
         GameObject.Find(kart).GetComponent<NavMeshObstacle>().enabled = true;
         ControladorJogador.enabled = true;
         ScriptsControllers.Add(ControladorJogador);

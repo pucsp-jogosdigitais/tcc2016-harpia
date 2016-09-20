@@ -9,9 +9,9 @@ public class ControllerScript : MonoBehaviour
 
     public bool drift = false;
     public bool jogando = false;
-    public Text colocacaoText;
     public Text contadorVoltas;
     public Text textVelocimetro;
+    public GameObject imagensColocacao;
     public Camera camKart;
     public string Player;
 
@@ -20,6 +20,7 @@ public class ControllerScript : MonoBehaviour
     private KartCameraScript CameraScript;
     private GerenciadorScript Gerenciador;
     private float vertical, horizontal;
+    private GameObject imgPos1, imgPos2, imgPos3, imgPos4;
 
     #endregion
 
@@ -30,12 +31,17 @@ public class ControllerScript : MonoBehaviour
         Gerenciador = GameObject.Find("Gerenciador").GetComponent<GerenciadorScript>(); //Localiza o gerenciador da pista
         Kart.Jogando = true;                                                            //Inicia o estado como jogando
 
+        //Acha a referencia das imagens de colocacao que irão na interface
+        imgPos1 = imagensColocacao.transform.Find("Primeiro").gameObject;
+        imgPos2 = imagensColocacao.transform.Find("Segundo").gameObject;
+        imgPos3 = imagensColocacao.transform.Find("Terceiro").gameObject;
+        imgPos4 = imagensColocacao.transform.Find("Quarto").gameObject;
+
         Player = " Player1";
 
         //Inicializa os textos de interface vazios
         contadorVoltas.text = "";
         textVelocimetro.text = "";
-        colocacaoText.text = "";
     }
 
     void FixedUpdate()
@@ -63,7 +69,6 @@ public class ControllerScript : MonoBehaviour
                 this.gameObject.GetComponentInChildren<NavMeshAgent>().enabled = true;
                 contadorVoltas.text = "";
                 textVelocimetro.text = "";
-                colocacaoText.text = "";
                 this.enabled = false;
             }
     }
@@ -108,13 +113,63 @@ public class ControllerScript : MonoBehaviour
     private void InserirInterface() //Atualiza a interface do jogador
     {
         if (Kart.lap != 0)
-            contadorVoltas.text = "Lap: " + Kart.lap.ToString() + "/" + Gerenciador.Laps.ToString();
+            contadorVoltas.text = Kart.lap.ToString() + "/" + Gerenciador.Laps.ToString();
         else if (Kart.lap > Gerenciador.Laps)
-            contadorVoltas.text = "Lap: " + Gerenciador.Laps.ToString() + "/" + Gerenciador.Laps.ToString();
+            contadorVoltas.text = Gerenciador.Laps.ToString() + "/" + Gerenciador.Laps.ToString();
         else
-            contadorVoltas.text = "Lap: " + "1" + "/" + Gerenciador.Laps.ToString();
-        textVelocimetro.text = "Velocidade: " + Kart.velAtual.ToString();
-        colocacaoText.text = "Posição: " + Kart.posicao.ToString();
+            contadorVoltas.text = "1" + "/" + Gerenciador.Laps.ToString();
+        textVelocimetro.text = Kart.velAtual.ToString();
+
+        #region Imagem de colocacao
+        switch (Kart.posicao)
+        {
+            
+            case 1:
+                {
+                    imgPos1.SetActive(true);
+                    imgPos2.SetActive(false);
+                    imgPos3.SetActive(false);
+                    imgPos4.SetActive(false);
+                    print("entrou1");
+                }
+                break;
+            case 2:
+                {
+                    imgPos1.SetActive(false);
+                    imgPos2.SetActive(true);
+                    imgPos3.SetActive(false);
+                    imgPos4.SetActive(false);
+                    print("entrou2");
+
+                }
+                break;
+            case 3:
+                {
+                    imgPos1.SetActive(false);
+                    imgPos2.SetActive(false);
+                    imgPos3.SetActive(true);
+                    imgPos4.SetActive(false);
+                    print("entrou3");
+
+                }
+                break;
+            case 4:
+                {
+                    imgPos1.SetActive(false);
+                    imgPos2.SetActive(false);
+                    imgPos3.SetActive(false);
+                    imgPos4.SetActive(true);
+                    print("entrou4");
+                }
+                break;
+
+            default :
+                {
+                    print("entroudef");
+                }
+                break;
+        }
+        #endregion
     }
 
     #endregion

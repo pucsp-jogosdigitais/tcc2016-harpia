@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 64fbe2b05dbbcea4b8ba1bca7d8c8ddf
+timeCreated: 1474222031
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group
+    100002: pasted__pCylinder1
+    100004: pasted__pCylinder2
+    100006: pasted__polySurface1
+    100008: pasted__polySurface6
+    100010: pasted__transform1
+    100012: pasted__transform2
+    100014: pasted__transform3
+    100016: pasted__transform4
+    100018: pasted__Violetta_Baleiro_1
+    100020: pasted__Violetta_BaleiroPorta_1
+    100022: //RootNode
+    400000: group
+    400002: pasted__pCylinder1
+    400004: pasted__pCylinder2
+    400006: pasted__polySurface1
+    400008: pasted__polySurface6
+    400010: pasted__transform1
+    400012: pasted__transform2
+    400014: pasted__transform3
+    400016: pasted__transform4
+    400018: pasted__Violetta_Baleiro_1
+    400020: pasted__Violetta_BaleiroPorta_1
+    400022: //RootNode
+    2300000: pasted__polySurface1
+    2300002: pasted__polySurface6
+    3300000: pasted__polySurface1
+    3300002: pasted__polySurface6
+    4300000: pasted__polySurface6
+    4300002: pasted__polySurface1
+    7400000: Baleiro_Giro
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Baleiro_Giro
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__pCylinder1
+        weight: 1
+      - path: group/pasted__pCylinder1/pasted__transform3
+        weight: 1
+      - path: group/pasted__pCylinder2
+        weight: 1
+      - path: group/pasted__pCylinder2/pasted__transform4
+        weight: 1
+      - path: group/pasted__Violetta_Baleiro_1
+        weight: 1
+      - path: group/pasted__Violetta_Baleiro_1/pasted__transform2
+        weight: 1
+      - path: group/pasted__Violetta_BaleiroPorta_1
+        weight: 1
+      - path: group/pasted__Violetta_BaleiroPorta_1/pasted__transform1
+        weight: 1
+      - path: pasted__polySurface6
+        weight: 1
+      - path: pasted__polySurface6/pasted__polySurface1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

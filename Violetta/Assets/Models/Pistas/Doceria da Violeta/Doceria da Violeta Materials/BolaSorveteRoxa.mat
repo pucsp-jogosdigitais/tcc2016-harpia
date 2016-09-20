@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: BolaSorveteRoxa
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: a6dfd6266f98f7345a3b86e957de9fe5, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8ff11c87c0a19aa4cbac29244dd909bd, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 05198e3411a4e3f4c84f03ca555f4459, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,7 +54,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: a6dfd6266f98f7345a3b86e957de9fe5, type: 3}
+          m_Texture: {fileID: 2800000, guid: 8ff11c87c0a19aa4cbac29244dd909bd, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 1
       data:
         first:
           name: _BumpScale
@@ -131,8 +131,8 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0.44852942, g: 0.43203938, b: 0.43203938, a: 1}
+        second: {r: 0.30980393, g: 0.9450981, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0.4044118, g: 0.4044118, b: 0.4044118, a: 1}
+        second: {r: 0.32413816, g: 1, b: 0, a: 1}

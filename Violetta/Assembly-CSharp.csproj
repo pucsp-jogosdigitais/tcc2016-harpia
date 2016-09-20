@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIScript.cs" />
+     <Compile Include="Assets\Scripts\ActivateTrigger.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\MathUtils.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\SplineController.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\SplineInterpolator.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\PowerUp Scripts\MisselComumScript.cs" />
      <Compile Include="Assets\Scripts\PowerUp Scripts\MisselTeleguiadoScript.cs" />
      <Compile Include="Assets\Scripts\PowerUp Scripts\OleoScript.cs" />
+     <Compile Include="Assets\Scripts\PowerUp Scripts\PowerUpBoxFalsaScript.cs" />
      <Compile Include="Assets\Scripts\PowerUp Scripts\PowerUpBoxScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />

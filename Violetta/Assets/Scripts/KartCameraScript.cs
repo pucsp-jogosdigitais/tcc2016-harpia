@@ -3,7 +3,6 @@ using System.Collections;
 
 public class KartCameraScript : MonoBehaviour
 {
-
     public Transform Kart;
     public bool cameraReversa = false;
     private bool virada = false;

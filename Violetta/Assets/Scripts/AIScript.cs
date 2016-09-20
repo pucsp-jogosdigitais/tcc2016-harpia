@@ -10,7 +10,7 @@ public class AIScript : MonoBehaviour
     private Transform[] points;
     private int pointaux = 0;
     private float maxRotação = 50.0f;
-    private float distDoCaminho = 0.2f;
+    private float distDoCaminho = 5f;
     private List<Transform> Caminho;
     private KartScript Kart;
     private Vector3 rotaçãoVector, aux;
