@@ -4,11 +4,9 @@ using System.Collections.Generic;
 
 public class AIScript : MonoBehaviour
 {
-
     public Transform CaminhoGroup;
     public Transform NavMesh;
     public int pointAtual;
-
     private Transform[] points;
     private int pointaux = 0;
     private float maxRotação = 50.0f;
@@ -30,13 +28,15 @@ public class AIScript : MonoBehaviour
 
     private float pontoInicialSensorMeio = 0.6f;
     private float pontoInicialSensorLateral = 0.3f;
-    private float alcanceSensorMeio = 50;
+    private float alcanceSensorMeio = 7;
     private float alcanceSensorLateral = 10;
     private float anguloSensorLateral = 20;
     private Vector3 auxAnguloSensor;
     private Vector3 posSensor;
     private RaycastHit hitSensor;
-    
+    private float sensibilidadeDesvio = 0;
+    private int flag = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -148,36 +148,62 @@ public class AIScript : MonoBehaviour
                                                                     transform.position.y,
                                                                     Caminho[pointAtual].position.z));
         novaRotação = maxRotação * (rotaçãoVector.x / rotaçãoVector.magnitude);
-        Kart.Direção(novaRotação);
+        if (flag == 0)
+            Kart.Direção(novaRotação);
+        else
+            Kart.Direção(novaRotação);
     }
 
     private void Sensores()
     {
-        //Front Mid Sensor
+        flag = 0;
+        sensibilidadeDesvio = 0;
+
+        #region Sensor Frontal
         posSensor = transform.position;
         posSensor += transform.forward * pontoInicialSensorMeio;
         if (Physics.Raycast(posSensor, transform.forward, out hitSensor, alcanceSensorMeio))
         {
+            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            {
+                if (hitSensor.normal.x < 0)
+                    sensibilidadeDesvio = 1;
+                else
+                    sensibilidadeDesvio = -1;
+            }
             Debug.DrawLine(posSensor, hitSensor.point, Color.black);
-        }
+        }    
+        #endregion
 
-        //Front Angled Right Sensor
+        #region Sensor Direita
         posSensor += transform.right * pontoInicialSensorLateral;
         auxAnguloSensor = Quaternion.AngleAxis(anguloSensorLateral, transform.up) * transform.forward;
         if (Physics.Raycast(posSensor, auxAnguloSensor, out hitSensor, alcanceSensorLateral))
         {
-            Debug.DrawLine(posSensor, hitSensor.point, Color.white);
+            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            {
+                sensibilidadeDesvio -= 0.5f;
+                flag++;
+                Debug.DrawLine(posSensor, hitSensor.point, Color.white);
+            }
         }
+        #endregion
 
-        //Front Straight left Sensor
+        #region Sensor Esquerda
         posSensor = transform.position;
         posSensor += transform.forward * pontoInicialSensorMeio;
         posSensor -= transform.right * pontoInicialSensorLateral;
         auxAnguloSensor = Quaternion.AngleAxis(-anguloSensorLateral, transform.up) * transform.forward;
         if (Physics.Raycast(posSensor, auxAnguloSensor, out hitSensor, alcanceSensorLateral))
         {
-            Debug.DrawLine(posSensor, hitSensor.point, Color.white);
+            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            {
+                sensibilidadeDesvio += 0.5f;
+                flag++;
+                Debug.DrawLine(posSensor, hitSensor.point, Color.white);
+            }
         }
-
+        #endregion      
     }
+
 }
