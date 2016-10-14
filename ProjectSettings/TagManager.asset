@@ -13,6 +13,7 @@ TagManager:
   - Karts
   - Boost
   - Poca
+  - Pista
   layers:
   - Default
   - TransparentFX

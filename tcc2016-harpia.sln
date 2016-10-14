@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp.Plugins", "tcc2016-harpia.CSharp.Plugins.csproj", "{3233CD8F-B7B4-5C95-4C48-F3247410E80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp", "tcc2016-harpia.CSharp.csproj", "{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp.Editor", "tcc2016-harpia.CSharp.Editor.csproj", "{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
