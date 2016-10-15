@@ -29,8 +29,8 @@ public class AIScript : MonoBehaviour
     private float pontoInicialSensorMeio = 0.6f;
     private float pontoInicialSensorLateral = 0.3f;
     private float alcanceSensorMeio = 7;
-    private float alcanceSensorLateral = 10;
-    private float anguloSensorLateral = 20;
+    private float alcanceSensorLateral = 15;
+    private float anguloSensorLateral = 25;
     private Vector3 auxAnguloSensor;
     private Vector3 posSensor;
     private RaycastHit hitSensor;
@@ -164,14 +164,15 @@ public class AIScript : MonoBehaviour
         posSensor += transform.forward * pontoInicialSensorMeio;
         if (Physics.Raycast(posSensor, transform.forward, out hitSensor, alcanceSensorMeio))
         {
-            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            if (hitSensor.transform.tag == "Untagged")
             {
                 if (hitSensor.normal.x < 0)
                     sensibilidadeDesvio = 1;
                 else
                     sensibilidadeDesvio = -1;
+
+                Debug.DrawLine(posSensor, hitSensor.point, Color.black);
             }
-            Debug.DrawLine(posSensor, hitSensor.point, Color.black);
         }    
         #endregion
 
@@ -180,7 +181,7 @@ public class AIScript : MonoBehaviour
         auxAnguloSensor = Quaternion.AngleAxis(anguloSensorLateral, transform.up) * transform.forward;
         if (Physics.Raycast(posSensor, auxAnguloSensor, out hitSensor, alcanceSensorLateral))
         {
-            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            if (hitSensor.transform.tag == "Untagged")
             {
                 sensibilidadeDesvio -= 0.5f;
                 flag++;
@@ -196,7 +197,7 @@ public class AIScript : MonoBehaviour
         auxAnguloSensor = Quaternion.AngleAxis(-anguloSensorLateral, transform.up) * transform.forward;
         if (Physics.Raycast(posSensor, auxAnguloSensor, out hitSensor, alcanceSensorLateral))
         {
-            if (hitSensor.transform.tag != "Pista" && hitSensor.transform.tag != "Limite" && hitSensor.transform.tag != "Checkpoint")
+            if (hitSensor.transform.tag == "Untagged")
             {
                 sensibilidadeDesvio += 0.5f;
                 flag++;
