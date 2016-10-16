@@ -19,9 +19,9 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 2f651de6ddb96744a805fad8f2b8704c, type: 3}
-          m_Scale: {x: 12, y: 12}
-          m_Offset: {x: 5, y: 5}
+          m_Texture: {fileID: 2800000, guid: 374da71c9dbc4844cb1141f64b3a86b1, type: 3}
+          m_Scale: {x: 7, y: 7}
+          m_Offset: {x: 0, y: 1.79}
       data:
         first:
           name: _BumpMap
@@ -93,20 +93,20 @@ Material:
         second: 0.5
       data:
         first:
-          name: _Metallic
-        second: 0
-      data:
-        first:
           name: _Parallax
         second: 0.02
       data:
         first:
-          name: _ZWrite
-        second: 1
+          name: _Metallic
+        second: 0
       data:
         first:
           name: _Glossiness
         second: 0.5
+      data:
+        first:
+          name: _ZWrite
+        second: 1
       data:
         first:
           name: _BumpScale
@@ -130,7 +130,7 @@ Material:
       data:
         first:
           name: _InvFade
-        second: 2
+        second: 0.01
     m_Colors:
       data:
         first:
