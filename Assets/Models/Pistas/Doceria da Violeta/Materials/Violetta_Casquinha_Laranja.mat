@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Picole_Vermelho
+  m_Name: Violetta_Casquinha_Laranja
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6c9f877a5c0574d4d87da00d491dbc2b, type: 3}
+          m_Texture: {fileID: 2800000, guid: 6734c1261296a7d47a00e3cd8b39c61f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4a604be11751dc6479da8d88fddd8616, type: 3}
+          m_Texture: {fileID: 2800000, guid: 99f0495c042100a4a9fde95c7d838fba, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,7 +54,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 6c9f877a5c0574d4d87da00d491dbc2b, type: 3}
+          m_Texture: {fileID: 2800000, guid: 6734c1261296a7d47a00e3cd8b39c61f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -102,7 +102,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0.26
       data:
         first:
           name: _ZWrite
@@ -110,7 +110,7 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 2
+        second: 1
       data:
         first:
           name: _OcclusionStrength
@@ -131,8 +131,8 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0.6764706, g: 0.6665225, b: 0.6665225, a: 1}
+        second: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
+        second: {r: 0.58823526, g: 0.56437176, b: 0.5017301, a: 1}
