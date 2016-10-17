@@ -10,7 +10,7 @@ public class PerseguirScript : MonoBehaviour
     private Transform[] points;
     private int pointaux = 0;
     private float maxRotação = 50.0f;
-    private float distDoCaminho = 0.1f;
+    private float distDoCaminho = 1f;
     private List<Transform> Caminho;
     private Vector3 rotaçãoVector, aux;
     private float novaRotação;

@@ -7,13 +7,14 @@ TagManager:
   - PowerUpBox
   - LapCounter
   - Checkpoint
-  - AranhaAoE
+  - Nuvem
   - Limite
   - AIController
   - Karts
   - Boost
   - Poca
   - Pista
+  - AranhaAoE
   layers:
   - Default
   - TransparentFX

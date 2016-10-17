@@ -44,18 +44,18 @@ public class AIScript : MonoBehaviour
         Kart.Jogando = true;
         localizarCaminho();
 
-        foreach (Transform ponto in Caminho)
+        /*foreach (Transform ponto in Caminho)
         {
             pointaux++;
             aux = transform.InverseTransformPoint(new Vector3(ponto.position.x,
                                                                     ponto.position.y,
                                                                     ponto.position.z));
-            if (aux.magnitude <= 0.5f)
+            if (aux.magnitude <= 1f)
             {
                 pointAtual = pointaux;
                 break;
             }
-        }
+        }*/
 
         PontoAtual = Caminho[0];
         PosAlvo = PontoAtual.position;
@@ -183,7 +183,7 @@ public class AIScript : MonoBehaviour
         {
             if (hitSensor.transform.tag == "Untagged")
             {
-                sensibilidadeDesvio -= 0.5f;
+                sensibilidadeDesvio -= 0.8f;
                 flag++;
                 Debug.DrawLine(posSensor, hitSensor.point, Color.white);
             }
@@ -199,7 +199,7 @@ public class AIScript : MonoBehaviour
         {
             if (hitSensor.transform.tag == "Untagged")
             {
-                sensibilidadeDesvio += 0.5f;
+                sensibilidadeDesvio += 0.8f;
                 flag++;
                 Debug.DrawLine(posSensor, hitSensor.point, Color.white);
             }
