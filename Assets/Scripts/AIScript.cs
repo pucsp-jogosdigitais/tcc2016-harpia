@@ -123,7 +123,7 @@ public class AIScript : MonoBehaviour
         }
         else
         {
-            distancia = new Vector3(this.transform.position.x - PontoAtual.position.x, 0, this.transform.position.y - PontoAtual.position.y).magnitude;
+           // distancia = new Vector3(this.transform.position.x - PontoAtual.position.x, 0, this.transform.position.y - PontoAtual.position.y).magnitude;
         }
 
         if (distancia < distDoCaminho)

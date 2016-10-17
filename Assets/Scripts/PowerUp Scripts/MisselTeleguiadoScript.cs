@@ -5,22 +5,33 @@ public class MisselTeleguiadoScript : MonoBehaviour {
 
     public float velocidade = 25f;
     Rigidbody MisselRigidbody;
+    GameObject KartAlvo;
 
     // Use this for initialization
     void Start ()
     {
         MisselRigidbody = GetComponent<Rigidbody>();
-        MisselRigidbody.velocity = transform.TransformDirection(Vector3.forward * velocidade);
+        //MisselRigidbody.velocity = transform.TransformDirection(Vector3.forward * velocidade);
     }
 
 
     // Update is called once per frame
     void Update () {
-	
+
+        if (KartAlvo != null)
+        {
+            transform.LookAt(KartAlvo.transform);
+            MisselRigidbody.velocity = transform.forward * velocidade;
+        }
 	}
 
     void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
+    }
+
+    public void defineAlvo(GameObject alvo)
+    {
+        KartAlvo = alvo;
     }
 }

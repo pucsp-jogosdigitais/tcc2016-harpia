@@ -1505,7 +1505,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 415.72998, y: 13.08, z: -675.52}
+  m_LocalPosition: {x: 10.299988, y: 0.63651466, z: -17.200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488596}
@@ -1727,7 +1727,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103242}
   m_LocalRotation: {x: 0, y: -0.97572416, z: 0, w: -0.2190033}
-  m_LocalPosition: {x: -219.5, y: 37.1, z: -142}
+  m_LocalPosition: {x: -219.5, y: 35.93, z: -142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 412524}
@@ -2219,7 +2219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121980}
   m_LocalRotation: {x: 0, y: -0.99903315, z: 0, w: -0.04396305}
-  m_LocalPosition: {x: -195.5, y: 43.9, z: -171.4}
+  m_LocalPosition: {x: -195.5, y: 36.05, z: -171.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 412524}
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cca722838dca594680fdd85afa2c8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayColor: {r: 0, g: 0, b: 0, a: 1}
+  rayColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

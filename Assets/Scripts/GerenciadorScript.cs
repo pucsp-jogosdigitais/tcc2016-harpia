@@ -329,5 +329,15 @@ public class GerenciadorScript : MonoBehaviour
 
     #endregion
 
+    public GameObject BuscarKartAlvo(int colocacao)
+    {
+        foreach (KartScript script in ScriptsKarts)
+        {
+            if (script.posicao == colocacao)
+                return script.gameObject;
+        }
+        return null;
+    }
+
 }
 

@@ -61,16 +61,17 @@ public class ControllerScript : MonoBehaviour
             if (Input.GetButtonDown("Voltar/PowerUp Especial" + Player)) //Atira o powerup especial
                 Kart.powerUpEspecial();
 
-            if (Kart.Terminou) //Se o jogador terminou, desativa os controles, tira os textos de interface e ativa a inteligencia artificial
-            {
-                this.gameObject.GetComponent<Rigidbody>().drag = 0.4f;
-                this.gameObject.GetComponentInChildren<AIScript>().enabled = true;
-                this.gameObject.GetComponentInChildren<NavMeshObstacle>().enabled = false;
-                this.gameObject.GetComponentInChildren<NavMeshAgent>().enabled = true;
-                contadorVoltas.text = "";
-                textVelocimetro.text = "";
-                this.enabled = false;
-            }
+        if (Kart.Terminou) //Se o jogador terminou, desativa os controles, tira os textos de interface e ativa a inteligencia artificial
+        {
+            this.gameObject.GetComponent<Rigidbody>().drag = 0.4f;
+            this.gameObject.GetComponentInChildren<AIScript>().enabled = true;
+            this.gameObject.GetComponentInChildren<NavMeshObstacle>().enabled = false;
+            this.gameObject.GetComponentInChildren<NavMeshAgent>().enabled = true;
+            contadorVoltas.text = "";
+            textVelocimetro.text = "";
+            contadorVoltas.gameObject.transform.parent.gameObject.transform.parent.gameObject.SetActive(false);
+            this.enabled = false;
+        }
     }
 
     #region Funções de movimentação
@@ -118,7 +119,7 @@ public class ControllerScript : MonoBehaviour
             contadorVoltas.text = Gerenciador.Laps.ToString() + "/" + Gerenciador.Laps.ToString();
         else
             contadorVoltas.text = "1" + "/" + Gerenciador.Laps.ToString();
-        textVelocimetro.text = Kart.velAtual.ToString();
+        textVelocimetro.text = Mathf.RoundToInt(Kart.KartRigidbody.velocity.magnitude*1.9f).ToString();
 
         #region Imagem de colocacao
         switch (Kart.posicao)

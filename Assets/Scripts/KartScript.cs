@@ -21,6 +21,8 @@ public class KartScript : MonoBehaviour
     private float contLento = 0;
     private float contImunidade;
     private bool imune = false;
+    private GameObject KartAlvo;
+    private int colocacaoAlvo;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -381,6 +383,16 @@ public class KartScript : MonoBehaviour
         #endregion
     }
 
+    private GameObject buscarAlvo(string direção)
+    {        
+        if (direção == "Trás")
+            colocacaoAlvo = posicao - 1;
+        else
+            colocacaoAlvo = posicao + 1;
+
+        return GameObject.Find("Gerenciador").GetComponent<GerenciadorScript>().BuscarKartAlvo(colocacaoAlvo);          
+    }
+
     private void ajustarDireçãoPowerUp(string direção)
     {
         if (direção == "Trás")
@@ -411,7 +423,7 @@ public class KartScript : MonoBehaviour
 
     private void Boost()
     {
-        KartRigidbody.AddForce(transform.forward * 4000f, ForceMode.Impulse);
+        KartRigidbody.AddForce(transform.forward * 2500f, ForceMode.Impulse);
     }
 
     private void Lentidao()
@@ -419,13 +431,15 @@ public class KartScript : MonoBehaviour
         if (lento && !imune)
         {
             KartRigidbody.mass = 1800;
+            KartRigidbody.drag = 1;
             contLento += Time.deltaTime / Time.timeScale;
-            if (contLento > 3)
+            if (contLento > 2)
                 lento = false;
         }
         else
         {
             KartRigidbody.mass = 800;
+            KartRigidbody.drag = 0.2f;
             contLento = 0;
         }
     }
@@ -477,7 +491,7 @@ public class KartScript : MonoBehaviour
             case 3: //Missel Teleguiado
                 {
                     ajustarDireçãoPowerUp(direção);
-                    Instantiate(MisselGuiadoPrefab, PowerUpPosition, PowerUpRotation);
+                    (Instantiate(MisselGuiadoPrefab, PowerUpPosition, PowerUpRotation) as GameObject).GetComponent<MisselTeleguiadoScript>().defineAlvo(buscarAlvo(direção));
                     powerUpTipo = 0;
                 }
                 break;
@@ -598,7 +612,6 @@ public class KartScript : MonoBehaviour
             AranhaScript.addAlvo = this.gameObject;
         }*/
         #endregion
-
         #region Checkpoints
         if (Objeto.gameObject.CompareTag("Checkpoint"))
         {
@@ -632,7 +645,8 @@ public class KartScript : MonoBehaviour
         #region Poça
         else if (Objeto.gameObject.CompareTag("Poca"))
         {
-            lento = true;
+            if (!imune)
+                lento = true;
         }
         #endregion
         #region Contador de Voltas
@@ -654,8 +668,8 @@ public class KartScript : MonoBehaviour
         {
             voltarNoCheckpoint();
         }
-        #endregion
-        
+        #endregion   
+             
     }
 
     #endregion
