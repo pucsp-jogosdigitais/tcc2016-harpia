@@ -1,11 +1,11 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{C6916A86-49EE-3EC3-1C1B-4176DAC575A3}") = "tcc2016-harpia", "Assembly-CSharp-firstpass.csproj", "{577A5E6F-9A87-58A6-DE05-F3A62871509F}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp.Plugins", "tcc2016-harpia.CSharp.Plugins.csproj", "{3233CD8F-B7B4-5C95-4C48-F3247410E80B}"
 EndProject
-Project("{C6916A86-49EE-3EC3-1C1B-4176DAC575A3}") = "tcc2016-harpia", "Assembly-CSharp.csproj", "{B6F24360-96EF-447C-345E-33C7CF6F2E4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp", "tcc2016-harpia.CSharp.csproj", "{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}"
 EndProject
-Project("{C6916A86-49EE-3EC3-1C1B-4176DAC575A3}") = "tcc2016-harpia", "Assembly-CSharp-Editor.csproj", "{AF8F3856-A146-4352-F16D-7FAD9729E7CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcc2016-harpia.CSharp.Editor", "tcc2016-harpia.CSharp.Editor.csproj", "{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,23 +13,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{577A5E6F-9A87-58A6-DE05-F3A62871509F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{577A5E6F-9A87-58A6-DE05-F3A62871509F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{577A5E6F-9A87-58A6-DE05-F3A62871509F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{577A5E6F-9A87-58A6-DE05-F3A62871509F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6F24360-96EF-447C-345E-33C7CF6F2E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6F24360-96EF-447C-345E-33C7CF6F2E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6F24360-96EF-447C-345E-33C7CF6F2E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6F24360-96EF-447C-345E-33C7CF6F2E4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF8F3856-A146-4352-F16D-7FAD9729E7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF8F3856-A146-4352-F16D-7FAD9729E7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF8F3856-A146-4352-F16D-7FAD9729E7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF8F3856-A146-4352-F16D-7FAD9729E7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3233CD8F-B7B4-5C95-4C48-F3247410E80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F2E5AF-7A6D-04ED-F8D0-F6A6F6EB4865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB93A5B-7D45-2F51-8578-97FF7D1436BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

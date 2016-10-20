@@ -336,7 +336,7 @@ public class GerenciadorScript : MonoBehaviour
             if (script.posicao == colocacao)
                 return script.gameObject;
         }
-        return null;
+        return GameObject.Find("GingerBreadMan");
     }
 
 }

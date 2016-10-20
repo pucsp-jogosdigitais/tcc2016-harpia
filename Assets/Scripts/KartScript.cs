@@ -70,6 +70,8 @@ public class KartScript : MonoBehaviour
     public bool Jogando = false;
     public int ContCP = 0;
     #endregion
+    private bool deixaRastro = false;
+    private float contRastro = 0;
 
     void Start()
     {
@@ -95,6 +97,9 @@ public class KartScript : MonoBehaviour
             Lentidao();        //Deixa o kart lento caso seja atingido
             if (PowerUpEspecialAyah != null)
                 Imunidade();
+            if (deixaRastro)
+                RastroPedras();
+                
         }
     }
 
@@ -460,6 +465,22 @@ public class KartScript : MonoBehaviour
         }
     }
 
+    private void RastroPedras()
+    {
+        contRastro += Time.deltaTime / Time.timeScale;
+        if (contRastro <= 5)
+        {
+            Instantiate(PowerUpEspecial, new Vector3 (PosTras.position.x + Random.Range(-0.3f,0.3f), 
+                                                      PosTras.position.y, 
+                                                      PosTras.position.z), PosTras.rotation); 
+        }
+        else
+        {
+            contRastro = 0;
+            deixaRastro = false;
+        }
+    }
+
     #endregion
 
     #region Funções de PowerUp
@@ -585,7 +606,9 @@ public class KartScript : MonoBehaviour
     #endregion
     #region Power Up Especial Momoto
     private void PowerUpMomoto()
-    { }
+    {
+        deixaRastro = true;
+    }
     #endregion
 
     #endregion
@@ -645,6 +668,7 @@ public class KartScript : MonoBehaviour
         #region Poça
         else if (Objeto.gameObject.CompareTag("Poca"))
         {
+            Destroy(Objeto.gameObject);
             if (!imune)
                 lento = true;
         }

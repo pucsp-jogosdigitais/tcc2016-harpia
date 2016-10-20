@@ -11,7 +11,6 @@ public class MisselTeleguiadoScript : MonoBehaviour {
     void Start ()
     {
         MisselRigidbody = GetComponent<Rigidbody>();
-        //MisselRigidbody.velocity = transform.TransformDirection(Vector3.forward * velocidade);
     }
 
 

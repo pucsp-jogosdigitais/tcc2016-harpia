@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class PerseguirScript : MonoBehaviour
@@ -9,11 +8,9 @@ public class PerseguirScript : MonoBehaviour
     public int pointAtual;
     private Transform[] points;
     private int pointaux = 0;
-    private float maxRotação = 50.0f;
     private float distDoCaminho = 1f;
     private List<Transform> Caminho;
     private Vector3 rotaçãoVector, aux;
-    private float novaRotação;
 
     // Use this for initialization
     void Start()
@@ -79,3 +76,4 @@ public class PerseguirScript : MonoBehaviour
         }
     }
 }
+
