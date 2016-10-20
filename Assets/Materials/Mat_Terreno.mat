@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Mat_Terreno
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -100,20 +100,20 @@ Material:
         second: 0.5
       data:
         first:
-          name: _Metallic
-        second: 1
-      data:
-        first:
           name: _Parallax
         second: 0.02
       data:
         first:
-          name: _ZWrite
+          name: _Metallic
         second: 1
       data:
         first:
           name: _Glossiness
         second: 0
+      data:
+        first:
+          name: _ZWrite
+        second: 1
       data:
         first:
           name: _BumpScale
@@ -138,12 +138,12 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 0.18382353, g: 0.1252002, b: 0.010813148, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0.14705886, g: 0.609, b: 0.309, a: 1}
+        second: {r: 1, g: 0.83921576, b: 0.5254902, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0.124513395, g: 0.3455882, b: 0.14883587, a: 1}
+        second: {r: 1, g: 0.9333334, b: 0.5764706, a: 1}
