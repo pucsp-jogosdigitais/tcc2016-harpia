@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Violetta_FINI
+  m_Name: Fini
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _NORMALMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,21 +19,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 10, y: 10}
+          m_Texture: {fileID: 2800000, guid: d2b704c4e14fe834d94e0413427d651a, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 209a7a18985ed8e4eaa3a5024355b71b, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 209a7a18985ed8e4eaa3a5024355b71b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,8 +54,8 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 10, y: 10}
+          m_Texture: {fileID: 2800000, guid: d2b704c4e14fe834d94e0413427d651a, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -69,7 +69,7 @@ Material:
           name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 10, y: 10}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -117,7 +117,7 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 0.2
+        second: 1
       data:
         first:
           name: _OcclusionStrength
@@ -138,11 +138,11 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0.18382353, g: 0.081098616, b: 0.081098616, a: 1}
+        second: {r: 0.5441177, g: 0.5441177, b: 0.5441177, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
       data:
         first:
           name: _SpecColor
