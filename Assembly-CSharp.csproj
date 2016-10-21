@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CameraPath Scripts\SplineInterpolator.cs" />
      <Compile Include="Assets\Scripts\CaminhoScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
+     <Compile Include="Assets\Scripts\DesaparecerScript.cs" />
      <Compile Include="Assets\Scripts\Elementos da Pista\BalaScript.cs" />
      <Compile Include="Assets\Scripts\Elementos da Pista\BaleiroScript.cs" />
      <Compile Include="Assets\Scripts\Elementos da Pista\CheckpointScript.cs" />
