@@ -12,7 +12,9 @@ public class GerenciadorScript : MonoBehaviour
     public int TempoPreview = 25;
     public int progTotal;
     public Camera CamPreview;
-    public Text regressiva, resultado;
+    public Text resultado;
+    public Image NomeRankAyah, NomeRankVioletta, NomeRankJeshi, NomeRankMomoto;
+    public List<GameObject> Resultados;
 
     private KartScript script;
     private List<KartScript> ScriptsKarts;
@@ -28,6 +30,7 @@ public class GerenciadorScript : MonoBehaviour
     private int numeroJogadores;
     private string player1, player2, player3, player4;
     private bool Iniciou = false;
+    public Image Ready, img1, img2, img3, Go;
 
     // Use this for initialization
     void Start()
@@ -40,10 +43,18 @@ public class GerenciadorScript : MonoBehaviour
 
         if (numeroJogadores == 0)
         {
-            numeroJogadores = 1;
+            numeroJogadores = 4;
             player1 = "Jeshi";
+            player2 = "Violetta";
+            player3 = "Momoto";
+            player4 = "Ayah";
         }
 
+        Ready.gameObject.SetActive(false);
+        img1.gameObject.SetActive(false);
+        img2.gameObject.SetActive(false);
+        img3.gameObject.SetActive(false);
+        Go.gameObject.SetActive(false);
         Karts = GameObject.FindGameObjectsWithTag("Karts");
         Checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
         PosIniciais = new List<Transform>();
@@ -113,11 +124,51 @@ public class GerenciadorScript : MonoBehaviour
             for (int i = 0; i < Karts.Count(); i++)
             {
                 script = Karts[i].GetComponent<KartScript>();
+                switch (script.Nome)
+                {
+                    case "Violetta":
+                        {
+                            NomeRankVioletta.transform.parent = Resultados[i].transform;
+                            RectTransform Rect = NomeRankVioletta.GetComponent<RectTransform>();
+                            Rect.offsetMin = new Vector2(0, 0);
+                            Rect.offsetMax = new Vector2(0, 0);
+                            Rect.sizeDelta = new Vector2(0, 0);
+                        }
+                        break;
+                    case "Jeshi":
+                        {
+                            NomeRankJeshi.transform.parent = Resultados[i].transform;
+                            RectTransform Rect = NomeRankJeshi.GetComponent<RectTransform>();
+                            Rect.offsetMin = new Vector2(0, 0);
+                            Rect.offsetMax = new Vector2(0, 0);
+                            Rect.sizeDelta = new Vector2(0, 0);
+                        }
+                        break;
+                    case "Ayah":
+                        {
+                            NomeRankAyah.transform.parent = Resultados[i].transform;
+                            RectTransform Rect = NomeRankAyah.GetComponent<RectTransform>();
+                            Rect.offsetMin = new Vector2(0, 0);
+                            Rect.offsetMax = new Vector2(0, 0);
+                            Rect.sizeDelta = new Vector2(0, 0);
+                        }
+                        break;
+                    case "Momoto":
+                        {
+                            NomeRankMomoto.transform.parent = Resultados[i].transform;
+                            RectTransform Rect = NomeRankMomoto.GetComponent<RectTransform>();
+                            Rect.offsetMin = new Vector2(0, 0);
+                            Rect.offsetMax = new Vector2(0, 0);
+                            Rect.sizeDelta = new Vector2(0, 0);
+                        }
+                        break;
+                }
 
-                if (i == 0)
-                    resultado.text = "         Ranking: \n1. " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
-                else
-                    resultado.text = resultado.text + "\n" + (i + 1) + ". " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
+
+               // if (i == 0)
+               //     resultado.text = "         Ranking: \n1. " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
+               // else
+               //     resultado.text = resultado.text + "\n" + (i + 1) + ". " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
             }
             #endregion
         }
@@ -179,7 +230,7 @@ public class GerenciadorScript : MonoBehaviour
             if (count2 >= 5)
             {
                 #region Inicia o Jogo
-                regressiva.text = "";
+                Go.gameObject.SetActive(false);
                 switch (numeroJogadores) //Ativa os karts como jogáveis
                 {
                     #region Somente um jogador
@@ -234,20 +285,34 @@ public class GerenciadorScript : MonoBehaviour
                 switch ((int)count2)
                 {
                     case 0:
-                        regressiva.text = "Ready?";
+                        {
+                            Ready.gameObject.SetActive(true);
+                        }
                         break;
                     case 1:
-                        regressiva.text = "3";
+                        {
+                            Ready.gameObject.SetActive(false);
+                            img3.gameObject.SetActive(true);
+                        }
                         break;
                     case 2:
-                        regressiva.text = "2";
-                        break;
+                        {
+                            img3.gameObject.SetActive(false);
+                            img2.gameObject.SetActive(true);
+                        }
+                            break;
                     case 3:
-                        regressiva.text = "1";
+                        {
+                            img2.gameObject.SetActive(false);                            
+                            img1.gameObject.SetActive(true);
+                        }
                         break;
                     case 4:
-                        regressiva.text = "GO!";
-                        break;
+                        {
+                            img1.gameObject.SetActive(false);
+                            Go.gameObject.SetActive(true);
+                        }
+                            break;
                 }
                 #endregion
             }
@@ -283,23 +348,37 @@ public class GerenciadorScript : MonoBehaviour
 
     private void configCameras(string Player1)
     {
+        //Cam Principal
         Camera cameraP1 = GameObject.Find(Player1).GetComponentInChildren<Camera>();
         cameraP1.rect = new Rect(0, 0, 1, 1);
+        CamerasPlayers.Add(cameraP1);
+        //Map
+        cameraP1 = GameObject.Find(Player1 + "_Map").GetComponentInChildren<Camera>();
+        cameraP1.rect = new Rect(0.8f, 0.6f, 1, 1);
         CamerasPlayers.Add(cameraP1);
     }
 
     private void configCameras(string Player1, string Player2)
-    {    
+    {   
+        //Cam Principal
         Camera cameraP1 = GameObject.Find(Player1).GetComponentInChildren<Camera>();
         Camera cameraP2 = GameObject.Find(Player2).GetComponentInChildren<Camera>();
         cameraP1.rect = new Rect(0, 0.5f, 1, 1);
         cameraP2.rect = new Rect(0, -0.5f, 1, 1);
         CamerasPlayers.Add(cameraP1);
         CamerasPlayers.Add(cameraP2);
+        //Map
+        cameraP1 = GameObject.Find(Player1 + "_Map").GetComponentInChildren<Camera>();
+        cameraP2 = GameObject.Find(Player2 + "_Map").GetComponentInChildren<Camera>();
+        cameraP1.rect = new Rect(0.8f, 0.6f, 1, 1);
+        cameraP2.rect = new Rect(0.8f, 0.1f, 0.5f, 0.415f);
+        CamerasPlayers.Add(cameraP1);
+        CamerasPlayers.Add(cameraP2);
     }
 
     private void configCameras(string Player1, string Player2, string Player3)
     {
+        //Cam Principal
         Camera cameraP1 = GameObject.Find(Player1).GetComponentInChildren<Camera>();
         Camera cameraP2 = GameObject.Find(Player2).GetComponentInChildren<Camera>();
         Camera cameraP3 = GameObject.Find(Player3).GetComponentInChildren<Camera>();
@@ -309,10 +388,21 @@ public class GerenciadorScript : MonoBehaviour
         CamerasPlayers.Add(cameraP1);
         CamerasPlayers.Add(cameraP2);
         CamerasPlayers.Add(cameraP3);
+        //Cam Map
+        cameraP1 = GameObject.Find(Player1 + "_Map").GetComponentInChildren<Camera>();
+        cameraP2 = GameObject.Find(Player2 + "_Map").GetComponentInChildren<Camera>();
+        cameraP3 = GameObject.Find(Player3 + "_Map").GetComponentInChildren<Camera>();
+        cameraP1.rect = new Rect(-0.15f, 0.75f, 1, 0.25f);
+        cameraP2.rect = new Rect(0.85f, 0.75f, 1, 0.25f);
+        cameraP3.rect = new Rect(0.85f, 0.25f, 1, 0.25f);
+        CamerasPlayers.Add(cameraP1);
+        CamerasPlayers.Add(cameraP2);
+        CamerasPlayers.Add(cameraP3);
     }
 
     private void configCameras(string Player1, string Player2, string Player3, string Player4)
     {
+        //Cam Principal
         Camera cameraP1 = GameObject.Find(Player1).GetComponentInChildren<Camera>();
         Camera cameraP2 = GameObject.Find(Player2).GetComponentInChildren<Camera>();
         Camera cameraP3 = GameObject.Find(Player3).GetComponentInChildren<Camera>();
@@ -321,6 +411,19 @@ public class GerenciadorScript : MonoBehaviour
         cameraP2.rect = new Rect(0.5f, 0.5f, 1, 1);
         cameraP3.rect = new Rect(-0.5f, -0.5f, 1, 1);
         cameraP4.rect = new Rect(0.5f, -0.5f, 1, 1);
+        CamerasPlayers.Add(cameraP1);
+        CamerasPlayers.Add(cameraP2);
+        CamerasPlayers.Add(cameraP3);
+        CamerasPlayers.Add(cameraP4);
+        //Cam Map
+        cameraP1 = GameObject.Find(Player1 + "_Map").GetComponentInChildren<Camera>();
+        cameraP2 = GameObject.Find(Player2 + "_Map").GetComponentInChildren<Camera>();
+        cameraP3 = GameObject.Find(Player3 + "_Map").GetComponentInChildren<Camera>();
+        cameraP4 = GameObject.Find(Player4 + "_Map").GetComponentInChildren<Camera>();
+        cameraP1.rect = new Rect(-0.15f, 0.75f, 1, 0.25f);
+        cameraP2.rect = new Rect(0.85f, 0.75f, 1, 0.25f);
+        cameraP3.rect = new Rect(-0.15f, 0.25f, 1, 0.25f);
+        cameraP4.rect = new Rect(0.85f, 0.25f, 1, 0.25f);
         CamerasPlayers.Add(cameraP1);
         CamerasPlayers.Add(cameraP2);
         CamerasPlayers.Add(cameraP3);
@@ -336,7 +439,7 @@ public class GerenciadorScript : MonoBehaviour
             if (script.posicao == colocacao)
                 return script.gameObject;
         }
-        return GameObject.Find("GingerBreadMan");
+        return null;
     }
 
 }

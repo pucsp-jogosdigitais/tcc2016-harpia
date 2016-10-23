@@ -512,7 +512,8 @@ public class KartScript : MonoBehaviour
             case 3: //Missel Teleguiado
                 {
                     ajustarDireçãoPowerUp(direção);
-                    (Instantiate(MisselGuiadoPrefab, PowerUpPosition, PowerUpRotation) as GameObject).GetComponent<MisselTeleguiadoScript>().defineAlvo(buscarAlvo(direção));
+                    GameObject instancia = (GameObject) Instantiate(MisselGuiadoPrefab, PowerUpPosition, PowerUpRotation);
+                    instancia.GetComponent<MisselTeleguiadoScript>().defineAlvo(buscarAlvo(direção));
                     powerUpTipo = 0;
                 }
                 break;
