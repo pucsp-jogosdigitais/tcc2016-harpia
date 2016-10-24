@@ -15,6 +15,8 @@ public class PerseguirScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        CaminhoGroup = GameObject.Find("Caminho_Nuvem").transform;
+
         localizarCaminho();
 
         foreach (Transform ponto in Caminho)
