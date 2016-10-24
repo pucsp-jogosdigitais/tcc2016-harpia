@@ -15,6 +15,7 @@ TagManager:
   - Poca
   - Pista
   - AranhaAoE
+  - CaminhoNuvem
   layers:
   - Default
   - TransparentFX
