@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 5f04ddb84a45c10459a9682c5e6f4952, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2cb5deaa888fd7849bcaa85a4ddf7220, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -54,7 +54,7 @@ Material:
         first:
           name: _EmissionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 5f04ddb84a45c10459a9682c5e6f4952, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2cb5deaa888fd7849bcaa85a4ddf7220, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:

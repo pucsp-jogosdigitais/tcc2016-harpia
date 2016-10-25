@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Elementos da Pista\CheckpointScript.cs" />
      <Compile Include="Assets\Scripts\Escolhas.cs" />
      <Compile Include="Assets\Scripts\GerenciadorScript.cs" />
+     <Compile Include="Assets\Scripts\InterfaceScript.cs" />
      <Compile Include="Assets\Scripts\KartCameraScript.cs" />
      <Compile Include="Assets\Scripts\KartScript.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\MainMenuScript.cs" />
