@@ -20,6 +20,8 @@ public class PowerUpBoxScript : MonoBehaviour {
             {
                 rend.enabled = true;
             }
+
+            this.gameObject.GetComponent<SphereCollider>().enabled = true;
         }
         else
         {
@@ -28,6 +30,8 @@ public class PowerUpBoxScript : MonoBehaviour {
             {
                 rend.enabled = false;
             }
+
+            this.gameObject.GetComponent<SphereCollider>().enabled = false;
         }
         eixoX.Rotate(new Vector3(1, 0, 0), 30f * Time.deltaTime);
         eixoY.Rotate(new Vector3(0, 1, 0), 50f * Time.deltaTime);

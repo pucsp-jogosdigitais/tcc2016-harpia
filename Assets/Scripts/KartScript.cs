@@ -101,8 +101,7 @@ public class KartScript : MonoBehaviour
             if (deixaRastro)
                 RastroPedras();
             Interface.setPowerUp(powerUpTipo);
-            Interface.setPowerUpEspecial(especialDisponivel);
-                
+            Interface.setPowerUpEspecial(especialDisponivel);                
         }
     }
 
