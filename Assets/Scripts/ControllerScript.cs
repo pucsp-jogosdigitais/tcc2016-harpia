@@ -9,8 +9,7 @@ public class ControllerScript : MonoBehaviour
 
     public bool drift = false;
     public bool jogando = false;
-    public Text contadorVoltas;
-    public Text textVelocimetro;
+    public InterfaceScript Interface;
     public GameObject imagensColocacao;
     public Camera camKart;
     public string Player;
@@ -38,15 +37,6 @@ public class ControllerScript : MonoBehaviour
         imgPos4 = imagensColocacao.transform.Find("Quarto").gameObject;
 
         Player = " Player1";
-
-        //Inicializa os textos de interface vazios
-        contadorVoltas.text = "";
-        textVelocimetro.text = "";
-    }
-
-    void FixedUpdate()
-    {
-                  //Chama a função com as mecanicas básicas do kart
     }
 
     void Update()
@@ -67,9 +57,7 @@ public class ControllerScript : MonoBehaviour
             this.gameObject.GetComponentInChildren<AIScript>().enabled = true;
             this.gameObject.GetComponentInChildren<NavMeshObstacle>().enabled = false;
             this.gameObject.GetComponentInChildren<NavMeshAgent>().enabled = true;
-            contadorVoltas.text = "";
-            textVelocimetro.text = "";
-            contadorVoltas.gameObject.transform.parent.gameObject.transform.parent.gameObject.SetActive(false);
+            Interface.Finaliza();
             this.enabled = false;
         }
     }
@@ -113,14 +101,8 @@ public class ControllerScript : MonoBehaviour
 
     private void InserirInterface() //Atualiza a interface do jogador
     {
-        if (Kart.lap != 0)
-            contadorVoltas.text = Kart.lap.ToString() + "/" + Gerenciador.Laps.ToString();
-        else if (Kart.lap > Gerenciador.Laps)
-            contadorVoltas.text = Gerenciador.Laps.ToString() + "/" + Gerenciador.Laps.ToString();
-        else
-            contadorVoltas.text = "1" + "/" + Gerenciador.Laps.ToString();
-        textVelocimetro.text = Mathf.RoundToInt(Kart.KartRigidbody.velocity.magnitude*1.9f).ToString();
-
+        Interface.setVolta(Gerenciador.Laps);
+        Interface.setVelocidade(Mathf.RoundToInt(Kart.KartRigidbody.velocity.magnitude * 1.9f));
         #region Imagem de colocacao
         switch (Kart.posicao)
         {            

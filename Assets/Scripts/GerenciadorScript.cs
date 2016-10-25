@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
 using UnityEngine.UI;
 using System.Linq;
@@ -44,8 +43,8 @@ public class GerenciadorScript : MonoBehaviour
         if (numeroJogadores == 0)
         {
             numeroJogadores = 1;
-            player1 = "Momoto";
-            //player2 = "Violetta";
+            player1 = "Violetta";
+            //player2 = "Momoto";
             //player3 = "Jeshi";
             //player4 = "Ayah";
         }
