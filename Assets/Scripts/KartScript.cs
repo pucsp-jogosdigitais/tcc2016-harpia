@@ -4,6 +4,7 @@ using System.Collections;
 
 public class KartScript : MonoBehaviour
 {
+    public InterfaceScript Interface;
     public string Nome;
     public int contProgresso;
     private int AuxContProg;
@@ -99,6 +100,8 @@ public class KartScript : MonoBehaviour
                 Imunidade();
             if (deixaRastro)
                 RastroPedras();
+            Interface.setPowerUp(powerUpTipo);
+            Interface.setPowerUpEspecial(especialDisponivel);
                 
         }
     }

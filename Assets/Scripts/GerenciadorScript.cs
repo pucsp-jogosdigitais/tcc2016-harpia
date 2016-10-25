@@ -42,11 +42,11 @@ public class GerenciadorScript : MonoBehaviour
 
         if (numeroJogadores == 0)
         {
-            numeroJogadores = 1;
-            player1 = "Violetta";
-            //player2 = "Momoto";
-            //player3 = "Jeshi";
-            //player4 = "Ayah";
+            numeroJogadores = 4;
+            player1 = "Ayah";
+            player2 = "Momoto";
+            player3 = "Jeshi";
+            player4 = "Violetta";
         }
 
         Ready.gameObject.SetActive(false);
