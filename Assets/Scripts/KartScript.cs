@@ -25,7 +25,7 @@ public class KartScript : MonoBehaviour
     private bool imune = false;
     private GameObject KartAlvo;
     private int colocacaoAlvo;
-    public int ProgNoFim;
+    public int ProgNoFim = 0;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;

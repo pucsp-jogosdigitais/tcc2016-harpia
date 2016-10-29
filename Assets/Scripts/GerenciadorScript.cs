@@ -29,6 +29,7 @@ public class GerenciadorScript : MonoBehaviour
     private int numeroJogadores;
     private string player1, player2, player3, player4;
     private bool Iniciou = false;
+    private int contAI;
     public Image Ready, img1, img2, img3, Go;
 
     // Use this for initialization
@@ -135,6 +136,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            print("Violetta " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
                     case "Jeshi":
@@ -144,6 +146,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            print("Jeshi " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
                     case "Ayah":
@@ -153,6 +156,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            print("Ayah " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
                     case "Momoto":
@@ -162,6 +166,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            print("Momoto " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
                 }
@@ -187,19 +192,34 @@ public class GerenciadorScript : MonoBehaviour
             }
             #endregion
 
-            #region Verifica se cada kart terminou a corrida e atualiza o seu progresso
+            #region Verifica se cada kart terminou a corrida
+            contAI = 0;
             foreach (KartScript script in ScriptsKarts)
             {
                 if ((script.contProgresso >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                 {
                     script.Terminou = true;
                 }
-                else if (script.gameObject.GetComponent<AIScript>().enabled)
+
+                if (script.gameObject.GetComponent<AIScript>().enabled)
                 {
-                    script.Terminou = true;
-                    script.ProgNoFim = script.contProgresso;
+                    contAI++;
                 }
             }
+
+            if (contAI == 4)
+            {
+                foreach (KartScript script in ScriptsKarts)
+                {
+                    if (!script.Terminou)
+                    {
+                        script.Terminou = true;
+                        script.ProgNoFim = script.contProgresso;
+                    }
+                }
+            }
+          
+
             #endregion
 
             #region Verifica se todos os karts já completaram a corrida
