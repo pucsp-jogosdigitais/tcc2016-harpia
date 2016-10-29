@@ -17,13 +17,15 @@ public class KartScript : MonoBehaviour
     public Transform CenterOfMass;
     public Rigidbody KartRigidbody;
     private float tempo = 0;
-    public int minutos = 0, segundos = 0;
+    public int minutos = 0, segundos = 0, milisegundos = 0;
+    public float AuxMilisegundos = 0;
     private bool lento = false;
     private float contLento = 0;
     private float contImunidade;
     private bool imune = false;
     private GameObject KartAlvo;
     private int colocacaoAlvo;
+    public int ProgNoFim;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -283,9 +285,11 @@ public class KartScript : MonoBehaviour
     {
         if (!Terminou)
         tempo += Time.deltaTime/Time.timeScale;
+        AuxMilisegundos = tempo % 1f;
         segundos = (int) Mathf.Round(tempo);
         minutos = segundos / 60;
         segundos = segundos - (60 * minutos);
+        milisegundos = (int)Mathf.Round(AuxMilisegundos * 1000);
     }
 
     private void movimentarRodas() //Movimento das meshs das rodas
@@ -696,7 +700,6 @@ public class KartScript : MonoBehaviour
             voltarNoCheckpoint();
         }
         #endregion   
-             
     }
 
     #endregion

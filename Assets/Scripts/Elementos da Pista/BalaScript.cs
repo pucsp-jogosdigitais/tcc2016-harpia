@@ -20,7 +20,7 @@ public class BalaScript : MonoBehaviour {
 
 	IEnumerator WaitAndDestroy()
 	{
-		yield return new WaitForSeconds (Random.Range(10,25));
+		yield return new WaitForSeconds (Random.Range(7,15));
         derretendo = true;
 	}
 }

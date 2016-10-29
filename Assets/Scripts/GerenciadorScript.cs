@@ -11,7 +11,7 @@ public class GerenciadorScript : MonoBehaviour
     public int TempoPreview = 25;
     public int progTotal;
     public Camera CamPreview;
-    public Text resultado;
+    public GameObject resultado;
     public Image NomeRankAyah, NomeRankVioletta, NomeRankJeshi, NomeRankMomoto;
     public List<GameObject> Resultados;
 
@@ -43,9 +43,9 @@ public class GerenciadorScript : MonoBehaviour
         if (numeroJogadores == 0)
         {
             numeroJogadores = 1;
-            player1 = "Ayah";
+            player1 = "Jeshi";
             player2 = "Momoto";
-            player3 = "Jeshi";
+            player3 = "Ayah";
             player4 = "Violetta";
         }
 
@@ -123,6 +123,9 @@ public class GerenciadorScript : MonoBehaviour
             for (int i = 0; i < Karts.Count(); i++)
             {
                 script = Karts[i].GetComponent<KartScript>();
+
+
+                #region Posiciona os nomes
                 switch (script.Nome)
                 {
                     case "Violetta":
@@ -162,12 +165,11 @@ public class GerenciadorScript : MonoBehaviour
                         }
                         break;
                 }
+                #endregion
 
+                resultado.SetActive(true);
 
-               // if (i == 0)
-               //     resultado.text = "         Ranking: \n1. " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
-               // else
-               //     resultado.text = resultado.text + "\n" + (i + 1) + ". " + script.Nome + " ...... " + script.minutos + ":" + script.segundos;
+                // script.minutos + ":" + script.segundos;
             }
             #endregion
         }
@@ -189,7 +191,14 @@ public class GerenciadorScript : MonoBehaviour
             foreach (KartScript script in ScriptsKarts)
             {
                 if ((script.contProgresso >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
+                {
                     script.Terminou = true;
+                }
+                else if (script.gameObject.GetComponent<AIScript>().enabled)
+                {
+                    script.Terminou = true;
+                    script.ProgNoFim = script.contProgresso;
+                }
             }
             #endregion
 
