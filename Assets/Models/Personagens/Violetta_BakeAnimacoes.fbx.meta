@@ -176,16 +176,16 @@ ModelImporter:
     7400000: Vira_Esquerda
     7400002: Idle
     7400004: Loop_Esquerda
-    7400006: Volta_Normal
+    7400006: Volta_Normal(Loop_Esquerda)
     7400008: Vira_Direita
     7400010: LoopDireita
-    7400012: Volta_Normal2
+    7400012: Volta_Normal(Loop_Direita)
     7400014: ParaTras
     7400016: LoopTras
-    7400018: Volta_Normal3
+    7400018: Volta_Normal(Loop_Tras)
     7400020: ParaFrente
     7400022: LoopFrente
-    7400024: Volta_Normal4
+    7400024: Volta_Normal(Loop_Frente)
     7400026: OlhandoParaTras
     7400028: LoopOlhandoParaTras
     7400030: VoltaOlharParaFrente
@@ -784,7 +784,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Volta_Normal
+      name: Volta_Normal(Loop_Esquerda)
       takeName: Take 001
       firstFrame: 60
       lastFrame: 70
@@ -1342,7 +1342,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Volta_Normal2
+      name: Volta_Normal(Loop_Direita)
       takeName: Take 001
       firstFrame: 100
       lastFrame: 110
@@ -1900,7 +1900,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Volta_Normal3
+      name: Volta_Normal(Loop_Tras)
       takeName: Take 001
       firstFrame: 140
       lastFrame: 150
@@ -2458,7 +2458,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Volta_Normal4
+      name: Volta_Normal(Loop_Frente)
       takeName: Take 001
       firstFrame: 180
       lastFrame: 190
