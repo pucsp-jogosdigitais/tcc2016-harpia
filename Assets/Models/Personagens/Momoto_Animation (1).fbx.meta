@@ -149,21 +149,21 @@ ModelImporter:
     7400006: Loop_Direita
     7400008: Vira_Esquerda
     7400010: Loop_Esquerda
-    7400012: VoltaaoNormal
+    7400012: VoltaNormal(LoopEsquerda)
     7400014: "IrParaTr\xE1s"
     7400016: "LoopParaTr\xE1s"
-    7400018: VoltaaoNormal2
+    7400018: VoltaNormal(LoopParaTras)
     7400020: VaiParaFrente
     7400022: LoopFrente
-    7400024: VoltaaoNormal3
+    7400024: VoltaNormal(LoopFrente)
     7400026: "OlhaParaTr\xE1s"
     7400028: "LoopOlhaParaTr\xE1s"
-    7400030: VoltaaoNormal4
+    7400030: VoltaNormal(LoopOlhaParaTras)
     7400032: Provocar
-    7400034: VoltaaoNormal5
+    7400034: VoltaNormal(Provocar)
     7400036: "Come\xE7aAComemorar(Kart)"
     7400038: "LoopComemora\xE7\xE3o(Kart)"
-    7400040: VoltaaoNormal6
+    7400040: "VoltarNormal(Loop_Comemora\xE7\xE3o)"
     7400042: PegaPowerUp
     7400044: LoopSegurarPowerUp
     9500000: //RootNode
@@ -200,177 +200,6 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: -1
-      lastFrame: 554.88
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: GrupoScale
-        weight: 1
-      - path: GrupoScale/COG
-        weight: 1
-      - path: GrupoScale/COG/Bacia
-        weight: 1
-      - path: GrupoScale/COG/Bacia/Perna_Dir_A
-        weight: 1
-      - path: GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A"
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B"
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B/Pe_Dir_C"
-        weight: 1
-      - path: GrupoScale/COG/Bacia/Perna_Esq_A
-        weight: 1
-      - path: GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A"
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B"
-        weight: 1
-      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B/Pe_Esq_C"
-        weight: 1
-      - path: GrupoScale/COG/Bacia/rabo1
-        weight: 0
-      - path: GrupoScale/COG/Bacia/rabo1/rabo2
-        weight: 0
-      - path: GrupoScale/COG/Bacia/rabo1/rabo2/rabo3
-        weight: 0
-      - path: GrupoScale/COG/Coluna_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar
-        weight: 0
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar/Boca
-        weight: 0
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir/Dedao_c_Dir
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B/Dedodomeio_C
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B/Indicador_C
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B/Mindinho_C
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc/Dedao_c_Esc
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
-          1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
-          1/Dedodomeio_B 1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
-          1/Dedodomeio_B 1/Dedodomeio_C 1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
-          1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
-          1/Indicador_B 1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
-          1/Indicador_B 1/Indicador_C 1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
-          1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
-          1/Mindinho_B 1
-        weight: 1
-      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
-          1/Mindinho_B 1/Mindinho_C 1
-        weight: 1
-      - path: GrupoScale/Mestre
-        weight: 0
-      - path: GrupoScale/Mestre/Cont_Bravo
-        weight: 0
-      - path: GrupoScale/Mestre/Cont_Sorriso
-        weight: 0
-      - path: GrupoScale/Mestre/Cont_Triste
-        weight: 0
-      - path: GrupoScale/Mestre/Cont_U
-        weight: 0
-      - path: GrupoScale/Mestre/Controlador_Centro
-        weight: 0
-      - path: Malha
-        weight: 0
-      - path: Malha/polySurface40
-        weight: 0
-      - path: Malha/polySurface41
-        weight: 0
-      - path: Malha/polySurface42
-        weight: 0
-      - path: Malha/polySurface43
-        weight: 0
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
@@ -1227,7 +1056,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal
+      name: VoltaNormal(LoopEsquerda)
       takeName: Take 001
       firstFrame: 51
       lastFrame: 55
@@ -1740,7 +1569,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal2
+      name: VoltaNormal(LoopParaTras)
       takeName: Take 001
       firstFrame: 53
       lastFrame: 70
@@ -2253,7 +2082,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal3
+      name: VoltaNormal(LoopFrente)
       takeName: Take 001
       firstFrame: 90
       lastFrame: 90
@@ -2766,7 +2595,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal4
+      name: VoltaNormal(LoopOlhaParaTras)
       takeName: Take 001
       firstFrame: 118
       lastFrame: 130
@@ -3108,7 +2937,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal5
+      name: VoltaNormal(Provocar)
       takeName: Take 001
       firstFrame: 172
       lastFrame: 185
@@ -3621,7 +3450,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: VoltaaoNormal6
+      name: "VoltarNormal(Loop_Comemora\xE7\xE3o)"
       takeName: Take 001
       firstFrame: 211
       lastFrame: 220
