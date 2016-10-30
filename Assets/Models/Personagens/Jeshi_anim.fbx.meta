@@ -168,19 +168,19 @@ ModelImporter:
     7400000: Idle
     7400002: Vira_Esquerda
     7400004: Loop_Esquerda
-    7400006: Volta_Normal
+    7400006: Volta_Normal(Loop_Esquerda)
     7400008: Vira_Direita
     7400010: Loop_Direita
-    7400012: Volta_Normal2
+    7400012: Volta_Normal(Loop_Direita)
     7400014: ParaFrente
     7400016: Loop_Frente
-    7400018: Volta_Normal3
+    7400018: Volta_Normal(Loop_Frente)
     7400020: "ParaTr\xE1s"
     7400022: "LoopTr\xE1s"
-    7400024: Volta_Normal4
+    7400024: "Volta_Normal(Loop_Tr\xE1s)"
     7400026: "ViraParaTr\xE1s"
     7400028: "LoopVirarParaTr\xE1s"
-    7400030: Volta_Normal5
+    7400030: "Volta_Normal(LoopVirarParaTr\xE1s)"
     7400032: Provocar
     7400034: Comemorar(Kart)
     7400036: "1\xBA Lugar"
@@ -743,7 +743,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
-      name: Volta_Normal
+      name: Volta_Normal(Loop_Esquerda)
       takeName: Take 001
       firstFrame: 55
       lastFrame: 60
@@ -1253,7 +1253,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
-      name: Volta_Normal2
+      name: Volta_Normal(Loop_Direita)
       takeName: Take 001
       firstFrame: 85
       lastFrame: 90
@@ -1763,7 +1763,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
-      name: Volta_Normal3
+      name: Volta_Normal(Loop_Frente)
       takeName: Take 001
       firstFrame: 120
       lastFrame: 130
@@ -2273,7 +2273,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
-      name: Volta_Normal4
+      name: "Volta_Normal(Loop_Tr\xE1s)"
       takeName: Take 001
       firstFrame: 160
       lastFrame: 170
@@ -2783,7 +2783,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
-      name: Volta_Normal5
+      name: "Volta_Normal(LoopVirarParaTr\xE1s)"
       takeName: Take 001
       firstFrame: 200
       lastFrame: 209
