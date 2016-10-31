@@ -3,6 +3,7 @@ using System;
 using UnityEngine.UI;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GerenciadorScript : MonoBehaviour
 {
@@ -136,6 +137,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
                             print("Violetta " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
@@ -146,6 +148,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
                             print("Jeshi " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
@@ -156,6 +159,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
                             print("Ayah " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
@@ -166,6 +170,7 @@ public class GerenciadorScript : MonoBehaviour
                             Rect.offsetMin = new Vector2(0, 0);
                             Rect.offsetMax = new Vector2(0, 0);
                             Rect.sizeDelta = new Vector2(0, 0);
+                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
                             print("Momoto " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
                         }
                         break;
@@ -177,6 +182,11 @@ public class GerenciadorScript : MonoBehaviour
                 // script.minutos + ":" + script.segundos;
             }
             #endregion
+
+            if (Input.GetKey(KeyCode.Escape)) //Interrompe o Preview
+            {
+                SceneManager.LoadScene("Menu Principal");
+            }
         }
         else
         {
