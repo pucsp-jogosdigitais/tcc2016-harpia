@@ -20,12 +20,14 @@ public class MisselTeleguiadoScript : MonoBehaviour {
         if (KartAlvo != null)
         {
             transform.LookAt(KartAlvo.transform);
-            MisselRigidbody.velocity = transform.forward * velocidade;
+            //MisselRigidbody.velocity = transform.forward * velocidade;
         }
-	}
+        MisselRigidbody.velocity = transform.forward * velocidade;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag == "Unttaged")
         Destroy(this.gameObject);
     }
 

@@ -80,8 +80,8 @@ public class KartScript : MonoBehaviour
     {
         KartRigidbody = GetComponent<Rigidbody>(); //Identifica e pega a referencia do rigidbody do carro 
         KartRigidbody.centerOfMass = new Vector3(CenterOfMass.localPosition.x * transform.localScale.x,   //Ajusta o centro de massa do Kart
-                                                 CenterOfMass.localPosition.y * transform.localScale.y - 0.003f,
-                                                 CenterOfMass.localPosition.z * transform.localScale.z - 0.005f);
+                                                 CenterOfMass.localPosition.y * transform.localScale.y ,
+                                                 CenterOfMass.localPosition.z * transform.localScale.z );
         posInicial = KartRigidbody.position; //Salva sua posição inicial na corrida
         rotInicial = KartRigidbody.rotation; //Salva sua rotação inicial na corrida
         ArmazenaFriccao();       //Armazena a friccao inicial das rodas e configura a friccao do drift
@@ -172,10 +172,10 @@ public class KartScript : MonoBehaviour
         if (velAtual <= velMax) //Se a vel está abaixo da máxima, pode acelerar. Senão, para de acelerar.
         {
             #region Aceleração normal, sem boost
-            RodaTDir.motorTorque = aceleracao * direção;
-            RodaTEsq.motorTorque = aceleracao * direção;
-            RodaFDir.motorTorque = aceleracao * direção; //Se tirar a aceleração das rodas frontais o kart não anda
-            RodaFEsq.motorTorque = aceleracao * direção;
+            RodaTDir.motorTorque = aceleracao*2 * direção;
+            RodaTEsq.motorTorque = aceleracao*2 * direção;
+           // RodaFDir.motorTorque = aceleracao * direção; //Se tirar a aceleração das rodas frontais o kart não anda
+           // RodaFEsq.motorTorque = aceleracao * direção;
             #endregion
 
         }
@@ -210,10 +210,12 @@ public class KartScript : MonoBehaviour
         }
         else
         {
-            angAtual = Mathf.Lerp(direcaoBaixaVel, direcaoAltaVel, auxVel);
-            angAtual *= direção;
-            RodaFDir.steerAngle = angAtual;
-            RodaFEsq.steerAngle = angAtual;
+            //angAtual = Mathf.Lerp(direcaoBaixaVel, direcaoAltaVel, auxVel);
+            //angAtual *= direção;
+
+
+            RodaFDir.steerAngle = direção * 25;
+            RodaFEsq.steerAngle = direção * 25;
             RodaTDir.steerAngle = 0f;
             RodaTEsq.steerAngle = 0f;
         }
@@ -669,7 +671,8 @@ public class KartScript : MonoBehaviour
         #region Randomização de PowerUps Comuns
         else if (Objeto.gameObject.CompareTag("PowerUpBox"))
         {
-            powerUpTipo = Random.Range(1, 6);
+            // powerUpTipo = Random.Range(1, 6);
+            powerUpTipo = 3;
         }
         #endregion
         #region Poça

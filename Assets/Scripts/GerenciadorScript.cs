@@ -45,10 +45,10 @@ public class GerenciadorScript : MonoBehaviour
         if (numeroJogadores == 0)
         {
             numeroJogadores = 1;
-            player1 = "Jeshi";
-            player2 = "Momoto";
-            player3 = "Ayah";
-            player4 = "Violetta";
+            player1 = "Momoto";
+            player2 = "Jeshi";
+            player3 = "Violetta";
+            player4 = "Ayah";
         }
 
         Ready.gameObject.SetActive(false);
@@ -125,7 +125,6 @@ public class GerenciadorScript : MonoBehaviour
             for (int i = 0; i < Karts.Count(); i++)
             {
                 script = Karts[i].GetComponent<KartScript>();
-
 
                 #region Posiciona os nomes
                 switch (script.Nome)
@@ -477,6 +476,10 @@ public class GerenciadorScript : MonoBehaviour
             if (script.posicao == colocacao)
                 return script.gameObject;
         }
+        if (colocacao >= 5)
+            return BuscarKartAlvo(1);
+        if (colocacao <= 0)
+            return BuscarKartAlvo(4);
         return null;
     }
 
