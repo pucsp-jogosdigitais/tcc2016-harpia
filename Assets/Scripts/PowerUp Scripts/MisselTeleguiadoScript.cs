@@ -27,7 +27,7 @@ public class MisselTeleguiadoScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Unttaged")
+        if(collision.gameObject.tag == "Untagged")
         Destroy(this.gameObject);
     }
 
