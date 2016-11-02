@@ -10,8 +10,11 @@ ModelImporter:
     400000: polySurface796
     400002: //RootNode
     2300000: polySurface796
+    2300002: //RootNode
     3300000: polySurface796
+    3300002: //RootNode
     4300000: polySurface796
+    4300002: Pista_bolo
   materials:
     importMaterials: 1
     materialName: 0
