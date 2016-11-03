@@ -671,8 +671,7 @@ public class KartScript : MonoBehaviour
         #region Randomização de PowerUps Comuns
         else if (Objeto.gameObject.CompareTag("PowerUpBox"))
         {
-            // powerUpTipo = Random.Range(1, 6);
-            powerUpTipo = 3;
+            powerUpTipo = Random.Range(1, 6);
         }
         #endregion
         #region Poça
