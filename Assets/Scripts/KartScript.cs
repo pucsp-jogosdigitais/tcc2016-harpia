@@ -26,6 +26,8 @@ public class KartScript : MonoBehaviour
     private GameObject KartAlvo;
     private int colocacaoAlvo;
     public int ProgNoFim = 0;
+    private Object ultimoPowerUp;
+    private float delayPowerUp = 0;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -93,11 +95,13 @@ public class KartScript : MonoBehaviour
     {
         if (Jogando)
         {
+            Peso();
             movimentarRodas(); //Movimenta as meshes de acordo com os colliders
             recargaEspecial(); //Conta o tempo de recarga do powerup especial
             VerificaTravado(); //Verifica se o kart não está travado em algum lugar da pista
             Timer();           //Inicia o timer
             Lentidao();        //Deixa o kart lento caso seja atingido
+            DelayUltimoPowerUp();
             if (PowerUpEspecialAyah != null)
                 Imunidade();
             if (deixaRastro)
@@ -256,6 +260,11 @@ public class KartScript : MonoBehaviour
 
     #region Funções Privadas
 
+    private void Peso()
+    {
+        KartRigidbody.AddForceAtPosition((-5 * KartRigidbody.velocity.sqrMagnitude) * transform.up, transform.position);
+    }
+
     private void ArmazenaFriccao()
     {
         #region Atrito das Rodas
@@ -292,6 +301,19 @@ public class KartScript : MonoBehaviour
         minutos = segundos / 60;
         segundos = segundos - (60 * minutos);
         milisegundos = (int)Mathf.Round(AuxMilisegundos * 1000);
+    }
+
+    private void DelayUltimoPowerUp()
+    {
+        if (ultimoPowerUp != null)
+        {
+            delayPowerUp += Time.deltaTime / Time.timeScale;
+            if (delayPowerUp > 1f)
+            {
+                ultimoPowerUp = null;
+                delayPowerUp = 0;
+            }
+        }
     }
 
     private void movimentarRodas() //Movimento das meshs das rodas
@@ -501,7 +523,7 @@ public class KartScript : MonoBehaviour
             case 1: //Missel Comum
                 {
                     ajustarDireçãoPowerUp(direção);
-                    Instantiate(MisselPrefab, PowerUpPosition, PowerUpRotation);
+                    ultimoPowerUp = Instantiate(MisselPrefab, PowerUpPosition, PowerUpRotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -522,6 +544,7 @@ public class KartScript : MonoBehaviour
                     ajustarDireçãoPowerUp(direção);
                     GameObject instancia = Instantiate(MisselGuiadoPrefab.gameObject, PowerUpPosition, PowerUpRotation) as GameObject;
                     instancia.GetComponent<MisselTeleguiadoScript>().defineAlvo(buscarAlvo(direção));
+                    ultimoPowerUp = instancia;
                     powerUpTipo = 0;
                 }
                 break;
@@ -530,7 +553,7 @@ public class KartScript : MonoBehaviour
             #region Oleo
             case 4:  //Oleo
                 {
-                    Instantiate(OleoPrefab, PosTras.position, PosTras.rotation);
+                    ultimoPowerUp = Instantiate(OleoPrefab, PosTras.position, PosTras.rotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -539,7 +562,7 @@ public class KartScript : MonoBehaviour
             #region Power Up Box Falsa
             case 5: //Power Up Box Falsa
                 {
-                    Instantiate(PowerUpBoxFalsa, PosTras.position, PosTras.rotation);
+                    ultimoPowerUp = Instantiate(PowerUpBoxFalsa, PosTras.position, PosTras.rotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -651,6 +674,8 @@ public class KartScript : MonoBehaviour
             if (ultimoCheckpoint == null)
             {
                 contProgresso = AuxContProg;
+                if (!Terminou)
+                    ProgNoFim = contProgresso;
                 ultimoCheckpoint = Objeto.gameObject;
                 ContCP++;
             }
@@ -658,6 +683,8 @@ public class KartScript : MonoBehaviour
             {
                 ultimoCheckpoint = Objeto.gameObject;
                 contProgresso = AuxContProg;
+                if (!Terminou)
+                    ProgNoFim = contProgresso;
                 ContCP++;
             }
         }
@@ -671,15 +698,20 @@ public class KartScript : MonoBehaviour
         #region Randomização de PowerUps Comuns
         else if (Objeto.gameObject.CompareTag("PowerUpBox"))
         {
+            if  (powerUpTipo == 0)
             powerUpTipo = Random.Range(1, 6);
+            //powerUpTipo = 3;
         }
         #endregion
         #region Poça
         else if (Objeto.gameObject.CompareTag("Poca"))
         {
-            Destroy(Objeto.gameObject);
-            if (!imune)
-                lento = true;
+            if (Objeto.gameObject != ultimoPowerUp)
+            {
+                Destroy(Objeto.gameObject);
+                if (!imune)
+                    lento = true;
+            }
         }
         #endregion
         #region Contador de Voltas

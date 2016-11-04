@@ -77,7 +77,7 @@ public class GerenciadorScript : MonoBehaviour
             Karts[i].transform.position = PosIniciais[i].position; //Coloca os karts nas posições pré definidas
             ScriptsKarts.Add(Karts[i].GetComponent<KartScript>()); //Salva a referência do script de cada Kart
             ScriptsAI.Add(Karts[i].GetComponent<AIScript>()); //Salva a referência do script de AI de cada Kart
-            ScriptsKarts[i].contProgresso = -i;     
+            ScriptsKarts[i].ProgNoFim = -i;     
         }
         #endregion
 
@@ -193,7 +193,7 @@ public class GerenciadorScript : MonoBehaviour
             contagemInicial();
 
             #region Atualiza as colocações/posições na corrida
-            Karts = Karts.OrderByDescending(go => go.GetComponent<KartScript>().contProgresso).ToArray();
+            Karts = Karts.OrderByDescending(go => go.GetComponent<KartScript>().ProgNoFim).ToArray();
             for (int i = 0; i < Karts.Count(); i++)
             {
                 Karts[i].GetComponent<KartScript>().posicao = i + 1;
@@ -205,7 +205,7 @@ public class GerenciadorScript : MonoBehaviour
             contAI = 0;
             foreach (KartScript script in ScriptsKarts)
             {
-                if ((script.contProgresso >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
+                if ((script.ProgNoFim >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                 {
                     script.Terminou = true;
                 }
@@ -223,7 +223,7 @@ public class GerenciadorScript : MonoBehaviour
                     if (!script.Terminou)
                     {
                         script.Terminou = true;
-                        script.ProgNoFim = script.contProgresso;
+                        //script.ProgNoFim = script.contProgresso;
                     }
                 }
             }

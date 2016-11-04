@@ -155,8 +155,8 @@ public class InterfaceScript : MonoBehaviour {
             case 5: //Power Up Box Falsa
                 {
                     ImgPoca.gameObject.SetActive(false);
-                    ImgBoost.gameObject.SetActive(true);
-                    ImgFalso.gameObject.SetActive(false);
+                    ImgBoost.gameObject.SetActive(false);
+                    ImgFalso.gameObject.SetActive(true);
                     ImgMisselVerm.gameObject.SetActive(false);
                     ImgMisselAzul.gameObject.SetActive(false);
                     ComumVazio.gameObject.SetActive(false);
