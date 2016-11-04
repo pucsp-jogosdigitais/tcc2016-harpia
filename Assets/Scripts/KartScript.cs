@@ -26,7 +26,7 @@ public class KartScript : MonoBehaviour
     private GameObject KartAlvo;
     private int colocacaoAlvo;
     public int ProgNoFim = 0;
-    private Object ultimoPowerUp;
+    private GameObject ultimoPowerUp = null;
     private float delayPowerUp = 0;
 
     #region Prefabs PowerUp
@@ -74,9 +74,9 @@ public class KartScript : MonoBehaviour
     private float contTravou = 0;
     public bool Jogando = false;
     public int ContCP = 0;
-    #endregion
     private bool deixaRastro = false;
     private float contRastro = 0;
+    #endregion
 
     void Start()
     {
@@ -101,6 +101,7 @@ public class KartScript : MonoBehaviour
             VerificaTravado(); //Verifica se o kart não está travado em algum lugar da pista
             Timer();           //Inicia o timer
             Lentidao();        //Deixa o kart lento caso seja atingido
+            if (Nome == "Momoto")
             DelayUltimoPowerUp();
             if (PowerUpEspecialAyah != null)
                 Imunidade();
@@ -306,9 +307,14 @@ public class KartScript : MonoBehaviour
     private void DelayUltimoPowerUp()
     {
         if (ultimoPowerUp != null)
+            print(ultimoPowerUp.name);
+        else
+            print("Nenhum");
+
+        if (ultimoPowerUp != null)
         {
             delayPowerUp += Time.deltaTime / Time.timeScale;
-            if (delayPowerUp > 1f)
+            if (delayPowerUp > 3f)
             {
                 ultimoPowerUp = null;
                 delayPowerUp = 0;
@@ -447,7 +453,7 @@ public class KartScript : MonoBehaviour
         if (KartRigidbody.velocity.magnitude < 1)
         {
             contTravou += Time.deltaTime / Time.timeScale;
-            if (contTravou > 5)
+            if (contTravou > 3)
                 voltarNoCheckpoint();
         }
         else
@@ -523,7 +529,7 @@ public class KartScript : MonoBehaviour
             case 1: //Missel Comum
                 {
                     ajustarDireçãoPowerUp(direção);
-                    ultimoPowerUp = Instantiate(MisselPrefab, PowerUpPosition, PowerUpRotation);
+                    Instantiate(MisselPrefab, PowerUpPosition, PowerUpRotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -553,7 +559,7 @@ public class KartScript : MonoBehaviour
             #region Oleo
             case 4:  //Oleo
                 {
-                    ultimoPowerUp = Instantiate(OleoPrefab, PosTras.position, PosTras.rotation);
+                    ultimoPowerUp = (GameObject) Instantiate(OleoPrefab, PosTras.position, PosTras.rotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -562,7 +568,7 @@ public class KartScript : MonoBehaviour
             #region Power Up Box Falsa
             case 5: //Power Up Box Falsa
                 {
-                    ultimoPowerUp = Instantiate(PowerUpBoxFalsa, PosTras.position, PosTras.rotation);
+                    ultimoPowerUp = (GameObject) Instantiate(PowerUpBoxFalsa, PosTras.position, PosTras.rotation);
                     powerUpTipo = 0;
                 }
                 break;
@@ -647,6 +653,12 @@ public class KartScript : MonoBehaviour
 
     #region Triggers
 
+    private void foiAtingido()
+    {
+        if (!imune)
+            lento = true;
+    }
+
     private void OnTriggerExit(Collider Objeto)
     {
         #region Aranha
@@ -699,18 +711,17 @@ public class KartScript : MonoBehaviour
         else if (Objeto.gameObject.CompareTag("PowerUpBox"))
         {
             if  (powerUpTipo == 0)
-            powerUpTipo = Random.Range(1, 6);
-            //powerUpTipo = 3;
+            //powerUpTipo = Random.Range(1, 6);
+            powerUpTipo = 4;
         }
         #endregion
         #region Poça
         else if (Objeto.gameObject.CompareTag("Poca"))
         {
-            if (Objeto.gameObject != ultimoPowerUp)
+            if (Objeto.gameObject.name != ultimoPowerUp.name)
             {
                 Destroy(Objeto.gameObject);
-                if (!imune)
-                    lento = true;
+                foiAtingido();
             }
         }
         #endregion
