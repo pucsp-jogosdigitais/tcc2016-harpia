@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -89,20 +83,20 @@
     <Compile Include="Assets\Scripts\Elementos da Pista\BalaScript.cs" />
     <Compile Include="Assets\Scripts\Elementos da Pista\BaleiroScript.cs" />
     <Compile Include="Assets\Scripts\Elementos da Pista\CheckpointScript.cs" />
-    <Compile Include="Assets\Scripts\Escolhas.cs" />
-    <Compile Include="Assets\Scripts\EscreveTempoScript.cs" />
     <Compile Include="Assets\Scripts\GerenciadorScript.cs" />
-    <Compile Include="Assets\Scripts\IconeMapScript.cs" />
-    <Compile Include="Assets\Scripts\InterfaceScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\EscreveTempoScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\IconeMapScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\InterfaceScript.cs" />
+    <Compile Include="Assets\Scripts\Interface\NumeroScript.cs" />
     <Compile Include="Assets\Scripts\KartCameraScript.cs" />
     <Compile Include="Assets\Scripts\KartScript.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\Escolhas.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\MenuSelecaoScript.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\MolduraScript.cs" />
+    <Compile Include="Assets\Scripts\Menu Scripts\PainelScript.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\PlataformaScript.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\TelaInicialScript.cs" />
-    <Compile Include="Assets\Scripts\MolduraScript.cs" />
-    <Compile Include="Assets\Scripts\NumeroScript.cs" />
-    <Compile Include="Assets\Scripts\PainelScript.cs" />
     <Compile Include="Assets\Scripts\PerseguirScript.cs" />
     <Compile Include="Assets\Scripts\PowerUp Scripts\Aranha Explosiva\AranhaExplosivaScript.cs" />
     <Compile Include="Assets\Scripts\PowerUp Scripts\Aranha Explosiva\AtivacaoAranhaScript.cs" />
