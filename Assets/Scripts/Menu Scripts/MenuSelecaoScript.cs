@@ -7,18 +7,24 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     #region Variáveis
     int numero;
-    public GameObject Plat1, Plat2, Plat3, Plat4;
-    private Object InstanciaPlat1, InstanciaPlat2, InstanciaPlat3, InstanciaPlat4;
-    public GameObject Moldura1, Moldura2, Moldura3, Moldura4;
+    public GameObject PainelCena, PainelLoading;
+    public GameObject Painel1P, Painel2P, Painel3P, Painel4P;
     private string level = "Pista 4 - Doceria da Violetta";
     private string Player1, Player2, Player3, Player4;
     private bool p1selecionou, p2selecionou, p3selecionou, p4selecionou;
     private bool CarregarCena;
-    public GameObject KartAyah, KartVioletta, KartJeshi, KartMomoto;
+    private float inputP1, inputP2, inputP3, inputP4;
+    private MolduraScript MoldP1, MoldP2, MoldP3, MoldP4;
+    private PainelScript Aux;
+    private AsyncOperation async;
+    public Texture ProgressBarFull;
     #endregion
 
     void Start()
     {
+        PainelLoading.SetActive(false);
+        PainelCena.SetActive(true);
+
         p1selecionou = false;
         p2selecionou = false;
         p3selecionou = false;
@@ -26,12 +32,13 @@ public class MenuSelecaoScript : MonoBehaviour {
         CarregarCena = false;
 
         numero = Escolhas.Numjogadores;
+        numero = 1;
         switch (numero)
         {
             #region Caso tenha um jogador selecionando
             case 1:
                 {
-                    Plat1.SetActive(true);
+                    Painel1P.SetActive(true);
                     p2selecionou = true;
                     p3selecionou = true;
                     p4selecionou = true;
@@ -39,52 +46,56 @@ public class MenuSelecaoScript : MonoBehaviour {
                     Player2 = "";
                     Player3 = "";
                     Player4 = "";
-                    Moldura1.SetActive(true);
+                    Aux = Painel1P.GetComponent<PainelScript>();
+                    MoldP1 = Aux.Player1;
                 }
                 break;
             #endregion
             #region Caso tenha dois jogadores selecionando
             case 2:
                 {
-                    Plat2.SetActive(true);
+                    Painel2P.SetActive(true);
                     p3selecionou = true;
                     p4selecionou = true;
                     Player1 = "Violetta";
                     Player2 = "Ayah";
                     Player3 = "";
                     Player4 = "";
-                    Moldura1.SetActive(true);
-                    Moldura2.SetActive(true);
+                    Aux = Painel2P.GetComponent<PainelScript>();
+                    MoldP1 = Aux.Player1;
+                    MoldP2 = Aux.Player2;
                 }
                 break;
             #endregion
             #region Caso tenha três jogadores selecionando
             case 3:
                 {
-                    Plat3.SetActive(true);
+                    Painel3P.SetActive(true);
                     p4selecionou = true;
                     Player1 = "Violetta";
                     Player2 = "Ayah";
                     Player3 = "Momoto";
                     Player4 = "";
-                    Moldura1.SetActive(true);
-                    Moldura2.SetActive(true);
-                    Moldura3.SetActive(true);
+                    Aux = Painel3P.GetComponent<PainelScript>();
+                    MoldP1 = Aux.Player1;
+                    MoldP2 = Aux.Player2;
+                    MoldP3 = Aux.Player3;
                 }
                 break;
             #endregion
             #region Caso tenha quatro jogadores selecionando
             case 4:
                 {
-                    Plat4.SetActive(true);
+                    Painel4P.SetActive(true);
                     Player1 = "Violetta";
                     Player2 = "Ayah";
                     Player3 = "Momoto";
                     Player4 = "Jeshi";
-                    Moldura1.SetActive(true);
-                    Moldura2.SetActive(true);
-                    Moldura3.SetActive(true);
-                    Moldura4.SetActive(true);
+                    Aux = Painel4P.GetComponent<PainelScript>();
+                    MoldP1 = Aux.Player1;
+                    MoldP2 = Aux.Player2;
+                    MoldP3 = Aux.Player3;
+                    MoldP4 = Aux.Player4;
                 }
                 break;
                 #endregion
@@ -95,20 +106,21 @@ public class MenuSelecaoScript : MonoBehaviour {
     void Update()
     {
         if (Input.GetButtonDown("Confirmar/PowerUp Comum Player1"))
-            p1selecionou = true;
+            ConfirmaPlayer1();
 
         if (Input.GetButtonDown("Confirmar/PowerUp Comum Player2"))
-            p2selecionou = true;
+            ConfirmaPlayer2();
 
         if (Input.GetButtonDown("Confirmar/PowerUp Comum Player3"))
-            p3selecionou = true;
+            ConfirmaPlayer3();
 
         if (Input.GetButtonDown("Confirmar/PowerUp Comum Player4"))
-            p4selecionou = true;
+            ConfirmaPlayer4();
     }
 	
 	void myUpdate ()
     {
+        #region Todos selecionaram
         if (p1selecionou && p2selecionou && p3selecionou && p4selecionou) //Se todos os jogadores já selecionaram os personagens
         {
             SalvaEscolhas();
@@ -124,44 +136,44 @@ public class MenuSelecaoScript : MonoBehaviour {
             }
             #endregion
         }
+        #endregion
         else
         {
             #region Selecao do Player1
-            if (!p1selecionou)
-            {
-                Player1 = Mover(Player1, Input.GetAxis("Volante Player1"));
-                AtualizaMoldura(Player1, Moldura1);
-                //Destroy(InstanciaPlat1);
-                //InstanciaPlat1 = AtualizaModelos(Player1, Plat1);
-                if (Input.GetButtonDown("Confirmar/PowerUp Comum Player1"))
-                    p1selecionou = true;
-            }
+            inputP1 = Input.GetAxis("Volante Player1");
+            if (inputP1 > 0.5f)
+                DireitaPlayer1();
+            else if (inputP1 < -0.5f)
+                EsquerdaPlayer1();
             #endregion
             #region Selecao do Player2
             if (!p2selecionou)
             {
-                Player2 = Mover(Player2, Input.GetAxis("Volante Player2"));
-                AtualizaMoldura(Player2, Moldura2);
-                if (Input.GetButtonDown("Confirmar/PowerUp Comum Player2"))
-                    p2selecionou = true;
+                inputP2 = Input.GetAxis("Volante Player2");
+                if (inputP2 > 0.5f)
+                    DireitaPlayer2();
+                else if (inputP2 < -0.5f)
+                    EsquerdaPlayer2();
             }
             #endregion
             #region Selecao do Player3
             if (!p3selecionou)
             {
-                Player3 = Mover(Player3, Input.GetAxis("Volante Player3"));
-                AtualizaMoldura(Player3, Moldura3);
-                if (Input.GetButtonDown("Confirmar/PowerUp Comum Player3"))
-                    p3selecionou = true;
+                inputP3 = Input.GetAxis("Volante Player3");
+                if (inputP3 > 0.5f)
+                    DireitaPlayer3();
+                else if (inputP3 < -0.5f)
+                    EsquerdaPlayer3();
             }
             #endregion
             #region Selecao do Player4
             if (!p4selecionou)
             {
-                Player4 = Mover(Player4, Input.GetAxis("Volante Player4"));
-                AtualizaMoldura(Player4, Moldura4);
-                if (Input.GetButtonDown("Confirmar/PowerUp Comum Player4"))
-                    p4selecionou = true;
+                inputP4 = Input.GetAxis("Volante Player4");
+                if (inputP4 > 0.5f)
+                    DireitaPlayer4();
+                else if (inputP4 < -0.5f)
+                    EsquerdaPlayer4();
             }
             #endregion
         }
@@ -169,10 +181,6 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     private string Mover (string Atual, float Direcao)
     {
-        print(Direcao);
-        if (Direcao <= 0.5f && Direcao >= -0.5f)
-            return Atual;
-
         switch (Atual)
         {
             #region Atual é Violetta
@@ -216,31 +224,9 @@ public class MenuSelecaoScript : MonoBehaviour {
                 break;
             #endregion
         }
-
         return Atual;
     }
-
-    private void AtualizaMoldura (string Personagem, GameObject Moldura)
-    {
-        Moldura.transform.parent = GameObject.Find(Personagem).transform;
-        RectTransform Rect = Moldura.GetComponent<RectTransform>();
-        Rect.offsetMin = new Vector2(0, 0);
-        Rect.offsetMax = new Vector2(0, 0);
-        Rect.sizeDelta = new Vector2(0, 0);
-    }
-
-    private Object AtualizaModelos (string Personagem, GameObject Plataforma)
-    {
-        if (Personagem == "Ayah")
-            return Instantiate(KartAyah, Plataforma.transform.position, Plataforma.transform.rotation);
-        if (Personagem == "Violetta")
-            return Instantiate(KartVioletta, Plataforma.transform.position, Plataforma.transform.rotation);
-        if (Personagem == "Jeshi")
-            return Instantiate(KartJeshi, Plataforma.transform.position, Plataforma.transform.rotation);
-        if (Personagem == "Momoto")
-            return Instantiate(KartMomoto, Plataforma.transform.position, Plataforma.transform.rotation);
-        return null;
-    }
+    
 
     private void SalvaEscolhas ()
     {
@@ -253,10 +239,12 @@ public class MenuSelecaoScript : MonoBehaviour {
     IEnumerator CarregarNovaCena()
     {
         //espera 3 segundos
-        yield return new WaitForSeconds(5);
+        //yield return new WaitForSeconds(5);
+        PainelCena.SetActive(false);
+        PainelLoading.SetActive(true);
 
         // Start an asynchronous operation to load the scene that was passed to the LoadNewScene coroutine.
-        AsyncOperation async = SceneManager.LoadSceneAsync(level);
+        async = SceneManager.LoadSceneAsync(level);
 
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
         while (!async.isDone)
@@ -265,6 +253,126 @@ public class MenuSelecaoScript : MonoBehaviour {
         }
     }
 
+    void OnGUI()
+    {
+        if (async != null)
+        {
+            //GUI.DrawTexture(new Rect(0, 0, 100, 50), ProgressBarEmpty);
+           // GUI.DrawTexture(new Rect(95, 167, 210 * async.progress, 25), ProgressBarFull);
+        }
+    }
 
+
+
+    public void DireitaPlayer1()
+    {
+        if (!p1selecionou)
+        {
+            Player1 = Mover(Player1, 1);
+            MoldP1.AtualizaMoldura(Player1);
+        }
+    }
+
+    public void EsquerdaPlayer1()
+    {
+        if (!p1selecionou)
+        {
+            Player1 = Mover(Player1, -1);
+            MoldP1.AtualizaMoldura(Player1);
+        }
+    }
+
+    public void ConfirmaPlayer1()
+    {
+        if (!p1selecionou)
+        {
+            p1selecionou = true;
+        }
+    }
+
+
+
+    public void DireitaPlayer2()
+    {
+        if (!p2selecionou)
+        {
+            Player2 = Mover(Player2, 1);
+            MoldP2.AtualizaMoldura(Player2);
+        }
+    }
+
+    public void EsquerdaPlayer2()
+    {
+        if (!p2selecionou)
+        {
+            Mover(Player2, -1);
+            MoldP2.AtualizaMoldura(Player2);
+        }
+    }
+
+    public void ConfirmaPlayer2()
+    {
+        if (!p2selecionou)
+        {
+            p2selecionou = true;
+        }
+    }
+
+
+
+    public void DireitaPlayer3()
+    {
+        if (!p3selecionou)
+        {
+            Player3 = Mover(Player3, 1);
+            MoldP3.AtualizaMoldura(Player3);
+        }
+    }
+
+    public void EsquerdaPlayer3()
+    {
+        if (!p3selecionou)
+        {
+            Mover(Player3, -1);
+            MoldP3.AtualizaMoldura(Player3);
+        }
+    }
+
+    public void ConfirmaPlayer3()
+    {
+        if (!p3selecionou)
+        {
+            p3selecionou = true;
+        }
+    }
+
+
+
+    public void DireitaPlayer4()
+    {
+        if (!p4selecionou)
+        {
+            Player4 = Mover(Player4, 1);
+            MoldP4.AtualizaMoldura(Player4);
+        }
+    }
+
+    public void EsquerdaPlayer4()
+    {
+        if (!p4selecionou)
+        {
+            Mover(Player4, -1);
+            MoldP4.AtualizaMoldura(Player4);
+        }
+    }
+
+    public void ConfirmaPlayer4()
+    {
+        if (!p4selecionou)
+        {
+            p4selecionou = true;
+            MoldP4.AtualizaMoldura(Player4);
+        }
+    }
 
 }
