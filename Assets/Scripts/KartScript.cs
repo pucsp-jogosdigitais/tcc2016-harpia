@@ -4,6 +4,7 @@ using System.Collections;
 
 public class KartScript : MonoBehaviour
 {
+    public AudioSource Audio;
     public InterfaceScript Interface;
     public string Nome;
     public int contProgresso;
@@ -76,6 +77,8 @@ public class KartScript : MonoBehaviour
     private float contRastro = 0;
     #endregion
 
+    public AudioClip Dano, PegaPowerUp, Andando;
+
     void Start()
     {
         KartRigidbody = GetComponent<Rigidbody>(); //Identifica e pega a referencia do rigidbody do carro 
@@ -93,6 +96,8 @@ public class KartScript : MonoBehaviour
     {
         if (Jogando)
         {
+            if (Andando != null)
+                Audio.PlayOneShot(Andando, 1);
             Peso();
             movimentarRodas(); //Movimenta as meshes de acordo com os colliders
             recargaEspecial(); //Conta o tempo de recarga do powerup especial
@@ -633,7 +638,11 @@ public class KartScript : MonoBehaviour
     private void foiAtingido()
     {
         if (!imune)
+        {
             lento = true;
+            if (Dano != null)
+            Audio.PlayOneShot(Dano, 1);
+        }
     }
 
     private void OnTriggerExit(Collider Objeto)
@@ -688,12 +697,23 @@ public class KartScript : MonoBehaviour
         else if (Objeto.gameObject.CompareTag("PowerUpBox"))
         {
             if (powerUpTipo == 0)
-                //powerUpTipo = Random.Range(1, 6);
+            {
+                powerUpTipo = Random.Range(1, 6);
                 powerUpTipo = 4;
+                if (PegaPowerUp != null)
+                    Audio.PlayOneShot(PegaPowerUp, 1);
+            }
         }
         #endregion
         #region Poça
         else if (Objeto.gameObject.CompareTag("Poca"))
+        {
+            Destroy(Objeto.gameObject);
+            foiAtingido();
+        }
+        #endregion
+        #region Poça
+        else if (Objeto.gameObject.CompareTag("Nuvem"))
         {
             Destroy(Objeto.gameObject);
             foiAtingido();

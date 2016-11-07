@@ -20,6 +20,7 @@ public class ControllerScript : MonoBehaviour
     private GerenciadorScript Gerenciador;
     private float vertical, horizontal;
     private GameObject imgPos1, imgPos2, imgPos3, imgPos4;
+    private AudioListener AudioList;
 
     #endregion
 
@@ -28,6 +29,8 @@ public class ControllerScript : MonoBehaviour
         CameraScript = camKart.GetComponent<KartCameraScript>();                        //Localiza o script da camera
         Kart = gameObject.GetComponent<KartScript>();                                   //Localiza o script do kart
         Gerenciador = GameObject.Find("Gerenciador").GetComponent<GerenciadorScript>(); //Localiza o gerenciador da pista
+        AudioList = GetComponent<AudioListener>();
+        AudioList.enabled = true;
         Kart.Jogando = true;                                                            //Inicia o estado como jogando
 
         //Acha a referencia das imagens de colocacao que irão na interface
