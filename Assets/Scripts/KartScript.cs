@@ -4,6 +4,7 @@ using System.Collections;
 
 public class KartScript : MonoBehaviour
 {
+    public Camera CamKart;
     public AudioSource Audio;
     public InterfaceScript Interface;
     public string Nome;
@@ -294,6 +295,19 @@ public class KartScript : MonoBehaviour
         }
     }
 
+    private IEnumerator EfeitoCamera()
+    {
+        CamKart.fieldOfView = 80;
+        yield return new WaitForSeconds(2);
+        for (int i=1;i<=20;i++)
+        {
+            CamKart.fieldOfView = 80 - i;
+            yield return new WaitForSeconds(0.05f);
+        }
+        CamKart.fieldOfView = 60;
+
+    }
+
     private void Timer()
     {
         if (!Terminou)
@@ -448,6 +462,7 @@ public class KartScript : MonoBehaviour
     private void Boost()
     {
         KartRigidbody.AddForce(transform.forward * 2500f, ForceMode.Impulse);
+        StartCoroutine(EfeitoCamera());
     }
 
     private void Lentidao()
