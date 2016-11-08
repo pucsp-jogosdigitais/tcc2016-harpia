@@ -90,15 +90,16 @@ public class KartScript : MonoBehaviour
         rotInicial = KartRigidbody.rotation; //Salva sua rotação inicial na corrida
         ArmazenaFriccao();       //Armazena a friccao inicial das rodas e configura a friccao do drift
         PersonalizaPersonagem(); //Ajusta atributos de acordo com o tipo de personagem
-        CooldownEspecial = 60;   //Define o tempo de recarga do powerup especial   
+        CooldownEspecial = 60;   //Define o tempo de recarga do powerup especial  
+        if (Andando != null)
+            Audio.PlayOneShot(Andando, 1);
     }
 
     void Update()
     {
         if (Jogando)
         {
-            if (Andando != null)
-                Audio.PlayOneShot(Andando, 1);
+            
             Peso();
             movimentarRodas(); //Movimenta as meshes de acordo com os colliders
             recargaEspecial(); //Conta o tempo de recarga do powerup especial
@@ -297,12 +298,16 @@ public class KartScript : MonoBehaviour
 
     private IEnumerator EfeitoCamera()
     {
-        CamKart.fieldOfView = 80;
-        yield return new WaitForSeconds(2);
+        for (int i = 1; i <= 20; i++)
+        {
+            CamKart.fieldOfView = 60 + i;
+            yield return new WaitForSeconds(0.01f);
+        }
+        yield return new WaitForSeconds(1);
         for (int i=1;i<=20;i++)
         {
             CamKart.fieldOfView = 80 - i;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
         CamKart.fieldOfView = 60;
 
