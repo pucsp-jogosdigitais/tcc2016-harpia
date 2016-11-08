@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 427390}
   - 65: {fileID: 6595140}
-  - 114: {fileID: 11459678}
   - 54: {fileID: 5479678}
   m_Layer: 0
   m_Name: Prefab_Poca
@@ -30,9 +29,10 @@ GameObject:
   - 95: {fileID: 9551022}
   - 111: {fileID: 11127474}
   - 135: {fileID: 13577606}
+  - 114: {fileID: 11465412}
   m_Layer: 0
   m_Name: "Po\xE7a"
-  m_TagString: Poca
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,8 +87,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5595612, y: 0.026126146, z: 0.42381188}
-  m_Center: {x: 0.1083374, y: -0.04993725, z: -0.12542725}
+  m_Size: {x: 0.5595612, y: 0.0032033175, z: 0.4238119}
+  m_Center: {x: 0.1083374, y: -0.061398506, z: -0.12542725}
 --- !u!95 &9551022
 Animator:
   serializedVersion: 3
@@ -120,18 +120,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &11459678
+--- !u!114 &11465412
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100082}
+  m_GameObject: {fileID: 162258}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49732ec7f98804148b16759cfab55948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 6595140}
 --- !u!135 &13577606
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -195,7 +194,7 @@ Prefab:
       objectReference: {fileID: 6595140}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Untagged
+      value: Teste
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -718,7 +718,7 @@ public class KartScript : MonoBehaviour
         {
             if (powerUpTipo == 0)
             {
-                powerUpTipo = Random.Range(1, 6);
+                //powerUpTipo = Random.Range(1, 6);
                 powerUpTipo = 4;
                 if (PegaPowerUp != null)
                     Audio.PlayOneShot(PegaPowerUp, 1);
@@ -732,7 +732,7 @@ public class KartScript : MonoBehaviour
             foiAtingido();
         }
         #endregion
-        #region Poça
+        #region Nuvem
         else if (Objeto.gameObject.CompareTag("Nuvem"))
         {
             Destroy(Objeto.gameObject);

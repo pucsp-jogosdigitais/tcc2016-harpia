@@ -16,6 +16,7 @@ TagManager:
   - Pista
   - AranhaAoE
   - CaminhoNuvem
+  - Teste
   layers:
   - Default
   - TransparentFX
