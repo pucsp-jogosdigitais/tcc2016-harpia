@@ -92,7 +92,7 @@ public class KartScript : MonoBehaviour
         PersonalizaPersonagem(); //Ajusta atributos de acordo com o tipo de personagem
         CooldownEspecial = 60;   //Define o tempo de recarga do powerup especial  
         if (Andando != null)
-            Audio.PlayOneShot(Andando, 1);
+            Audio.PlayOneShot(Andando, 0.6f);
     }
 
     void Update()
@@ -718,8 +718,7 @@ public class KartScript : MonoBehaviour
         {
             if (powerUpTipo == 0)
             {
-                //powerUpTipo = Random.Range(1, 6);
-                powerUpTipo = 4;
+                powerUpTipo = Random.Range(1, 6);
                 if (PegaPowerUp != null)
                     Audio.PlayOneShot(PegaPowerUp, 1);
             }
