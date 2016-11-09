@@ -28,6 +28,7 @@ public class KartScript : MonoBehaviour
     private GameObject KartAlvo;
     private int colocacaoAlvo;
     public int ProgNoFim = 0;
+    private bool PegouPUEspecial;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -79,6 +80,7 @@ public class KartScript : MonoBehaviour
     #endregion
 
     public AudioClip Dano, PegaPowerUp, Andando;
+    public ParticleSystem Rastro, LevouDano, PegouPowerUp, Ganhou;
 
     void Start()
     {
@@ -111,7 +113,8 @@ public class KartScript : MonoBehaviour
             if (deixaRastro)
                 RastroPedras();
             Interface.setPowerUp(powerUpTipo);
-            Interface.setPowerUpEspecial(especialDisponivel);                
+            Interface.setPowerUpEspecial(especialDisponivel);
+            ParticulasRastroFumaca();
         }
     }
 
@@ -417,11 +420,18 @@ public class KartScript : MonoBehaviour
         if (countEspecial >= CooldownEspecial)
         {
             especialDisponivel = true;
+            if (!PegouPUEspecial)
+            {
+                if (PegouPowerUp != null)
+                    PegouPowerUp.Play();
+                PegouPUEspecial = true;
+            }
         }
         else
         {
             countEspecial += Time.deltaTime/Time.timeScale;
             especialDisponivel = false;
+            PegouPUEspecial = false;
         }
         #endregion
     }
@@ -452,7 +462,7 @@ public class KartScript : MonoBehaviour
 
     private void VerificaTravado() //Verifica se o jogador está travado/parado a mais de 5 segundos
     {
-        if (KartRigidbody.velocity.magnitude < 1)
+        if (KartRigidbody.velocity.magnitude < 1.5f)
         {
             contTravou += Time.deltaTime / Time.timeScale;
             if (contTravou > 3)
@@ -517,6 +527,27 @@ public class KartScript : MonoBehaviour
         {
             contRastro = 0;
             deixaRastro = false;
+        }
+    }
+
+    private void ParticulasRastroFumaca()
+    {
+        if (Rastro != null)
+        {
+            if (KartRigidbody.velocity.magnitude < 1.5f)
+            {
+                if (Rastro.isPlaying)
+                {
+                    Rastro.Stop();
+                }
+            }
+            else
+            {
+                if (!Rastro.isPlaying)
+                {
+                    Rastro.Play();
+                }
+            }
         }
     }
 
@@ -661,7 +692,9 @@ public class KartScript : MonoBehaviour
         {
             lento = true;
             if (Dano != null)
-            Audio.PlayOneShot(Dano, 1);
+                Audio.PlayOneShot(Dano, 1);
+            if (LevouDano != null)
+                LevouDano.Play();
         }
     }
 
@@ -721,6 +754,9 @@ public class KartScript : MonoBehaviour
                 powerUpTipo = Random.Range(1, 6);
                 if (PegaPowerUp != null)
                     Audio.PlayOneShot(PegaPowerUp, 1);
+                if (PegouPowerUp != null)
+                    PegouPowerUp.Play();
+
             }
         }
         #endregion
