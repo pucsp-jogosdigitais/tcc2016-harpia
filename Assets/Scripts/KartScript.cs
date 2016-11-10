@@ -80,7 +80,7 @@ public class KartScript : MonoBehaviour
     #endregion
 
     public AudioClip Dano, PegaPowerUp, Andando;
-    public ParticleSystem Rastro, LevouDano, PegouPowerUp, Ganhou;
+    public ParticleSystem Rastro, LevouDano, PegouPowerUp, ExplosaoMissel, Ganhou;
 
     void Start()
     {
@@ -698,6 +698,18 @@ public class KartScript : MonoBehaviour
         }
     }
 
+    private void foiAtingidoMissel()
+    {
+        if (!imune)
+        {
+            lento = true;
+            if (Dano != null)
+                Audio.PlayOneShot(Dano, 1);
+            if (ExplosaoMissel != null)
+                ExplosaoMissel.Play();
+        }
+    }
+
     private void OnTriggerExit(Collider Objeto)
     {
         #region Aranha
@@ -765,6 +777,13 @@ public class KartScript : MonoBehaviour
         {
             Destroy(Objeto.gameObject);
             foiAtingido();
+        }
+        #endregion
+        #region Missel
+        else if (Objeto.gameObject.CompareTag("Missel"))
+        {
+            Destroy(Objeto.gameObject);
+            foiAtingidoMissel();
         }
         #endregion
         #region Nuvem
