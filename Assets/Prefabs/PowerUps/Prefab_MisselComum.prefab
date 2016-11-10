@@ -100,7 +100,7 @@ GameObject:
   - 82: {fileID: 8247498}
   m_Layer: 0
   m_Name: Prefab_MisselComum
-  m_TagString: Teste
+  m_TagString: Missel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,7 +705,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Teste
+      value: Missel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

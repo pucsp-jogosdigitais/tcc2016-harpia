@@ -551,6 +551,30 @@ public class KartScript : MonoBehaviour
         }
     }
 
+    private void foiAtingido()
+    {
+        if (!imune)
+        {
+            lento = true;
+            if (Dano != null)
+                Audio.PlayOneShot(Dano, 1);
+            if (LevouDano != null)
+                LevouDano.Play();
+        }
+    }
+
+    private void foiAtingidoMissel()
+    {
+        if (!imune)
+        {
+            lento = true;
+            if (Dano != null)
+                Audio.PlayOneShot(Dano, 1);
+            if (ExplosaoMissel != null)
+                ExplosaoMissel.Play();
+        }
+    }
+
     #endregion
 
     #region Funções de PowerUp
@@ -685,30 +709,6 @@ public class KartScript : MonoBehaviour
     #endregion
 
     #region Triggers
-
-    private void foiAtingido()
-    {
-        if (!imune)
-        {
-            lento = true;
-            if (Dano != null)
-                Audio.PlayOneShot(Dano, 1);
-            if (LevouDano != null)
-                LevouDano.Play();
-        }
-    }
-
-    private void foiAtingidoMissel()
-    {
-        if (!imune)
-        {
-            lento = true;
-            if (Dano != null)
-                Audio.PlayOneShot(Dano, 1);
-            if (ExplosaoMissel != null)
-                ExplosaoMissel.Play();
-        }
-    }
 
     private void OnTriggerExit(Collider Objeto)
     {
