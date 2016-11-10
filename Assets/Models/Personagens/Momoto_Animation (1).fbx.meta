@@ -143,7 +143,7 @@ ModelImporter:
     4300002: polySurface41
     4300004: polySurface42
     4300006: polySurface43
-    7400000: Take 001
+    7400000: "3\xBA Lugar"
     7400002: Idle
     7400004: Vira_Direita
     7400006: Loop_Direita
@@ -166,6 +166,8 @@ ModelImporter:
     7400040: "VoltarNormal(Loop_Comemora\xE7\xE3o)"
     7400042: PegaPowerUp
     7400044: LoopSegurarPowerUp
+    7400046: "2\xBA Lugar"
+    7400048: "1\xBA Lugar"
     9500000: //RootNode
     13700000: polySurface40
     13700002: polySurface41
@@ -3796,6 +3798,519 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 225
       lastFrame: 232
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: GrupoScale
+        weight: 1
+      - path: GrupoScale/COG
+        weight: 1
+      - path: GrupoScale/COG/Bacia
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B/Pe_Dir_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B/Pe_Esq_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/rabo1
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2/rabo3
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar/Boca
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir/Dedao_c_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B/Dedodomeio_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B/Indicador_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B/Mindinho_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc/Dedao_c_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1/Dedodomeio_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1/Indicador_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1/Mindinho_C 1
+        weight: 1
+      - path: GrupoScale/Mestre
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Bravo
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Sorriso
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Triste
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_U
+        weight: 0
+      - path: GrupoScale/Mestre/Controlador_Centro
+        weight: 0
+      - path: Malha
+        weight: 0
+      - path: Malha/polySurface40
+        weight: 0
+      - path: Malha/polySurface41
+        weight: 0
+      - path: Malha/polySurface42
+        weight: 0
+      - path: Malha/polySurface43
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "3\xBA Lugar"
+      takeName: Take 001
+      firstFrame: 302
+      lastFrame: 382
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: GrupoScale
+        weight: 1
+      - path: GrupoScale/COG
+        weight: 1
+      - path: GrupoScale/COG/Bacia
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B/Pe_Dir_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B/Pe_Esq_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/rabo1
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2/rabo3
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar/Boca
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir/Dedao_c_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B/Dedodomeio_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B/Indicador_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B/Mindinho_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc/Dedao_c_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1/Dedodomeio_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1/Indicador_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1/Mindinho_C 1
+        weight: 1
+      - path: GrupoScale/Mestre
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Bravo
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Sorriso
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Triste
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_U
+        weight: 0
+      - path: GrupoScale/Mestre/Controlador_Centro
+        weight: 0
+      - path: Malha
+        weight: 0
+      - path: Malha/polySurface40
+        weight: 0
+      - path: Malha/polySurface41
+        weight: 0
+      - path: Malha/polySurface42
+        weight: 0
+      - path: Malha/polySurface43
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "2\xBA Lugar"
+      takeName: Take 001
+      firstFrame: 375
+      lastFrame: 474
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: GrupoScale
+        weight: 1
+      - path: GrupoScale/COG
+        weight: 1
+      - path: GrupoScale/COG/Bacia
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Dir_A/Perna_Dir_B/P\xE9_Dir_A/Pe_Dir_B/Pe_Dir_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A
+        weight: 1
+      - path: GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B"
+        weight: 1
+      - path: "GrupoScale/COG/Bacia/Perna_Esq_A/Perna_Esq_B/P\xE9_Esq_A/Pe_Esq_B/Pe_Esq_C"
+        weight: 1
+      - path: GrupoScale/COG/Bacia/rabo1
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2
+        weight: 0
+      - path: GrupoScale/COG/Bacia/rabo1/rabo2/rabo3
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/Cabeca/Maxilar/Boca
+        weight: 0
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedao_A_Dir/Dedao_B_Dir/Dedao_c_Dir
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Dedodomeio_A/Dedodomeio_B/Dedodomeio_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Indicador_A/Indicador_B/Indicador_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint16/Braco_Dir_A/Braco_Dir_B/Braco_Dir_C/jt_Mao_Dir/Mindinho_A/Mindinho_B/Mindinho_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedao_A_Esc/Dedao_B_Esc/Dedao_c_Esc
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Dedodomeio_A
+          1/Dedodomeio_B 1/Dedodomeio_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Indicador_A
+          1/Indicador_B 1/Indicador_C 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1
+        weight: 1
+      - path: GrupoScale/COG/Coluna_A/Coluna_B/joint17/Braco_Esc_A/Braco_Esc_B/Braco_Esc_C/jt_Mao_Esc/Mindinho_A
+          1/Mindinho_B 1/Mindinho_C 1
+        weight: 1
+      - path: GrupoScale/Mestre
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Bravo
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Sorriso
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_Triste
+        weight: 0
+      - path: GrupoScale/Mestre/Cont_U
+        weight: 0
+      - path: GrupoScale/Mestre/Controlador_Centro
+        weight: 0
+      - path: Malha
+        weight: 0
+      - path: Malha/polySurface40
+        weight: 0
+      - path: Malha/polySurface41
+        weight: 0
+      - path: Malha/polySurface42
+        weight: 0
+      - path: Malha/polySurface43
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "1\xBA Lugar"
+      takeName: Take 001
+      firstFrame: 496
+      lastFrame: 553
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
