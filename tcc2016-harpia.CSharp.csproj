@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -78,6 +72,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Asset UI\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Asset UI\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\AIScript.cs" />
     <Compile Include="Assets\Scripts\CameraPath Scripts\MathUtils.cs" />
     <Compile Include="Assets\Scripts\CameraPath Scripts\SplineController.cs" />
@@ -112,6 +117,12 @@
     <Compile Include="Assets\Scripts\PowerUp Scripts\PowerUpBoxScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Asset UI\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\Asset UI\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Asset UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
+    <None Include="Assets\Imagens\Particle Alpha Blend.shader" />
+    <None Include="Assets\Imagens\Sprites-Default.shader" />
+    <None Include="Assets\Imagens\UI-Default.shader" />
     <None Include="Assets\Shaders\Neon.shader" />
     <None Include="Assets\Shaders\Pirulito.shader" />
     <None Include="Assets\Shaders\WaterSonic.shader" />
