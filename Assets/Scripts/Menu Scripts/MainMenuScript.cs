@@ -7,6 +7,7 @@ public class MainMenuScript : MonoBehaviour {
 
     public GameObject PainelConfig, PainelMenu, PainelCustom;
     public Button BotInicialConfig, BotInicialMenu, BotInicialCustom;
+    public MovieTexture texturaVideo;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,8 @@ public class MainMenuScript : MonoBehaviour {
         PainelMenu.SetActive(true);
         GameObject myEventSystem = GameObject.Find("EventSystem");
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(BotInicialMenu.gameObject);
+        texturaVideo.loop = true;
+        texturaVideo.Play();
 	}
 	
 	// Update is called once per frame

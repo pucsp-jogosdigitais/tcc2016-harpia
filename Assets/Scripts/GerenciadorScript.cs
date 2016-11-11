@@ -45,8 +45,8 @@ public class GerenciadorScript : MonoBehaviour
         if (numeroJogadores == 0)
         {
             numeroJogadores = 1;
-            player1 = "Jeshi";
-            player2 = "Momoto";
+            player1 = "Momoto";
+            player2 = "Jeshi";
             player3 = "Violetta";
             player4 = "Ayah";
         }

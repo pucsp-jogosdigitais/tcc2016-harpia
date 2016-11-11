@@ -313,7 +313,6 @@ public class KartScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         CamKart.fieldOfView = 60;
-
     }
 
     private void Timer()
@@ -755,7 +754,7 @@ public class KartScript : MonoBehaviour
         #region Boost
         else if (Objeto.gameObject.CompareTag("Boost"))
         {
-            Boost();
+           Boost();
         }
         #endregion
         #region Randomização de PowerUps Comuns
