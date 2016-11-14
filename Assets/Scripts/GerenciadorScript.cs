@@ -123,9 +123,9 @@ public class GerenciadorScript : MonoBehaviour
         {
             MostraRaking();
 
-            if (Input.GetKey(KeyCode.Escape)) //Interrompe o Preview
+            if (Input.GetKey(KeyCode.Space)) //Interrompe o Preview
             {
-                SceneManager.LoadScene("Menu Principal");
+                VoltaMenu();
             }
         }
         else
@@ -488,6 +488,11 @@ public class GerenciadorScript : MonoBehaviour
         if (colocacao <= 0)
             return BuscarKartAlvo(4);
         return null;
+    }
+
+    public void VoltaMenu()
+    {
+        SceneManager.LoadScene("Menu Principal");
     }
 
 }
