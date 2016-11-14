@@ -62,6 +62,7 @@ public class ControllerScript : MonoBehaviour
             this.gameObject.GetComponentInChildren<NavMeshAgent>().enabled = true;
             Interface.Finaliza();
             this.enabled = false;
+            
         }
     }
 

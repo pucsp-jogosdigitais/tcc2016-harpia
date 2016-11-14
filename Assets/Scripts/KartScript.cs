@@ -29,6 +29,7 @@ public class KartScript : MonoBehaviour
     private int colocacaoAlvo;
     public int ProgNoFim = 0;
     private bool PegouPUEspecial;
+    public bool SomouTempoExtra = false;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -243,6 +244,21 @@ public class KartScript : MonoBehaviour
 
     #region Funções Públicas
 
+    public void SomaTempoExtra(float TempoExtra)
+    {
+        if (!SomouTempoExtra)
+        {
+            tempo += TempoExtra;
+            AuxMilisegundos = tempo % 1f;
+            segundos = (int)Mathf.Round(tempo);
+            minutos = segundos / 60;
+            segundos = segundos - (60 * minutos);
+            milisegundos = (int)Mathf.Round(AuxMilisegundos * 1000);
+            SomouTempoExtra = true;
+        }
+    }
+
+
     public void voltarNoCheckpoint() //Faz o jogador voltar no ultimo checkpoint coletado
     {
         if (ultimoCheckpoint != null)
@@ -421,8 +437,7 @@ public class KartScript : MonoBehaviour
             especialDisponivel = true;
             if (!PegouPUEspecial)
             {
-                if (PegouPowerUp != null)
-                    PegouPowerUp.Play();
+                PegouPowerUp.Play();
                 PegouPUEspecial = true;
             }
         }
@@ -569,8 +584,7 @@ public class KartScript : MonoBehaviour
             lento = true;
             if (Dano != null)
                 Audio.PlayOneShot(Dano, 1);
-            if (ExplosaoMissel != null)
-                ExplosaoMissel.Play();
+            ExplosaoMissel.Play();
         }
     }
 
@@ -765,8 +779,7 @@ public class KartScript : MonoBehaviour
                 powerUpTipo = Random.Range(1, 6);
                 if (PegaPowerUp != null)
                     Audio.PlayOneShot(PegaPowerUp, 1);
-                if (PegouPowerUp != null)
-                    PegouPowerUp.Play();
+                PegouPowerUp.Play();
 
             }
         }

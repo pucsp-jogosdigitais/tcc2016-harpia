@@ -45,10 +45,10 @@ public class GerenciadorScript : MonoBehaviour
         if (numeroJogadores == 0)
         {
             numeroJogadores = 1;
-            player1 = "Momoto";
+            player1 = "Ayah";
             player2 = "Jeshi";
             player3 = "Violetta";
-            player4 = "Ayah";
+            player4 = "Momoto";
         }
 
         Ready.gameObject.SetActive(false);
@@ -121,66 +121,7 @@ public class GerenciadorScript : MonoBehaviour
     {
         if (Fim)
         {
-            #region Mostra Ranking
-            for (int i = 0; i < Karts.Count(); i++)
-            {
-                script = Karts[i].GetComponent<KartScript>();
-
-                #region Posiciona os nomes
-                switch (script.Nome)
-                {
-                    case "Violetta":
-                        {
-                            NomeRankVioletta.transform.parent = Resultados[i].transform;
-                            RectTransform Rect = NomeRankVioletta.GetComponent<RectTransform>();
-                            Rect.offsetMin = new Vector2(0, 0);
-                            Rect.offsetMax = new Vector2(0, 0);
-                            Rect.sizeDelta = new Vector2(0, 0);
-                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
-                            print("Violetta " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
-                        }
-                        break;
-                    case "Jeshi":
-                        {
-                            NomeRankJeshi.transform.parent = Resultados[i].transform;
-                            RectTransform Rect = NomeRankJeshi.GetComponent<RectTransform>();
-                            Rect.offsetMin = new Vector2(0, 0);
-                            Rect.offsetMax = new Vector2(0, 0);
-                            Rect.sizeDelta = new Vector2(0, 0);
-                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
-                            print("Jeshi " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
-                        }
-                        break;
-                    case "Ayah":
-                        {
-                            NomeRankAyah.transform.parent = Resultados[i].transform;
-                            RectTransform Rect = NomeRankAyah.GetComponent<RectTransform>();
-                            Rect.offsetMin = new Vector2(0, 0);
-                            Rect.offsetMax = new Vector2(0, 0);
-                            Rect.sizeDelta = new Vector2(0, 0);
-                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
-                            print("Ayah " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
-                        }
-                        break;
-                    case "Momoto":
-                        {
-                            NomeRankMomoto.transform.parent = Resultados[i].transform;
-                            RectTransform Rect = NomeRankMomoto.GetComponent<RectTransform>();
-                            Rect.offsetMin = new Vector2(0, 0);
-                            Rect.offsetMax = new Vector2(0, 0);
-                            Rect.sizeDelta = new Vector2(0, 0);
-                            Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
-                            print("Momoto " + script.minutos + ":" + script.segundos + "." + script.milisegundos);
-                        }
-                        break;
-                }
-                #endregion
-
-                resultado.SetActive(true);
-
-                // script.minutos + ":" + script.segundos;
-            }
-            #endregion
+            MostraRaking();
 
             if (Input.GetKey(KeyCode.Escape)) //Interrompe o Preview
             {
@@ -208,6 +149,7 @@ public class GerenciadorScript : MonoBehaviour
                 if ((script.ProgNoFim >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                 {
                     script.Terminou = true;
+                    script.Ganhou.Play();
                 }
 
                 if (script.gameObject.GetComponent<AIScript>().enabled)
@@ -379,6 +321,71 @@ public class GerenciadorScript : MonoBehaviour
         GameObject.Find(kart).GetComponent<NavMeshObstacle>().enabled = true;
         ControladorJogador.enabled = true;
         ScriptsControllers.Add(ControladorJogador);
+    }
+
+    private void MostraRaking()
+    {
+        #region Mostra Ranking
+        for (int i = 0; i < Karts.Count(); i++)
+        {
+            script = Karts[i].GetComponent<KartScript>();
+
+            #region Posiciona os nomes
+            switch (script.Nome)
+            {
+                case "Violetta":
+                    {
+                        NomeRankVioletta.transform.parent = Resultados[i].transform;
+                        RectTransform Rect = NomeRankVioletta.GetComponent<RectTransform>();
+                        Rect.offsetMin = new Vector2(0, 0);
+                        Rect.offsetMax = new Vector2(0, 0);
+                        Rect.sizeDelta = new Vector2(0, 0);
+                        if (!script.SomouTempoExtra)
+                            script.SomaTempoExtra((250 - script.ProgNoFim) * 0.4f);
+                        Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
+                    }
+                    break;
+                case "Jeshi":
+                    {
+                        NomeRankJeshi.transform.parent = Resultados[i].transform;
+                        RectTransform Rect = NomeRankJeshi.GetComponent<RectTransform>();
+                        Rect.offsetMin = new Vector2(0, 0);
+                        Rect.offsetMax = new Vector2(0, 0);
+                        Rect.sizeDelta = new Vector2(0, 0);
+                        if (!script.SomouTempoExtra)
+                            script.SomaTempoExtra((250 - script.ProgNoFim) * 0.4f);
+                        Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
+                    }
+                    break;
+                case "Ayah":
+                    {
+                        NomeRankAyah.transform.parent = Resultados[i].transform;
+                        RectTransform Rect = NomeRankAyah.GetComponent<RectTransform>();
+                        Rect.offsetMin = new Vector2(0, 0);
+                        Rect.offsetMax = new Vector2(0, 0);
+                        Rect.sizeDelta = new Vector2(0, 0);
+                        if (!script.SomouTempoExtra)
+                            script.SomaTempoExtra((250 - script.ProgNoFim) * 0.4f);
+                        Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
+                    }
+                    break;
+                case "Momoto":
+                    {
+                        NomeRankMomoto.transform.parent = Resultados[i].transform;
+                        RectTransform Rect = NomeRankMomoto.GetComponent<RectTransform>();
+                        Rect.offsetMin = new Vector2(0, 0);
+                        Rect.offsetMax = new Vector2(0, 0);
+                        Rect.sizeDelta = new Vector2(0, 0);
+                        if (!script.SomouTempoExtra)
+                            script.SomaTempoExtra((250 - script.ProgNoFim) * 0.4f);
+                        Resultados[i].GetComponentInChildren<EscreveTempoScript>().SetTempos(script.minutos, script.segundos, script.milisegundos);
+                    }
+                    break;
+            }
+            #endregion
+            resultado.SetActive(true);
+        }
+        #endregion
     }
 
     #region Métodos para configurar cameras de acordo com os jogadores
