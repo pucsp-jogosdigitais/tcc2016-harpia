@@ -20,13 +20,13 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 70, y: 70}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4c72c67a5cc7fbc449951b92bded1803, type: 3}
+          m_Texture: {fileID: 2800000, guid: 209a7a18985ed8e4eaa3a5024355b71b, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -55,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 70, y: 70}
           m_Offset: {x: 0, y: 0}
       data:
         first:
