@@ -30,6 +30,7 @@ public class KartScript : MonoBehaviour
     public int ProgNoFim = 0;
     private bool PegouPUEspecial;
     public bool SomouTempoExtra = false;
+    private bool AplicandoEfeitoCam = false;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -329,6 +330,7 @@ public class KartScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         CamKart.fieldOfView = 60;
+        AplicandoEfeitoCam = false;
     }
 
     private void Timer()
@@ -491,7 +493,11 @@ public class KartScript : MonoBehaviour
     private void Boost()
     {
         KartRigidbody.AddForce(transform.forward * 2500f, ForceMode.Impulse);
-        StartCoroutine(EfeitoCamera());
+        if (!AplicandoEfeitoCam)
+        {
+            StartCoroutine(EfeitoCamera());
+            AplicandoEfeitoCam = true;
+        }
     }
 
     private void Lentidao()
