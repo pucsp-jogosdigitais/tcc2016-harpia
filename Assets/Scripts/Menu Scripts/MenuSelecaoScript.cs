@@ -32,7 +32,7 @@ public class MenuSelecaoScript : MonoBehaviour {
         CarregarCena = false;
 
         numero = Escolhas.Numjogadores;
-        numero = 1;
+        numero = 4;
         switch (numero)
         {
             #region Caso tenha um jogador selecionando
@@ -48,6 +48,7 @@ public class MenuSelecaoScript : MonoBehaviour {
                     Player4 = "";
                     Aux = Painel1P.GetComponent<PainelScript>();
                     MoldP1 = Aux.Player1;
+                    MoldP1.AtualizaMoldura(Player1);
                 }
                 break;
             #endregion
@@ -64,6 +65,8 @@ public class MenuSelecaoScript : MonoBehaviour {
                     Aux = Painel2P.GetComponent<PainelScript>();
                     MoldP1 = Aux.Player1;
                     MoldP2 = Aux.Player2;
+                    MoldP1.AtualizaMoldura(Player1);
+                    MoldP2.AtualizaMoldura(Player2);
                 }
                 break;
             #endregion
@@ -80,6 +83,9 @@ public class MenuSelecaoScript : MonoBehaviour {
                     MoldP1 = Aux.Player1;
                     MoldP2 = Aux.Player2;
                     MoldP3 = Aux.Player3;
+                    MoldP1.AtualizaMoldura(Player1);
+                    MoldP2.AtualizaMoldura(Player2);
+                    MoldP3.AtualizaMoldura(Player3);
                 }
                 break;
             #endregion
@@ -96,6 +102,10 @@ public class MenuSelecaoScript : MonoBehaviour {
                     MoldP2 = Aux.Player2;
                     MoldP3 = Aux.Player3;
                     MoldP4 = Aux.Player4;
+                    MoldP1.AtualizaMoldura(Player1);
+                    MoldP2.AtualizaMoldura(Player2);
+                    MoldP3.AtualizaMoldura(Player3);
+                    MoldP4.AtualizaMoldura(Player4);
                 }
                 break;
                 #endregion
