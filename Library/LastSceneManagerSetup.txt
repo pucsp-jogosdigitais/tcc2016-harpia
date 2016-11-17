@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Pista 4 - Doceria da Violetta.unity
+- path: Assets/Scenes/Teste_Anim.unity
   isLoaded: 1
   isActive: 1
