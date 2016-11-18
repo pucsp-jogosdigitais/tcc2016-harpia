@@ -57,12 +57,14 @@
      <Compile Include="Assets\Asset UI\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Asset UI\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Scripts\AIScript.cs" />
+     <Compile Include="Assets\Scripts\AutodestruirAncoraScript.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\MathUtils.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\SplineController.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\SplineInterpolator.cs" />
      <Compile Include="Assets\Scripts\CaminhoScript.cs" />
      <Compile Include="Assets\Scripts\ControllerScript.cs" />
      <Compile Include="Assets\Scripts\DelayScript.cs" />
+     <Compile Include="Assets\Scripts\DelayScriptMissel.cs" />
      <Compile Include="Assets\Scripts\DesaparecerScript.cs" />
      <Compile Include="Assets\Scripts\Elementos da Pista\BalaScript.cs" />
      <Compile Include="Assets\Scripts\Elementos da Pista\BaleiroScript.cs" />
