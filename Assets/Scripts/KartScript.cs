@@ -31,6 +31,7 @@ public class KartScript : MonoBehaviour
     private bool PegouPUEspecial;
     public bool SomouTempoExtra = false;
     private bool AplicandoEfeitoCam = false;
+    private bool AplicandoEfeitoGlitch = false;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -81,8 +82,9 @@ public class KartScript : MonoBehaviour
     private float contRastro = 0;
     #endregion
 
-    public AudioClip Dano, PegaPowerUp, Andando;
+    public AudioClip Dano, PegaPowerUp, Andando, Explosao;
     public ParticleSystem Rastro, LevouDano, PegouPowerUp, ExplosaoMissel, Ganhou;
+    public UnityStandardAssets.ImageEffects.GlitchEffect EfeitoGlitch;
 
     void Start()
     {
@@ -580,7 +582,24 @@ public class KartScript : MonoBehaviour
                 Audio.PlayOneShot(Dano, 1);
             if (LevouDano != null)
                 LevouDano.Play();
+            else
+            {
+                if (!AplicandoEfeitoGlitch)
+                {
+                    AplicandoEfeitoGlitch = true;
+                    StartCoroutine(EfeitoCameraGlitch());
+                }
+            }
+
         }
+    }
+
+    private IEnumerator EfeitoCameraGlitch()
+    {
+        EfeitoGlitch.enabled = true;
+        yield return new WaitForSeconds(1.5f);
+        EfeitoGlitch.enabled = false;
+        AplicandoEfeitoGlitch = false;
     }
 
     private void foiAtingidoMissel()
@@ -588,9 +607,23 @@ public class KartScript : MonoBehaviour
         if (!imune)
         {
             lento = true;
+
+            Audio.PlayOneShot(Explosao, 1);
+            ExplosaoMissel.Play();
+
             if (Dano != null)
                 Audio.PlayOneShot(Dano, 1);
-            ExplosaoMissel.Play();
+
+            if (LevouDano != null)
+                LevouDano.Play();
+            else
+            {
+                if (!AplicandoEfeitoGlitch)
+                {
+                    AplicandoEfeitoGlitch = true;
+                    StartCoroutine(EfeitoCameraGlitch());
+                }
+            }
         }
     }
 

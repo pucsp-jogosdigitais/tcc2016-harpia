@@ -46,6 +46,7 @@ GameObject:
   - 4: {fileID: 442168}
   - 208: {fileID: 20884148}
   - 82: {fileID: 8259506}
+  - 114: {fileID: 11428400}
   m_Layer: 0
   m_Name: Prefab_Ancora
   m_TagString: Untagged
@@ -256,6 +257,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &11428400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe63d2d6846a542896f2bcd7c85afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!208 &20884148
 NavMeshObstacle:
   m_ObjectHideFlags: 1

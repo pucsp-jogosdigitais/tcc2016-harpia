@@ -38,8 +38,6 @@ public class ControllerScript : MonoBehaviour
         imgPos2 = imagensColocacao.transform.Find("Segundo").gameObject;
         imgPos3 = imagensColocacao.transform.Find("Terceiro").gameObject;
         imgPos4 = imagensColocacao.transform.Find("Quarto").gameObject;
-
-        Player = " Player1";
     }
 
     void Update()

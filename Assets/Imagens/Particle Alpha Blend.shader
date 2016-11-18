@@ -72,7 +72,7 @@ Category {
 				#endif
 				float2 coord = float2(i.texcoord.x-_Time.y,i.texcoord.y);
 
-				_TintColor = fixed4(cos(_Time.x)+1, cos(_Time.y)+1, sin(_Time.y),0.5f);
+				_TintColor = fixed4(cos(_Time.y)+0.3f, cos(_Time.w)+1, sin(_Time.y)+1,0.5f);
 				fixed4 col = 3.0f * i.color * _TintColor * tex2D(_MainTex, coord)* tex2D(_MaskTex, i.texcoord);
 				UNITY_APPLY_FOG(i.fogCoord, col);
 				return col;

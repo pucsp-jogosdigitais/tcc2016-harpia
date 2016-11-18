@@ -32,10 +32,14 @@ public class GerenciadorScript : MonoBehaviour
     private bool Iniciou = false;
     private int contAI;
     public Image Ready, img1, img2, img3, Go;
+    public AudioSource Audio;
+    public AudioClip AudioContagem, AudioGo, MusicaTema, AudioQuartoLugar, AudioTerceiroLugar, AudioPrimeiroSegundoLugar;
 
     // Use this for initialization
     void Start()
     {
+        Audio.PlayOneShot(MusicaTema, 0.2f);
+
         numeroJogadores = Escolhas.Numjogadores;
         player1 = Escolhas.player1;
         player2 = Escolhas.player2;
