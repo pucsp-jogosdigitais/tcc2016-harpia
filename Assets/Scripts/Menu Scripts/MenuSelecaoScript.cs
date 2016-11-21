@@ -2,29 +2,35 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class MenuSelecaoScript : MonoBehaviour {
 
     #region Variáveis
     int numero;
     public GameObject PainelCena, PainelLoading;
+    public GameObject Ponto1, Ponto2, Ponto3;
     public GameObject Painel1P, Painel2P, Painel3P, Painel4P;
     private string level = "Pista 4 - Doceria da Violetta";
-    private string Player1, Player2, Player3, Player4;
-    private bool p1selecionou, p2selecionou, p3selecionou, p4selecionou;
+    public string Player1, Player2, Player3, Player4;
+    public bool p1selecionou, p2selecionou, p3selecionou, p4selecionou;
+    public bool p1PodeSelecionar, p2PodeSelecionar, p3PodeSelecionar, p4PodeSelecionar;
     private bool CarregarCena;
     private float inputP1, inputP2, inputP3, inputP4;
     private MolduraScript MoldP1, MoldP2, MoldP3, MoldP4;
     private PainelScript Aux;
     private AsyncOperation async;
     public Texture ProgressBarFull;
+    private bool NoLoading;
+    private float count;
+    private GerenciaSelecaoScript GerenciadorPainel;
     #endregion
 
     void Start()
     {
         PainelLoading.SetActive(false);
         PainelCena.SetActive(true);
-
+        NoLoading = false;
         p1selecionou = false;
         p2selecionou = false;
         p3selecionou = false;
@@ -38,6 +44,7 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 1:
                 {
                     Painel1P.SetActive(true);
+                    GerenciadorPainel = Painel1P.GetComponent<GerenciaSelecaoScript>();
                     p2selecionou = true;
                     p3selecionou = true;
                     p4selecionou = true;
@@ -55,6 +62,7 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 2:
                 {
                     Painel2P.SetActive(true);
+                    GerenciadorPainel = Painel2P.GetComponent<GerenciaSelecaoScript>();
                     p3selecionou = true;
                     p4selecionou = true;
                     Player1 = "Violetta";
@@ -73,6 +81,7 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 3:
                 {
                     Painel3P.SetActive(true);
+                    GerenciadorPainel = Painel3P.GetComponent<GerenciaSelecaoScript>();
                     p4selecionou = true;
                     Player1 = "Violetta";
                     Player2 = "Ayah";
@@ -92,6 +101,7 @@ public class MenuSelecaoScript : MonoBehaviour {
             case 4:
                 {
                     Painel4P.SetActive(true);
+                    GerenciadorPainel = Painel4P.GetComponent<GerenciaSelecaoScript>();
                     Player1 = "Violetta";
                     Player2 = "Ayah";
                     Player3 = "Momoto";
@@ -114,29 +124,36 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Confirmar/PowerUp Comum Player1"))
-            ConfirmaPlayer1();
+        if (!NoLoading)
+        {
+            if (Input.GetButtonDown("Confirmar/PowerUp Comum Player1"))
+                ConfirmaPlayer1();
 
-        if (Input.GetButtonDown("Confirmar/PowerUp Comum Player2"))
-            ConfirmaPlayer2();
+            if (Input.GetButtonDown("Confirmar/PowerUp Comum Player2"))
+                ConfirmaPlayer2();
 
-        if (Input.GetButtonDown("Confirmar/PowerUp Comum Player3"))
-            ConfirmaPlayer3();
+            if (Input.GetButtonDown("Confirmar/PowerUp Comum Player3"))
+                ConfirmaPlayer3();
 
-        if (Input.GetButtonDown("Confirmar/PowerUp Comum Player4"))
-            ConfirmaPlayer4();
+            if (Input.GetButtonDown("Confirmar/PowerUp Comum Player4"))
+                ConfirmaPlayer4();
 
-        if (Input.GetButtonDown("Voltar/PowerUp Especial Player1"))
-            VoltarMenu();
+            if (Input.GetButtonDown("Voltar/PowerUp Especial Player1"))
+                VoltarMenu();
 
-        if (Input.GetButtonDown("Voltar/PowerUp Especial Player2"))
-            VoltarMenu();
+            if (Input.GetButtonDown("Voltar/PowerUp Especial Player2"))
+                VoltarMenu();
 
-        if (Input.GetButtonDown("Voltar/PowerUp Especial Player3"))
-            VoltarMenu();
+            if (Input.GetButtonDown("Voltar/PowerUp Especial Player3"))
+                VoltarMenu();
 
-        if (Input.GetButtonDown("Voltar/PowerUp Especial Player4"))
-            VoltarMenu();
+            if (Input.GetButtonDown("Voltar/PowerUp Especial Player4"))
+                VoltarMenu();
+        }
+        else
+        {
+
+        }
     }
 	
 	void myUpdate ()
@@ -202,7 +219,6 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     private string Mover (string Atual, float Direcao)
     {
-        print(Atual +", "+ Direcao);
         switch (Atual)
         {
             #region Atual é Violetta
@@ -260,8 +276,6 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     IEnumerator CarregarNovaCena()
     {
-        //espera 3 segundos
-        //yield return new WaitForSeconds(5);
         PainelCena.SetActive(false);
         PainelLoading.SetActive(true);
 
@@ -271,6 +285,39 @@ public class MenuSelecaoScript : MonoBehaviour {
         // While the asynchronous operation to load the new scene is not yet complete, continue waiting until it's done.
         while (!async.isDone)
         {
+            count += Time.deltaTime / Time.timeScale;
+            switch ((int)count)
+            {
+                case 0:
+                    {
+                        Ponto1.SetActive(true);
+                        Ponto2.SetActive(false);
+                        Ponto3.SetActive(false);
+                    }
+                    break;
+                case 1:
+                    {
+                        Ponto1.SetActive(true);
+                        Ponto2.SetActive(true);
+                        Ponto3.SetActive(false);
+                    }
+                    break;
+                case 2:
+                    {
+                        Ponto1.SetActive(true);
+                        Ponto2.SetActive(true);
+                        Ponto3.SetActive(true);
+                    }
+                    break;
+                case 3:
+                    {
+                        Ponto1.SetActive(false);
+                        Ponto2.SetActive(false);
+                        Ponto3.SetActive(false);
+                        count = 0;
+                    }
+                    break;
+            }
             yield return null;
         }
     }
@@ -309,9 +356,13 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     public void ConfirmaPlayer1()
     {
-        if (!p1selecionou)
+        if (p1PodeSelecionar)
         {
-            p1selecionou = true;
+            if (!p1selecionou)
+            {
+                p1selecionou = true;
+                GerenciadorPainel.Selecionados.Add(Player1);
+            }
         }
     }
 
@@ -337,9 +388,13 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     public void ConfirmaPlayer2()
     {
-        if (!p2selecionou)
+        if (p2PodeSelecionar)
         {
-            p2selecionou = true;
+            if (!p2selecionou)
+            {
+                p2selecionou = true;
+                GerenciadorPainel.Selecionados.Add(Player2);
+            }
         }
     }
 
@@ -365,9 +420,13 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     public void ConfirmaPlayer3()
     {
-        if (!p3selecionou)
+        if (p3PodeSelecionar)
         {
-            p3selecionou = true;
+            if (!p3selecionou)
+            {
+                p3selecionou = true;
+                GerenciadorPainel.Selecionados.Add(Player3);
+            }
         }
     }
 
@@ -393,10 +452,14 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     public void ConfirmaPlayer4()
     {
-        if (!p4selecionou)
+        if (p4PodeSelecionar)
         {
-            p4selecionou = true;
-            MoldP4.AtualizaMoldura(Player4);
+            if (!p4selecionou)
+            {
+                p4selecionou = true;
+                MoldP4.AtualizaMoldura(Player4);
+                GerenciadorPainel.Selecionados.Add(Player4);
+            }
         }
     }
 
