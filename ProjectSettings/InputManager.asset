@@ -163,7 +163,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 0
-    axis: 0
+    axis: 3
     joyNum: 2
   - serializedVersion: 3
     m_Name: Volante Player2
@@ -307,7 +307,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 0
-    axis: 0
+    axis: 3
     joyNum: 3
   - serializedVersion: 3
     m_Name: Volante Player3
@@ -451,7 +451,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 0
-    axis: 0
+    axis: 3
     joyNum: 4
   - serializedVersion: 3
     m_Name: Volante Player4

@@ -32,7 +32,6 @@ public class MenuSelecaoScript : MonoBehaviour {
         CarregarCena = false;
 
         numero = Escolhas.Numjogadores;
-        numero = 4;
         switch (numero)
         {
             #region Caso tenha um jogador selecionando
@@ -126,6 +125,18 @@ public class MenuSelecaoScript : MonoBehaviour {
 
         if (Input.GetButtonDown("Confirmar/PowerUp Comum Player4"))
             ConfirmaPlayer4();
+
+        if (Input.GetButtonDown("Voltar/PowerUp Especial Player1"))
+            VoltarMenu();
+
+        if (Input.GetButtonDown("Voltar/PowerUp Especial Player2"))
+            VoltarMenu();
+
+        if (Input.GetButtonDown("Voltar/PowerUp Especial Player3"))
+            VoltarMenu();
+
+        if (Input.GetButtonDown("Voltar/PowerUp Especial Player4"))
+            VoltarMenu();
     }
 	
 	void myUpdate ()
@@ -191,6 +202,7 @@ public class MenuSelecaoScript : MonoBehaviour {
 
     private string Mover (string Atual, float Direcao)
     {
+        print(Atual +", "+ Direcao);
         switch (Atual)
         {
             #region Atual é Violetta
@@ -272,7 +284,10 @@ public class MenuSelecaoScript : MonoBehaviour {
         }
     }
 
-
+    public void VoltarMenu()
+    {
+        SceneManager.LoadScene("Menu Principal");
+    }
 
     public void DireitaPlayer1()
     {
@@ -315,7 +330,7 @@ public class MenuSelecaoScript : MonoBehaviour {
     {
         if (!p2selecionou)
         {
-            Mover(Player2, -1);
+            Player2 = Mover(Player2, -1);
             MoldP2.AtualizaMoldura(Player2);
         }
     }
@@ -343,7 +358,7 @@ public class MenuSelecaoScript : MonoBehaviour {
     {
         if (!p3selecionou)
         {
-            Mover(Player3, -1);
+            Player3 = Mover(Player3, -1);
             MoldP3.AtualizaMoldura(Player3);
         }
     }
@@ -371,7 +386,7 @@ public class MenuSelecaoScript : MonoBehaviour {
     {
         if (!p4selecionou)
         {
-            Mover(Player4, -1);
+            Player4 = Mover(Player4, -1);
             MoldP4.AtualizaMoldura(Player4);
         }
     }

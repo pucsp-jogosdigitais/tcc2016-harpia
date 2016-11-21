@@ -160,11 +160,11 @@
     <None Include="Assets\Asset UI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Asset UI\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Asset UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
-    <None Include="Assets\Imagens\Particle Alpha Blend.shader" />
-    <None Include="Assets\Imagens\Sprites-Default.shader" />
-    <None Include="Assets\Imagens\UI-Default.shader" />
     <None Include="Assets\Shaders\Neon.shader" />
+    <None Include="Assets\Shaders\Particle Alpha Blend.shader" />
     <None Include="Assets\Shaders\Pirulito.shader" />
+    <None Include="Assets\Shaders\Sprites-Default.shader" />
+    <None Include="Assets\Shaders\UI-Default.shader" />
     <None Include="Assets\Shaders\WaterSonic.shader" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />

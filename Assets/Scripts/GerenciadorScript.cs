@@ -38,7 +38,7 @@ public class GerenciadorScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Audio.PlayOneShot(MusicaTema, 0.2f);
+        Audio.PlayOneShot(MusicaTema, 0.4f);
 
         numeroJogadores = Escolhas.Numjogadores;
         player1 = Escolhas.player1;
@@ -150,7 +150,7 @@ public class GerenciadorScript : MonoBehaviour
             contAI = 0;
             foreach (KartScript script in ScriptsKarts)
             {
-                if ((script.ProgNoFim >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
+                if ((script.ProgNoFim >= progTotal) && (script.lap > Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                 {
                     script.Terminou = true;
                     script.Ganhou.Play();
@@ -276,24 +276,28 @@ public class GerenciadorScript : MonoBehaviour
                         {
                             Ready.gameObject.SetActive(false);
                             img3.gameObject.SetActive(true);
+                            Audio.PlayOneShot(AudioContagem);
                         }
                         break;
                     case 2:
                         {
                             img3.gameObject.SetActive(false);
                             img2.gameObject.SetActive(true);
+                            Audio.PlayOneShot(AudioContagem);
                         }
                             break;
                     case 3:
                         {
                             img2.gameObject.SetActive(false);                            
                             img1.gameObject.SetActive(true);
+                            Audio.PlayOneShot(AudioContagem);
                         }
                         break;
                     case 4:
                         {
                             img1.gameObject.SetActive(false);
                             Go.gameObject.SetActive(true);
+                            Audio.PlayOneShot(AudioGo);
                         }
                             break;
                 }

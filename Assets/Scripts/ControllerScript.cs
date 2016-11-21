@@ -103,7 +103,7 @@ public class ControllerScript : MonoBehaviour
 
     private void InserirInterface() //Atualiza a interface do jogador
     {
-        Interface.setVolta(Gerenciador.Laps);
+        Interface.setVolta(Kart.lap);
         Interface.setVelocidade(Mathf.RoundToInt(Kart.KartRigidbody.velocity.magnitude * 1.9f));
         #region Imagem de colocacao
         switch (Kart.posicao)
