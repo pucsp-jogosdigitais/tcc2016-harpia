@@ -306,17 +306,11 @@ public class KartScript : MonoBehaviour
         #endregion
     }
 
-    private IEnumerator Delay(int segundos, string tipo)
+    private IEnumerator DelayLapCounter()
     {
-        yield return new WaitForSeconds(segundos);
-        switch (tipo)
-        {
-            case "colisão":
-                {
-                    jaContou = false;
-                }
-                break;
-        }
+        yield return new WaitForSeconds(60);
+        jaContou = false;
+
     }
 
     private IEnumerator EfeitoCamera()
@@ -888,14 +882,11 @@ public class KartScript : MonoBehaviour
         #region Contador de Voltas
         else if (Objeto.gameObject.CompareTag("LapCounter"))
         {
-            if (jaContou)
-            {
-                StartCoroutine(Delay(50, "colisão"));
-            }
-            else
+            if (!jaContou)
             {
                 lap++;
                 jaContou = true;
+                StartCoroutine(DelayLapCounter());
             }
         }
         #endregion
