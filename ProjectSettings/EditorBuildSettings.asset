@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tela de Logos.unity
+  - enabled: 1
     path: Assets/Scenes/Tela Inicial.unity
   - enabled: 1
     path: Assets/Scenes/Menu Principal.unity
@@ -14,9 +16,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Cidade dos Competidores.unity
   - enabled: 0
-    path: Assets/Scenes/Pista 1 - Geleiras de Jeshi.unity
-  - enabled: 0
     path: Assets/Scenes/Pista 2 - Mina do Momoto.unity
+  - enabled: 0
+    path: Assets/Scenes/Pista 1 - Geleiras de Jeshi.unity
   - enabled: 0
     path: Assets/Scenes/Pista 3 - Noite da Ayah.unity
   - enabled: 1

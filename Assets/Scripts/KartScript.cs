@@ -75,7 +75,8 @@ public class KartScript : MonoBehaviour
     public int powerUpTipo = 0;
     private Vector3 PowerUpPosition;
     private Quaternion PowerUpRotation;
-    private float contTravou = 0;
+    private float contTravou = 0, contTravou2 = 0;
+    private bool FazendoEfeitoColidir;
     public bool Jogando = false;
     public int ContCP = 0;
     private bool deixaRastro = false;
@@ -480,6 +481,17 @@ public class KartScript : MonoBehaviour
 
     private void VerificaTravado() //Verifica se o jogador está travado/parado a mais de 5 segundos
     {
+        if (!RodaFDir.isGrounded && !RodaFEsq.isGrounded && !RodaTDir.isGrounded && !RodaTEsq.isGrounded)
+        {
+            contTravou2 += Time.deltaTime / Time.timeScale;
+            if (contTravou2 > 2)
+                voltarNoCheckpoint();
+        }
+        else
+        {
+            contTravou2 = 0;
+        }
+
         if (KartRigidbody.velocity.magnitude < 1.5f)
         {
             contTravou += Time.deltaTime / Time.timeScale;
@@ -597,9 +609,26 @@ public class KartScript : MonoBehaviour
     private IEnumerator EfeitoCameraGlitch()
     {
         EfeitoGlitch.enabled = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         EfeitoGlitch.enabled = false;
         AplicandoEfeitoGlitch = false;
+    }
+
+    private IEnumerator EfeitoAoColidir()
+    {
+        if (LevouDano != null)
+            LevouDano.Play();
+        else
+        {
+            if (!AplicandoEfeitoGlitch)
+            {
+                AplicandoEfeitoGlitch = true;
+                StartCoroutine(EfeitoCameraGlitch());
+            }
+        }
+        yield return new WaitForSeconds(5f);
+        FazendoEfeitoColidir = false;
+
     }
 
     private void foiAtingidoMissel()
@@ -760,7 +789,19 @@ public class KartScript : MonoBehaviour
 
     #endregion
 
-    #region Triggers
+    #region Triggers e Colisoes
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Karts")
+        {
+            if (!FazendoEfeitoColidir)
+            {
+                StartCoroutine(EfeitoAoColidir());
+                FazendoEfeitoColidir = true;
+            }
+        }
+    }
 
     private void OnTriggerExit(Collider Objeto)
     {

@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\PowerUp Scripts\MisselTeleguiadoScript.cs" />
     <Compile Include="Assets\Scripts\PowerUp Scripts\PowerUpBoxFalsaScript.cs" />
     <Compile Include="Assets\Scripts\PowerUp Scripts\PowerUpBoxScript.cs" />
+    <Compile Include="Assets\Scripts\TelaLogoScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset UI\Fonts\Jupiter\LICENSE.txt" />

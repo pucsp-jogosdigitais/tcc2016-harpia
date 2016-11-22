@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GerenciadorScript : MonoBehaviour
 {
-    public int Laps = 1;
+    public int Laps = 3;
     public bool Fim;
     public int TempoPreview = 25;
     public int progTotal;
@@ -48,7 +48,7 @@ public class GerenciadorScript : MonoBehaviour
 
         if (numeroJogadores == 0)
         {
-            numeroJogadores = 1;
+            numeroJogadores = 2;
             player1 = "Ayah";
             player2 = "Jeshi";
             player3 = "Violetta";
@@ -127,7 +127,7 @@ public class GerenciadorScript : MonoBehaviour
         {
             MostraRaking();
 
-            if (Input.GetKey(KeyCode.Space)) //Interrompe o Preview
+            if (Input.GetKey(KeyCode.Space)) //Interrompe o Ranking
             {
                 VoltaMenu();
             }
