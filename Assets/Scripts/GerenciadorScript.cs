@@ -150,7 +150,7 @@ public class GerenciadorScript : MonoBehaviour
             contAI = 0;
             foreach (KartScript script in ScriptsKarts)
             {
-                if ((script.ProgNoFim >= progTotal) && (script.lap > Laps) && (script.ContCP >= numTotalCheckPoints / 2))
+                if ((script.ProgNoFim >= progTotal) && (script.lap >= Laps) && (script.ContCP >= numTotalCheckPoints / 2))
                 {
                     script.Terminou = true;
                     script.Ganhou.Play();
