@@ -4739,7 +4739,7 @@ MonoBehaviour:
   BotInicialCustom: {fileID: 2025370712}
   BotInicialCreditos: {fileID: 369611481}
   BotInicialControles: {fileID: 1186098636}
-  texturaVideo: {fileID: 15200000, guid: 8c02d4f39ab28c146bab78fcc40d6500, type: 3}
+  texturaVideo: {fileID: 15200000, guid: d5665702e7ea2e24d8ca5bb480627fa3, type: 3}
   ControlesP1: {fileID: 278244727}
   ControlesP2: {fileID: 888953083}
   ControlesP3: {fileID: 1160424416}
@@ -6799,7 +6799,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: f73ed212c46a1b244b0bbf20c68b9901, type: 2}
+  m_Material: {fileID: 2100000, guid: 25eb89f676ad61f448f7d0a7093b3c4b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
