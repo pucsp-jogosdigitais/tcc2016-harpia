@@ -1912,6 +1912,7 @@ GameObject:
   - 222: {fileID: 678017646}
   - 114: {fileID: 678017645}
   - 114: {fileID: 678017644}
+  - 114: {fileID: 678017647}
   m_Layer: 5
   m_Name: Custom
   m_TagString: Untagged
@@ -1957,7 +1958,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62352943, b: 1, a: 0.64705884}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -2022,6 +2023,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 678017642}
+--- !u!114 &678017647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678017642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742871577
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1028048168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6643,7 +6655,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 25eb89f676ad61f448f7d0a7093b3c4b, type: 2}
+  m_Material: {fileID: 2100000, guid: f73ed212c46a1b244b0bbf20c68b9901, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
