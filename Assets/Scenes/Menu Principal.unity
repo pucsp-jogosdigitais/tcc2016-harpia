@@ -486,6 +486,7 @@ GameObject:
   - 222: {fileID: 295031309}
   - 114: {fileID: 295031308}
   - 114: {fileID: 295031307}
+  - 114: {fileID: 295031310}
   m_Layer: 5
   m_Name: Creditos
   m_TagString: Untagged
@@ -531,7 +532,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62352943, b: 1, a: 0.64705884}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -596,6 +597,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295031305}
+--- !u!114 &295031310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295031305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &357799792
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +813,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -877,6 +889,7 @@ GameObject:
   - 222: {fileID: 372796733}
   - 114: {fileID: 372796732}
   - 114: {fileID: 372796731}
+  - 114: {fileID: 372796734}
   m_Layer: 5
   m_Name: Quatro
   m_TagString: Untagged
@@ -922,7 +935,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -987,6 +1000,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372796729}
+--- !u!114 &372796734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372796729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427214227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1106,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -1246,7 +1270,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -345.5, y: 0}
-  m_SizeDelta: {x: -779, y: 0}
+  m_SizeDelta: {x: -909, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &459712959
 MonoBehaviour:
@@ -1292,6 +1316,7 @@ GameObject:
   - 222: {fileID: 481163637}
   - 114: {fileID: 481163636}
   - 114: {fileID: 481163635}
+  - 114: {fileID: 481163638}
   m_Layer: 5
   m_Name: Quatro
   m_TagString: Untagged
@@ -1337,7 +1362,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -1402,6 +1427,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481163633}
+--- !u!114 &481163638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481163633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &495598821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1827,7 @@ GameObject:
   - 222: {fileID: 673951342}
   - 114: {fileID: 673951341}
   - 114: {fileID: 673951340}
+  - 114: {fileID: 673951343}
   m_Layer: 5
   m_Name: Controles
   m_TagString: Untagged
@@ -1836,7 +1873,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62352943, b: 1, a: 0.64705884}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -1901,6 +1938,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673951338}
+--- !u!114 &673951343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673951338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &678017642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1984,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.8021745}
   m_AnchorMax: {x: 1, y: 0.95300007}
   m_AnchoredPosition: {x: -911.46344, y: 370.03552}
-  m_SizeDelta: {x: 1822.9268, y: 147.80911}
+  m_SizeDelta: {x: 1952.9268, y: 147.80911}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &678017644
 MonoBehaviour:
@@ -2224,7 +2272,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -2604,6 +2652,7 @@ GameObject:
   - 222: {fileID: 853947113}
   - 114: {fileID: 853947112}
   - 114: {fileID: 853947111}
+  - 114: {fileID: 853947114}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -2649,7 +2698,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62352943, b: 1, a: 0.64705884}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -2714,6 +2763,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853947109}
+--- !u!114 &853947114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853947109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &854987142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,7 +3140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1028048168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3116,6 +3176,7 @@ GameObject:
   - 222: {fileID: 1034453773}
   - 114: {fileID: 1034453772}
   - 114: {fileID: 1034453771}
+  - 114: {fileID: 1034453774}
   m_Layer: 5
   m_Name: Dois
   m_TagString: Untagged
@@ -3161,7 +3222,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -3226,6 +3287,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1034453769}
+--- !u!114 &1034453774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034453769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036214569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,6 +3497,7 @@ GameObject:
   - 222: {fileID: 1076544371}
   - 114: {fileID: 1076544370}
   - 114: {fileID: 1076544369}
+  - 114: {fileID: 1076544372}
   m_Layer: 5
   m_Name: Tres
   m_TagString: Untagged
@@ -3470,7 +3543,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -3535,6 +3608,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076544367}
+--- !u!114 &1076544372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1076544367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1080893891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3630,7 @@ GameObject:
   - 222: {fileID: 1080893895}
   - 114: {fileID: 1080893894}
   - 114: {fileID: 1080893893}
+  - 114: {fileID: 1080893896}
   m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
@@ -3591,7 +3676,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -3656,6 +3741,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080893891}
+--- !u!114 &1080893896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080893891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096279761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,6 +4312,7 @@ GameObject:
   - 222: {fileID: 1186098638}
   - 114: {fileID: 1186098637}
   - 114: {fileID: 1186098636}
+  - 114: {fileID: 1186098639}
   m_Layer: 5
   m_Name: Um
   m_TagString: Untagged
@@ -4238,7 +4335,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.79849356}
   m_AnchorMax: {x: 1, y: 0.95300007}
-  m_AnchoredPosition: {x: -879, y: 164}
+  m_AnchoredPosition: {x: -814, y: 164}
   m_SizeDelta: {x: 910, y: 152}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1186098636
@@ -4261,7 +4358,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -4326,6 +4423,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1186098634}
+--- !u!114 &1186098639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1186098634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1190663198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,7 +4666,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.87273896, y: 0.81544274}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 671, y: 142.91}
+  m_AnchoredPosition: {x: 565, y: -36}
   m_SizeDelta: {x: 440, y: 436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339417225
@@ -4797,6 +4905,7 @@ GameObject:
   - 222: {fileID: 1430778850}
   - 114: {fileID: 1430778849}
   - 114: {fileID: 1430778848}
+  - 114: {fileID: 1430778851}
   m_Layer: 5
   m_Name: Tres
   m_TagString: Untagged
@@ -4842,7 +4951,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -4907,6 +5016,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430778846}
+--- !u!114 &1430778851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1430778846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431721000
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,7 +5249,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -5286,6 +5406,7 @@ GameObject:
   - 222: {fileID: 1506332399}
   - 114: {fileID: 1506332398}
   - 114: {fileID: 1506332397}
+  - 114: {fileID: 1506332400}
   m_Layer: 5
   m_Name: Dois
   m_TagString: Untagged
@@ -5331,7 +5452,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -5396,6 +5517,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1506332395}
+--- !u!114 &1506332400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1506332395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1534467480
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,7 +5919,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -6093,6 +6225,7 @@ GameObject:
   - 222: {fileID: 1766461696}
   - 114: {fileID: 1766461695}
   - 114: {fileID: 1766461694}
+  - 114: {fileID: 1766461697}
   m_Layer: 5
   m_Name: Voltar
   m_TagString: Untagged
@@ -6138,7 +6271,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -6203,6 +6336,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766461692}
+--- !u!114 &1766461697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1766461692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773651497
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,6 +6901,7 @@ GameObject:
   - 222: {fileID: 2025370714}
   - 114: {fileID: 2025370713}
   - 114: {fileID: 2025370712}
+  - 114: {fileID: 2025370715}
   m_Layer: 5
   m_Name: Um
   m_TagString: Untagged
@@ -6779,8 +6924,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0.79849356}
   m_AnchorMax: {x: 1, y: 0.95300007}
-  m_AnchoredPosition: {x: -909.99994, y: 368.75012}
-  m_SizeDelta: {x: 1820, y: 151.62955}
+  m_AnchoredPosition: {x: -844.9999, y: 368.75012}
+  m_SizeDelta: {x: 1755, y: 151.62955}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2025370712
 MonoBehaviour:
@@ -6802,7 +6947,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.62559474, b: 1, a: 0.647}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0}
     m_ColorMultiplier: 1
@@ -6867,6 +7012,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2025370710}
+--- !u!114 &2025370715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2025370710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a926a7d227de144b8135d4b686e2a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2055172856
 GameObject:
   m_ObjectHideFlags: 0
