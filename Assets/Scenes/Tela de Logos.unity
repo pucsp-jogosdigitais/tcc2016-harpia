@@ -222,7 +222,7 @@ GameObject:
   - 4: {fileID: 1093821930}
   - 114: {fileID: 1093821929}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MenuLogotipoScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
