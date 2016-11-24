@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Pista 4 - Doceria da Violetta.unity
+- path: Assets/Scenes/SelecaoPlayers.unity
   isLoaded: 1
   isActive: 1
