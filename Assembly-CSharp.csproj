@@ -45,17 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset UI\Scripts\ActiveStateToggler.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\ApplicationManager.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\ChangeColor.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\DragMe.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\DragPanel.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\DropMe.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\PanelManager.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\ResizePanel.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\ScrollDetailTexture.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\ShowSliderValue.cs" />
-     <Compile Include="Assets\Asset UI\Scripts\TiltWindow.cs" />
      <Compile Include="Assets\Scripts\AIScript.cs" />
      <Compile Include="Assets\Scripts\AnimaBotaoScript.cs" />
      <Compile Include="Assets\Scripts\AutodestruirAncoraScript.cs" />
@@ -125,11 +114,9 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
-     <None Include="Assets\Asset UI\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
-     <None Include="Assets\Asset UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\Shaders\Pirulito.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
@@ -146,7 +133,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
-     <None Include="Assets\Asset UI\Materials\UI-Default-No-Alpha.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />

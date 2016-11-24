@@ -4739,7 +4739,7 @@ MonoBehaviour:
   BotInicialCustom: {fileID: 2025370712}
   BotInicialCreditos: {fileID: 369611481}
   BotInicialControles: {fileID: 1186098636}
-  texturaVideo: {fileID: 15200000, guid: d5665702e7ea2e24d8ca5bb480627fa3, type: 3}
+  texturaVideo: {fileID: 15200000, guid: 95acce8b9d1898c46b4fa74ac091b9b6, type: 3}
   ControlesP1: {fileID: 278244727}
   ControlesP2: {fileID: 888953083}
   ControlesP3: {fileID: 1160424416}
