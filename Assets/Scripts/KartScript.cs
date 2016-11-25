@@ -371,8 +371,13 @@ public class KartScript : MonoBehaviour
 
     private void movimentarRodas() //Movimento das meshs das rodas
     {
+		Vector3 pos;
+		Quaternion rot;
+		RodaFDir.GetWorldPose (out pos, out rot);
+		RodaFDirMesh.transform.position = pos;
+		RodaFDirMesh.transform.rotation = rot;
         //Faz as rodas rodarem conforme o carro anda
-        RodaFDirMesh.Rotate(RodaFDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
+      // RodaFDirMesh.Rotate(RodaFDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaFEsqMesh.Rotate(RodaFEsq.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaTDirMesh.Rotate(RodaTDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaTEsqMesh.Rotate(RodaTEsq.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
@@ -380,7 +385,7 @@ public class KartScript : MonoBehaviour
         //Faz as rodas dianteiras virarem quando o volante vira
         auxRotX = RodaFDirMesh.localEulerAngles.x;
         auxRotZ = RodaFDirMesh.localEulerAngles.z;
-        RodaFDirMesh.localEulerAngles = new Vector3(auxRotX, RodaFDir.steerAngle, auxRotZ);
+        //RodaFDirMesh.localEulerAngles = new Vector3(auxRotX, RodaFDir.steerAngle, auxRotZ);
         auxRotX = RodaFEsqMesh.localEulerAngles.x;
         auxRotZ = RodaFEsqMesh.localEulerAngles.z;
         RodaFEsqMesh.localEulerAngles = new Vector3(auxRotX, RodaFEsq.steerAngle, auxRotZ);
