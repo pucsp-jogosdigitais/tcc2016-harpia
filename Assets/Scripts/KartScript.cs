@@ -376,13 +376,7 @@ public class KartScript : MonoBehaviour
         RodaFEsqMesh.Rotate(RodaFEsq.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaTDirMesh.Rotate(RodaTDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaTEsqMesh.Rotate(RodaTEsq.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
-
-        //Faz as rodas mudarem de posição de acordo com a suspensão
-        //RodaFDirMesh.transform.position = RodaFDir.transform.position - new Vector3(0, (RodaFDir.radius), 0);
-        //RodaFEsqMesh.transform.position = RodaFEsq.transform.position - new Vector3(0, (RodaFEsq.radius), 0);
-        //RodaTDirMesh.transform.position = RodaTDir.transform.position - new Vector3(0, (RodaTDir.radius), 0);
-        //RodaTEsqMesh.transform.position = RodaTEsq.transform.position - new Vector3(0, (RodaTEsq.radius), 0);
-      
+              
         //Faz as rodas dianteiras virarem quando o volante vira
         auxRotX = RodaFDirMesh.localEulerAngles.x;
         auxRotZ = RodaFDirMesh.localEulerAngles.z;
@@ -391,13 +385,21 @@ public class KartScript : MonoBehaviour
         auxRotZ = RodaFEsqMesh.localEulerAngles.z;
         RodaFEsqMesh.localEulerAngles = new Vector3(auxRotX, RodaFEsq.steerAngle, auxRotZ);
 
+
+        //Faz as rodas mudarem de posição de acordo com a suspensão
+        //RodaFDirMesh.transform.position = RodaFDir.transform.position - new Vector3(0, (RodaFDir.radius), 0);
+        //RodaFEsqMesh.transform.position = RodaFEsq.transform.position - new Vector3(0, (RodaFEsq.radius), 0);
+        //RodaTDirMesh.transform.position = RodaTDir.transform.position - new Vector3(0, (RodaTDir.radius), 0);
+        //RodaTEsqMesh.transform.position = RodaTEsq.transform.position - new Vector3(0, (RodaTEsq.radius), 0);
+
+        /*
         //Faz as rodas traseiras virarem quando o volante vira      
         auxRotX = RodaTDirMesh.localEulerAngles.x;
         auxRotZ = RodaTDirMesh.localEulerAngles.z;
         RodaTDirMesh.localEulerAngles = new Vector3(auxRotX, RodaTDir.steerAngle, auxRotZ);
         auxRotX = RodaTEsqMesh.localEulerAngles.x;
         auxRotZ = RodaTEsqMesh.localEulerAngles.z;
-        RodaTEsqMesh.localEulerAngles = new Vector3(auxRotX, RodaTEsq.steerAngle, auxRotZ);
+        RodaTEsqMesh.localEulerAngles = new Vector3(auxRotX, RodaTEsq.steerAngle, auxRotZ);*/
     }
 
     private void PersonalizaPersonagem()
