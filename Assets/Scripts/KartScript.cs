@@ -5,9 +5,12 @@ using System.Collections;
 public class KartScript : MonoBehaviour
 {
     public Camera CamKart;
+    private KartCameraScript ScriptCam;
     public AudioSource Audio;
     public InterfaceScript Interface;
     public string Nome;
+    public Animator Animacao;
+    public float AnimSide, AnimFront, TempoProvocacao;
     public int contProgresso;
     private int AuxContProg;
     public int lap = 0;
@@ -84,11 +87,13 @@ public class KartScript : MonoBehaviour
     #endregion
 
     public AudioClip Dano, PegaPowerUp, Andando, Explosao;
+    public float VolumeDano, VolumePegaPowerUp, VolumeAndando, VolumeExplosao;
     public ParticleSystem Rastro, LevouDano, PegouPowerUp, ExplosaoMissel, Ganhou;
     public UnityStandardAssets.ImageEffects.GlitchEffect EfeitoGlitch;
 
     void Start()
     {
+        ScriptCam = CamKart.GetComponent<KartCameraScript>();
         KartRigidbody = GetComponent<Rigidbody>(); //Identifica e pega a referencia do rigidbody do carro 
         KartRigidbody.centerOfMass = new Vector3(CenterOfMass.localPosition.x * transform.localScale.x,   //Ajusta o centro de massa do Kart
                                                  CenterOfMass.localPosition.y * transform.localScale.y ,
@@ -99,14 +104,23 @@ public class KartScript : MonoBehaviour
         PersonalizaPersonagem(); //Ajusta atributos de acordo com o tipo de personagem
         CooldownEspecial = 60;   //Define o tempo de recarga do powerup especial  
         if (Andando != null)
-            Audio.PlayOneShot(Andando, 0.6f);
+            Audio.PlayOneShot(Andando, VolumeAndando);
     }
 
     void Update()
     {
+        if (Terminou)
+            Animacao.SetBool("Comemoração", true);
+        else
+            Animacao.SetBool("Comemoração", false);
+
+        if (ScriptCam.cameraReversa)      
+            Animacao.SetBool("OlhandoParaTras", true);
+        else
+            Animacao.SetBool("OlhandoParaTras", false);
+
         if (Jogando)
-        {
-            
+        {            
             Peso();
             movimentarRodas(); //Movimenta as meshes de acordo com os colliders
             recargaEspecial(); //Conta o tempo de recarga do powerup especial
@@ -228,7 +242,12 @@ public class KartScript : MonoBehaviour
         {
             //angAtual = Mathf.Lerp(direcaoBaixaVel, direcaoAltaVel, auxVel);
             //angAtual *= direção;
-
+            if (direção > 0)
+                Animacao.SetFloat("side", -AnimSide);
+            if (direção < 0)
+                Animacao.SetFloat("side", AnimSide);
+            if (direção == 0)
+                Animacao.SetFloat("side", 0);
 
             RodaFDir.steerAngle = direção * 25;
             RodaFEsq.steerAngle = direção * 25;
@@ -240,6 +259,12 @@ public class KartScript : MonoBehaviour
 
     public void Direção(float rotaçãoAI)
     {
+        if (rotaçãoAI > 0)
+            Animacao.SetFloat("side", -AnimSide);
+        if (rotaçãoAI < 0)
+            Animacao.SetFloat("side", AnimSide);
+        if (rotaçãoAI == 0)
+            Animacao.SetFloat("side", 0);
         RodaFEsq.steerAngle = rotaçãoAI;
         RodaFDir.steerAngle = rotaçãoAI;
     }
@@ -315,6 +340,7 @@ public class KartScript : MonoBehaviour
 
     private IEnumerator EfeitoCamera()
     {
+        Animacao.SetFloat("front", -AnimFront);
         for (int i = 1; i <= 20; i++)
         {
             CamKart.fieldOfView = 60 + i;
@@ -327,6 +353,8 @@ public class KartScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         CamKart.fieldOfView = 60;
+
+        Animacao.SetFloat("front", 0);
         AplicandoEfeitoCam = false;
     }
 
@@ -585,7 +613,7 @@ public class KartScript : MonoBehaviour
         {
             lento = true;
             if (Dano != null)
-                Audio.PlayOneShot(Dano, 1);
+                Audio.PlayOneShot(Dano, VolumeDano);
             if (LevouDano != null)
                 LevouDano.Play();
             else
@@ -625,17 +653,24 @@ public class KartScript : MonoBehaviour
 
     }
 
+    private IEnumerator AnimacaoProvocacao()
+    {
+        Animacao.SetBool("Provocação", true);
+        yield return new WaitForSeconds(TempoProvocacao);
+        Animacao.SetBool("Provocação", false);
+    }
+
     private void foiAtingidoMissel()
     {
         if (!imune)
         {
             lento = true;
 
-            Audio.PlayOneShot(Explosao, 1);
+            Audio.PlayOneShot(Explosao, VolumeExplosao);
             ExplosaoMissel.Play();
 
             if (Dano != null)
-                Audio.PlayOneShot(Dano, 1);
+                Audio.PlayOneShot(Dano, VolumeDano);
 
             if (LevouDano != null)
                 LevouDano.Play();
@@ -715,6 +750,7 @@ public class KartScript : MonoBehaviour
                 break;*/
             #endregion
         }
+        StartCoroutine(AnimacaoProvocacao());
     }
 
     public void powerUpEspecial()
@@ -753,6 +789,7 @@ public class KartScript : MonoBehaviour
                #endregion
             }
             countEspecial = 0; //Inicia novamente a contagem do tempo de recarga
+            StartCoroutine(AnimacaoProvocacao());
         }
     }
 
@@ -852,7 +889,7 @@ public class KartScript : MonoBehaviour
             {
                 powerUpTipo = Random.Range(1, 6);
                 if (PegaPowerUp != null)
-                    Audio.PlayOneShot(PegaPowerUp, 1);
+                    Audio.PlayOneShot(PegaPowerUp, VolumePegaPowerUp);
                 PegouPowerUp.Play();
 
             }
