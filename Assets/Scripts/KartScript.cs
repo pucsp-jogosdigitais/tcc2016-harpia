@@ -374,9 +374,23 @@ public class KartScript : MonoBehaviour
 		Vector3 pos;
 		Quaternion rot;
 		RodaFDir.GetWorldPose (out pos, out rot);
-		RodaFDirMesh.transform.position = pos;
+		//RodaFDirMesh.transform.position = pos;
 		RodaFDirMesh.transform.rotation = rot;
-        //Faz as rodas rodarem conforme o carro anda
+
+		RodaFEsq.GetWorldPose (out pos, out rot);
+		//RodaFEsqMesh.transform.position = pos;
+		RodaFEsqMesh.transform.rotation = rot;
+
+		RodaTDir.GetWorldPose (out pos, out rot);
+		//RodaTDirMesh.transform.position = pos;
+		RodaTDirMesh.transform.rotation = rot;
+
+		RodaTEsq.GetWorldPose (out pos, out rot);
+		//RodaTEsqMesh.transform.position = pos;
+		RodaTEsqMesh.transform.rotation = rot;
+
+
+       /* //Faz as rodas rodarem conforme o carro anda
       // RodaFDirMesh.Rotate(RodaFDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaFEsqMesh.Rotate(RodaFEsq.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
         RodaTDirMesh.Rotate(RodaTDir.rpm * (60f * 360f * Time.deltaTime * Time.timeScale), 0, 0);
@@ -389,6 +403,7 @@ public class KartScript : MonoBehaviour
         auxRotX = RodaFEsqMesh.localEulerAngles.x;
         auxRotZ = RodaFEsqMesh.localEulerAngles.z;
         RodaFEsqMesh.localEulerAngles = new Vector3(auxRotX, RodaFEsq.steerAngle, auxRotZ);
+
 
 
         //Faz as rodas mudarem de posição de acordo com a suspensão
@@ -619,8 +634,9 @@ public class KartScript : MonoBehaviour
         if (!imune)
         {
             lento = true;
-            if (Dano != null)
-                Audio.PlayOneShot(Dano, VolumeDano);
+			if (Dano != null)
+				Audio.PlayOneShot(Dano, VolumeDano);
+			
             if (LevouDano != null)
                 LevouDano.Play();
             else
@@ -645,6 +661,10 @@ public class KartScript : MonoBehaviour
 
     private IEnumerator EfeitoAoColidir()
     {
+
+		if (Dano != null)
+			Audio.PlayOneShot(Dano, VolumeDano);
+		
         if (LevouDano != null)
             LevouDano.Play();
         else
