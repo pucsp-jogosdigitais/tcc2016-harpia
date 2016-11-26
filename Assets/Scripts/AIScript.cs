@@ -89,10 +89,14 @@ public class AIScript : MonoBehaviour
             if (probSoltarPowerUp == 0)
                 Kart.powerUpComum(direçãoPowerUp);
         }
-
-        probSoltarPowerUp = Random.Range(0, 500);
-        if (probSoltarPowerUp == 0)
-            Kart.powerUpEspecial();
+		if (Kart.Nome != "Ayah") {
+			probSoltarPowerUp = Random.Range (0, 500);
+			if (probSoltarPowerUp == 0)
+				Kart.powerUpEspecial ();
+		} else {
+			if (Kart.MostrandoAlvo)
+				Kart.powerUpEspecial ();
+		}
     }
 
     private void localizarCaminho()

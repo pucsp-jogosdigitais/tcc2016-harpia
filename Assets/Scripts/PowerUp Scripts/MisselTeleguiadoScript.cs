@@ -34,5 +34,6 @@ public class MisselTeleguiadoScript : MonoBehaviour {
     public void defineAlvo(GameObject alvo)
     {
         KartAlvo = alvo;
+        KartAlvo.GetComponent<KartScript>().MostrandoAlvo = true;
     }
 }

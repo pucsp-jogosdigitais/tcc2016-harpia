@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AIScript.cs" />
+     <Compile Include="Assets\Scripts\AlvoScript.cs" />
      <Compile Include="Assets\Scripts\AnimaBotaoScript.cs" />
      <Compile Include="Assets\Scripts\AutodestruirAncoraScript.cs" />
      <Compile Include="Assets\Scripts\CameraPath Scripts\MathUtils.cs" />

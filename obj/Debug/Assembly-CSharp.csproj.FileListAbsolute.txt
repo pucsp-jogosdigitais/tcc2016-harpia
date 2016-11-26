@@ -277,3 +277,5 @@ C:\Users\Driika\Desktop\Violetta 14-08\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\Driika\Desktop\Violetta 14-08\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Driika\Desktop\Violetta 14-08\obj\Debug\Assembly-CSharp.dll
 C:\Users\Driika\Desktop\Violetta 14-08\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Drika\git\tcc2016-harpia\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Drika\git\tcc2016-harpia\obj\Debug\Assembly-CSharp.dll

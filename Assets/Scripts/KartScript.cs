@@ -35,6 +35,8 @@ public class KartScript : MonoBehaviour
     public bool SomouTempoExtra = false;
     private bool AplicandoEfeitoCam = false;
     private bool AplicandoEfeitoGlitch = false;
+    public bool MostrandoAlvo = false;
+    public GameObject alvo;
 
     #region Prefabs PowerUp
     public Object AranhaExplosivaPrefab;
@@ -109,15 +111,20 @@ public class KartScript : MonoBehaviour
 
     void Update()
     {
-        if (Terminou)
-            Animacao.SetBool("Comemoração", true);
-        else
-            Animacao.SetBool("Comemoração", false);
+		alvo.SetActive (MostrandoAlvo);
 
-        if (ScriptCam.cameraReversa)      
-            Animacao.SetBool("OlhandoParaTras", true);
-        else
-            Animacao.SetBool("OlhandoParaTras", false);
+        if (Animacao != null)
+        {
+            if (Terminou)
+                Animacao.SetBool("Comemoração", true);
+            else
+                Animacao.SetBool("Comemoração", false);
+
+            if (ScriptCam.cameraReversa)
+                Animacao.SetBool("OlhandoParaTras", true);
+            else
+                Animacao.SetBool("OlhandoParaTras", false);
+        }
 
         if (Jogando)
         {            
@@ -242,13 +249,10 @@ public class KartScript : MonoBehaviour
         {
             //angAtual = Mathf.Lerp(direcaoBaixaVel, direcaoAltaVel, auxVel);
             //angAtual *= direção;
-            if (direção > 0)
-                Animacao.SetFloat("side", -AnimSide);
-            if (direção < 0)
-                Animacao.SetFloat("side", AnimSide);
-            if (direção == 0)
-                Animacao.SetFloat("side", 0);
-
+            if (Animacao != null)
+            {
+                Animacao.SetFloat("side", AnimSide * direção);
+            }
             RodaFDir.steerAngle = direção * 25;
             RodaFEsq.steerAngle = direção * 25;
             RodaTDir.steerAngle = 0f;
@@ -259,12 +263,10 @@ public class KartScript : MonoBehaviour
 
     public void Direção(float rotaçãoAI)
     {
-        if (rotaçãoAI > 0)
-            Animacao.SetFloat("side", -AnimSide);
-        if (rotaçãoAI < 0)
-            Animacao.SetFloat("side", AnimSide);
-        if (rotaçãoAI == 0)
-            Animacao.SetFloat("side", 0);
+        if (Animacao != null)
+        {
+            Animacao.SetFloat("side", AnimSide * rotaçãoAI);
+        }
         RodaFEsq.steerAngle = rotaçãoAI;
         RodaFDir.steerAngle = rotaçãoAI;
     }
@@ -340,7 +342,10 @@ public class KartScript : MonoBehaviour
 
     private IEnumerator EfeitoCamera()
     {
-        Animacao.SetFloat("front", -AnimFront);
+        if (Animacao != null)
+        {
+            Animacao.SetFloat("front", -AnimFront);
+        }
         for (int i = 1; i <= 20; i++)
         {
             CamKart.fieldOfView = 60 + i;
@@ -353,8 +358,10 @@ public class KartScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         CamKart.fieldOfView = 60;
-
-        Animacao.SetFloat("front", 0);
+        if (Animacao != null)
+        {
+            Animacao.SetFloat("front", 0);
+        }
         AplicandoEfeitoCam = false;
     }
 
@@ -682,9 +689,15 @@ public class KartScript : MonoBehaviour
 
     private IEnumerator AnimacaoProvocacao()
     {
-        Animacao.SetBool("Provocação", true);
+        if (Animacao != null)
+        {
+            Animacao.SetBool("Provocação", true);
+        }
         yield return new WaitForSeconds(TempoProvocacao);
-        Animacao.SetBool("Provocação", false);
+        if (Animacao != null)
+        {
+            Animacao.SetBool("Provocação", false);
+        }
     }
 
     private void foiAtingidoMissel()
@@ -695,6 +708,8 @@ public class KartScript : MonoBehaviour
 
             Audio.PlayOneShot(Explosao, VolumeExplosao);
             ExplosaoMissel.Play();
+            if (MostrandoAlvo)
+                MostrandoAlvo = false;
 
             if (Dano != null)
                 Audio.PlayOneShot(Dano, VolumeDano);
