@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05c5d385f71dda42bff314d6ae20e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texturaVideo: {fileID: 15200000, guid: c03506c030deebf40bbfee3ad97476e9, type: 3}
+  texturaVideo: {fileID: 15200000, guid: b6356981ae7d5264ea2f704bbd45ef5b, type: 3}
 --- !u!1 &1632355464
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: fb1b9e8d0def3ba4aad02915daaa079e, type: 2}
+  m_Material: {fileID: 2100000, guid: 9945aa7a8306cf14b8b68433369628ac, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
