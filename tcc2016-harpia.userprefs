@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraPath Scripts\SplineController.cs">
     <Files>
-      <File FileName="Assets\Scripts\CameraPath Scripts\SplineController.cs" Line="12" Column="32" />
+      <File FileName="Assets\Scripts\CameraPath Scripts\SplineController.cs" Line="12" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

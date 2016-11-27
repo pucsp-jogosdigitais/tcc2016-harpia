@@ -9,7 +9,7 @@ public enum eOrientationMode { NODE = 0, TANGENT }
 public class SplineController : MonoBehaviour
 {
     public GameObject SplineRoot;
-    private float Duration = 45;
+    private float Duration = 200;
     private eOrientationMode OrientationMode = eOrientationMode.NODE;
     private eWrapMode WrapMode = eWrapMode.ONCE;
     private bool AutoStart = true;
