@@ -18,6 +18,7 @@ TagManager:
   - CaminhoNuvem
   - Missel
   - KartCollider
+  - Ursinho
   layers:
   - Default
   - TransparentFX

@@ -943,7 +943,13 @@ public class KartScript : MonoBehaviour
             Destroy(Objeto.gameObject);
             foiAtingido();
         }
-        #endregion
+		#endregion        
+		#region Poça
+		else if (Objeto.gameObject.CompareTag("Ursinho"))
+		{
+			foiAtingido();
+		}
+		#endregion
         #region Missel
         else if (Objeto.gameObject.CompareTag("Missel"))
         {
